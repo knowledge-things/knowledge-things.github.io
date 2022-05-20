@@ -1,3 +1,5 @@
+https://knowledgething.github.io/2022/05/21/java-han-shu-shi-bian-cheng-zhi-optional/
+https://knowledgething.github.io/2022/05/21/qiu-ji-ptz-he-shi-chang-jiao-yu-onvif-he-ptz-dui-ying-guan-xi/
 https://knowledgething.github.io/2022/05/19/hello-world/
 https://knowledgething.github.io/404/index.html
 https://knowledgething.github.io/friends.json
@@ -7,3 +9,7 @@ https://knowledgething.github.io/about/index.html
 https://knowledgething.github.io/tags/index.html
 https://knowledgething.github.io/categories/index.html
 https://knowledgething.github.io/
+https://knowledgething.github.io/tags/java/
+https://knowledgething.github.io/tags/Optional/
+https://knowledgething.github.io/tags/camera-onvif/
+https://knowledgething.github.io/categories/java/

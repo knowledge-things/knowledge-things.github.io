@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://knowledgething.github.io/2022/05/21/java-han-shu-shi-bian-cheng-zhi-optional/</loc>
+    
+    <lastmod>2022-05-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://knowledgething.github.io/2022/05/21/qiu-ji-ptz-he-shi-chang-jiao-yu-onvif-he-ptz-dui-ying-guan-xi/</loc>
+    
+    <lastmod>2022-05-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://knowledgething.github.io/2022/05/19/hello-world/</loc>
     
     <lastmod>2022-05-19</lastmod>
@@ -76,12 +94,40 @@
 
   <url>
     <loc>https://knowledgething.github.io/</loc>
-    <lastmod>2022-05-19</lastmod>
+    <lastmod>2022-05-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
+  <url>
+    <loc>https://knowledgething.github.io/tags/java/</loc>
+    <lastmod>2022-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://knowledgething.github.io/tags/Optional/</loc>
+    <lastmod>2022-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://knowledgething.github.io/tags/camera-onvif/</loc>
+    <lastmod>2022-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://knowledgething.github.io/categories/java/</loc>
+    <lastmod>2022-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>
