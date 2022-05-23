@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Kevin Blog</title>
   
-  <subtitle>  </subtitle>
+  <subtitle>always-be-coding</subtitle>
   <link href="https://knowledgething.github.io/atom.xml" rel="self"/>
   
   <link href="https://knowledgething.github.io/"/>
-  <updated>2022-05-20T18:14:51.498Z</updated>
+  <updated>2022-05-23T13:08:11.922Z</updated>
   <id>https://knowledgething.github.io/</id>
   
   <author>
@@ -15,6 +15,69 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>靶面尺寸和镜头焦距配套对应的视场角</title>
+    <link href="https://knowledgething.github.io/2022/05/23/ba-mian-chi-cun-he-jing-tou-jiao-ju-pei-tao-dui-ying-de-shi-chang-jiao/"/>
+    <id>https://knowledgething.github.io/2022/05/23/ba-mian-chi-cun-he-jing-tou-jiao-ju-pei-tao-dui-ying-de-shi-chang-jiao/</id>
+    <published>2022-05-23T12:46:30.000Z</published>
+    <updated>2022-05-23T13:08:11.922Z</updated>
+    
+    <content type="html"><![CDATA[<div class="table-container"><table><thead><tr><th>1</th><th>2</th><th>3</th><th>镜头焦距：</th><th>1.9mm</th><th>1.9mm</th><th>1.9mm</th><th>2.4mm</th><th>2.8mm</th><th>2.8mm</th><th>2.8mm</th><th>3.6mm</th><th>3.6mm</th><th>3.6mm</th><th>3.9mm</th><th>4mm</th><th>4mm</th><th>4mm</th><th>5mm</th><th>6mm</th></tr></thead><tbody><tr><td>靶面尺寸</td><td>长(mm)</td><td>宽(mm)</td><td>对角(mm)</td><td>水平视场角</td><td>垂直视场角</td><td>视场角</td><td>水平视场角</td><td>水平视场角</td><td>垂直视场角</td><td>视场角</td><td>水平视场角</td><td>垂直视场角</td><td>视场角</td><td>水平视场角</td><td>水平视场角</td><td>垂直视场角</td><td>视场角</td><td>水平视场角</td><td>水平视场角</td></tr><tr><td>1/6”</td><td>2.4</td><td>1.8</td><td>3</td><td>64.55128973</td><td>50.69235275</td><td>76.58032769</td><td>53.13010326</td><td>46.39718182</td><td>35.63777844</td><td>56.35718118</td><td>36.86989827</td><td>28.07248741</td><td>45.23973067</td><td>34.20545852</td><td>33.39849</td><td>25.36077</td><td>41.11209</td><td>28.04247</td><td>22.61987</td></tr><tr><td>1/4”</td><td>3.2</td><td>2.4</td><td>4</td><td>80.20181646</td><td>64.55128973</td><td>92.93760301</td><td>67.3801362</td><td>59.48976361</td><td>46.39718182</td><td>71.0753568</td><td>47.92497877</td><td>36.86989827</td><td>58.10920919</td><td>44.61241087</td><td>43.60282</td><td>33.39849</td><td>53.1301</td><td>37.97443</td><td>29.86283</td></tr><tr><td>3.6</td><td>2.7</td><td>4.5</td><td>86.90368608</td><td>70.7895929</td><td>99.64153386</td><td>73.73979655</td><td>65.47045366</td><td>51.48141759</td><td>77.56872952</td><td>53.13010326</td><td>41.11209114</td><td>64.01076751</td><td>49.55028198</td><td>48.45549</td><td>37.29908</td><td>58.71551</td><td>43.13259</td><td>33.39849</td></tr><tr><td>1/3.6”</td><td>4</td><td>3</td><td>5</td><td>92.93760301</td><td>76.58032769</td><td>105.5303338</td><td>79.61114354</td><td>71.0753568</td><td>56.35718118</td><td>83.52060083</td><td>58.10920919</td><td>45.23973067</td><td>69.55566392</td><td>54.29936432</td><td>53.1301</td><td>41.11209</td><td>64.01077</td><td>48.44853</td><td>36.8699</td></tr><tr><td>1/3.2”</td><td>4.536</td><td>3.416</td><td>5.678</td><td>100.0913228</td><td>83.90774916</td><td>112.4151895</td><td>86.76048649</td><td>78.01494644</td><td>62.76638318</td><td>90.79251787</td><td>64.42185655</td><td>50.76348344</td><td>76.51941044</td><td>60.35929687</td><td>59.10647</td><td>46.24497</td><td>70.73046</td><td>55.86371</td><td>41.41318</td></tr><tr><td>1/3”</td><td>4.8</td><td>3.6</td><td>6</td><td>103.265031</td><td>86.90368608</td><td>115.305115</td><td>90.00000154</td><td>81.20259068</td><td>65.47045366</td><td>93.94986962</td><td>67.3801362</td><td>53.13010326</td><td>79.61114354</td><td>63.21500557</td><td>61.92751</td><td>48.45549</td><td>73.7398</td><td>59.65761</td><td>43.60282</td></tr><tr><td>1/2.8”</td><td>4.59</td><td>3.42</td><td>5.71</td><td>100.7581907</td><td>83.97442642</td><td>112.712541</td><td>87.4376781</td><td>78.67903116</td><td>62.82601814</td><td>91.11447318</td><td>65.03502234</td><td>50.81543708</td><td>76.83274295</td><td>60.95034996</td><td>59.6901</td><td>46.29342</td><td>71.0347</td><td>56.6316</td><td>41.86371</td></tr><tr><td>1/2.7”</td><td>5.27</td><td>3.96</td><td>6.592</td><td>108.4120734</td><td>92.3623794</td><td>120.0768619</td><td>95.3444878</td><td>86.52220908</td><td>70.53153652</td><td>99.30323061</td><td>72.40411143</td><td>57.62158847</td><td>84.95166994</td><td>68.08914978</td><td>66.74979</td><td>52.67082</td><td>78.97705</td><td>66.68016</td><td>47.41896</td></tr><tr><td>5.371</td><td>4.035</td><td>6.718</td><td>109.4409395</td><td>93.43598697</td><td>121.0111347</td><td>96.42642672</td><td>87.60845497</td><td>71.54819508</td><td>100.3720838</td><td>73.44383343</td><td>58.53399502</td><td>86.03311928</td><td>69.10180006</td><td>67.75285</td><td>53.53047</td><td>80.04372</td><td>68.23864</td><td>48.22499</td></tr><tr><td>1/2.5”</td><td>5.76</td><td>4.29</td><td>7.182</td><td>113.172555</td><td>96.93218357</td><td>124.2333209</td><td>100.3888595</td><td>91.61386047</td><td>74.90938911</td><td>104.1109859</td><td>77.31961783</td><td>61.57579159</td><td>89.85658289</td><td>72.88888476</td><td>71.50778</td><td>56.40487</td><td>83.83182</td><td>74.42337</td><td>51.28201</td></tr><tr><td>1/2.3”</td><td>6.16</td><td>4.62</td><td>7.7</td><td>116.6605317</td><td>101.1246685</td><td>127.4667255</td><td>104.1470771</td><td>95.45262362</td><td>79.04526389</td><td>107.9452551</td><td>81.09765338</td><td>65.3738742</td><td>93.84391352</td><td>76.59937866</td><td>75.19254</td><td>60.01287</td><td>87.81062</td><td>81.11793</td><td>54.34588</td></tr><tr><td>1/2”</td><td>6.4</td><td>4.8</td><td>8</td><td>118.6005569</td><td>103.265031</td><td>129.184566</td><td>106.2602065</td><td>97.62815133</td><td>81.20259068</td><td>110.0159615</td><td>83.26708009</td><td>67.3801362</td><td>96.02557665</td><td>78.73863583</td><td>77.31962</td><td>61.92751</td><td>90</td><td>85.31844</td><td>56.14497</td></tr><tr><td>1/1.8”</td><td>7.2</td><td>5.4</td><td>9</td><td>124.3518094</td><td>109.7316158</td><td>134.218899</td><td>112.6198669</td><td>104.2500345</td><td>87.91674815</td><td>116.2184184</td><td>90.00000154</td><td>73.73979655</td><td>102.6803852</td><td>85.41878137</td><td>83.97443</td><td>68.0387</td><td>96.73292</td><td>100.5046</td><td>61.92751</td></tr><tr><td>1/1.7”</td><td>7.6</td><td>5.7</td><td>9.5</td><td>126.8698998</td><td>112.6198669</td><td>136.3971834</td><td>115.4487133</td><td>107.2312982</td><td>91.01405967</td><td>118.9635407</td><td>93.09631699</td><td>76.73497208</td><td>105.6834082</td><td>88.5118831</td><td>87.0624</td><td>70.93975</td><td>99.79819</td><td>108.9137</td><td>64.69489</td></tr><tr><td>1/1.6”</td><td>8.08</td><td>6.01</td><td>10.07</td><td>129.6250777</td><td>115.3913423</td><td>138.6511528</td><td>118.5743466</td><td>110.5507182</td><td>94.04505096</td><td>121.842496</td><td>96.59223359</td><td>79.70500692</td><td>108.8708424</td><td>92.0202983</td><td>90.5701</td><td>73.83141</td><td>103.07</td><td>119.8922</td><td>67.90739</td></tr><tr><td>2/3”</td><td>8.8</td><td>6.6</td><td>11</td><td>133.2888726</td><td>120.1369784</td><td>141.8845934</td><td>122.7790828</td><td>115.0576174</td><td>99.37180137</td><td>126.0395407</td><td>101.421188</td><td>85.02089561</td><td>113.5868613</td><td>96.89477536</td><td>95.45262</td><td>79.04526</td><td>107.9453</td><td>138.6173</td><td>72.50768</td></tr><tr><td>1”</td><td>12.9</td><td>9.6</td><td>16</td><td>147.1728347</td><td>136.8093814</td><td>153.2795657</td><td>139.1802367</td><td>133.0678505</td><td>119.4871277</td><td>141.41991</td><td>121.6647753</td><td>106.2602065</td><td>131.5445116</td><td>117.681393</td><td>116.3893</td><td>100.3889</td><td>126.8699</td><td>397.3125</td><td>94.14006</td></tr></tbody></table></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;div class=&quot;table-container&quot;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;1&lt;/th&gt;
+&lt;th&gt;2&lt;/th&gt;
+&lt;th&gt;3&lt;/th&gt;
+&lt;th&gt;镜头焦距：&lt;/th&gt;
+&lt;th&gt;1.9mm&lt;/th&gt;
+&lt;th&gt;1.9mm&lt;/th&gt;
+&lt;th&gt;1.9mm&lt;/</summary>
+      
+    
+    
+    
+    <category term="摄像头相关" scheme="https://knowledgething.github.io/categories/%E6%91%84%E5%83%8F%E5%A4%B4%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="视场角" scheme="https://knowledgething.github.io/tags/%E8%A7%86%E5%9C%BA%E8%A7%92/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bits 速查表</title>
+    <link href="https://knowledgething.github.io/2022/05/22/bits-su-cha-biao/"/>
+    <id>https://knowledgething.github.io/2022/05/22/bits-su-cha-biao/</id>
+    <published>2022-05-22T14:28:34.000Z</published>
+    <updated>2022-05-22T14:30:23.505Z</updated>
+    
+    <content type="html"><![CDATA[<div class="row">    <embed src="bits-cheat-sheet.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;bits-cheat-sheet.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;application/pdf&quot;&gt;
+	&lt;/div&gt;
+
+
+</summary>
+      
+    
+    
+    
+    
+    <category term="Bits" scheme="https://knowledgething.github.io/tags/Bits/"/>
+    
+  </entry>
   
   <entry>
     <title>Java函数式编程之Optional</title>
@@ -48,7 +111,7 @@
     <link href="https://knowledgething.github.io/2022/05/21/qiu-ji-ptz-he-shi-chang-jiao-yu-onvif-he-ptz-dui-ying-guan-xi/"/>
     <id>https://knowledgething.github.io/2022/05/21/qiu-ji-ptz-he-shi-chang-jiao-yu-onvif-he-ptz-dui-ying-guan-xi/</id>
     <published>2022-05-20T16:43:13.000Z</published>
-    <updated>2022-05-20T17:37:16.242Z</updated>
+    <updated>2022-05-20T18:20:09.237Z</updated>
     
     <content type="html"><![CDATA[<p>文章目录</p><h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><ul><li><p>不同品牌对应关系不一致，同一品牌，根据摄像头产品参数也会不一致</p></li><li><p>球机的PTZ和ONVIF的PTZ是线性关系</p></li><li><p>摄像头的视场角与ONVIF的Zoom是非线性关系</p></li><li><p>ONVIF的PTZ范围</p><p>P、T ∈[-1, 1]</p><p>Z∈ [0,1]</p></li><li><p>球机PTZ范围：根据不同型号不一致</p><h2 id="PTZ-ONVIF-amp-PTZ-SDK"><a href="#PTZ-ONVIF-amp-PTZ-SDK" class="headerlink" title="PTZ_ONVIF &amp; PTZ_SDK"></a>PTZ_ONVIF &amp; PTZ_SDK</h2></li><li><p>以海康相机iDS-2VS435-F837为例，分别ONVIF控制球机转动指定PTZ坐标，再使用SDK获取PTZ坐标</p></li><li>海康球机SDK获取PTZ坐标(具体参考《设备网络SDK使用手册》)</li></ul><pre class="line-numbers language-java" data-language="java"><code class="language-java">int p_pos &#x3D; HexToDecMa(ptz_pos.wPanPos) &#x2F; 10 % 360;&#x2F;&#x2F; 十六进制转化为十进制角度int t_pos &#x3D; HexToDecMa(ptz_pos.wTiltPos) &#x2F; 10 % 360;int z_pos &#x3D; HexToDecMa(ptz_pos.wZoomPos) &#x2F; 10 % 360;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>ONVIF——&gt;PTZ</p><p>模型函数是线性关系$\ y=kx+b $<br>LS最小二乘拟合<br>关系如下：<br>\begin{cases}<br>p′=179.87∗p+179.95 \\<br>t′=55.00∗t+35.24 \\<br>z′=36.00∗z+1.0<br>\end{cases}</p><p>球机水平方向转动360°<br>球机垂直方向转动[-20°, 90°]<br>球机光学放大倍数37倍<br>可以根据参数来验证拟合关系，设计正交试验，只需要测量几次即可</p><p>球机视场角与ONVIF对应关系</p><p>有时候需要实时获取视场角</p><p>视场角∝放大倍数∝Zoom</p><p>以海康相机iDS-2VS435-F837为例，固定PT，分别ONVIF控制球机转动指定Z，再获取视场角，视场角获取可以参考《视场角计算》</p><p>对应关系如下：</p><p>ONVIF-Zoom ——&gt;水平/垂直视场角</p><p>可以很明显看出是非线性关系<br>采用《非线性优化算法——LM》拟合曲线<br>关系如下</p><script type="math/tex; mode=display">{ F O V H = 1.626 ∗ e 0.634 0.177 + z o o m F O V V = 0.953 ∗ e 0.598 0.166 + z o o m{FOVH=1.626∗e0.6340.177+zoomFOVV=0.953∗e0.5980.166+zoom{FOVH=1.626∗e0.6340.177+zoomFOVV=0.953∗e0.5980.166+zoom{ FOV H =1.626∗e 0.177+zoom0.634FOV V =0.953∗e 0.166+zoom0.598</script><p>​    </p><p>拟合效果如下</p>]]></content>
     
@@ -65,7 +128,7 @@
     
     
     
-    <category term="camera,onvif" scheme="https://knowledgething.github.io/tags/camera-onvif/"/>
+    <category term="camera onvif" scheme="https://knowledgething.github.io/tags/camera-onvif/"/>
     
   </entry>
   
