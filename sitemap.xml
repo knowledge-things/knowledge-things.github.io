@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://knowledgething.github.io/2022/05/23/ru-he-qu-de-jiu-ban-macos/</loc>
+    
+    <lastmod>2022-05-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://knowledgething.github.io/2022/05/23/ba-mian-chi-cun-he-jing-tou-jiao-ju-pei-tao-dui-ying-de-shi-chang-jiao/</loc>
     
     <lastmod>2022-05-23</lastmod>
@@ -140,6 +149,13 @@
   </url>
   
   <url>
+    <loc>https://knowledgething.github.io/tags/macOS/</loc>
+    <lastmod>2022-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://knowledgething.github.io/tags/camera-onvif/</loc>
     <lastmod>2022-05-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -157,6 +173,13 @@
   
   <url>
     <loc>https://knowledgething.github.io/categories/java/</loc>
+    <lastmod>2022-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://knowledgething.github.io/categories/macOS/</loc>
     <lastmod>2022-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

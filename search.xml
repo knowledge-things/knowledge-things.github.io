@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>如何取得舊版 macOS</title>
+      <link href="/2022/05/23/ru-he-qu-de-jiu-ban-macos/"/>
+      <url>/2022/05/23/ru-he-qu-de-jiu-ban-macos/</url>
+      
+        <content type="html"><![CDATA[<p>如果您的 Mac 與最新版 macOS 不相容，您可以升級到舊版 macOS，例如 macOS Big Sur、Catalina、Mojave 或 High Sierra。</p><p>若要取得最新功能，並維護 Mac 的安全性、穩定性、相容性與效能，請務必讓軟體保持最新狀態。Apple 建議您一律使用與 Mac 相容的最新版 macOS。</p><p><a href="https://support.apple.com/zh-tw/HT212735">了解如何升級為 macOS Monterey</a>（最新版 macOS）。</p><h2 id="檢查相容性"><a href="#檢查相容性" class="headerlink" title="檢查相容性"></a>檢查相容性</h2><p>Mac 隨附的 macOS 版本是其可以使用的最早版本。例如，如果 Mac 隨附 macOS Big Sur，則不能使用 macOS Catalina 或之前版本。如果 macOS 與裝置不相容，App Store 或安裝程式會告知您。如果您嘗試安裝比目前安裝版本更舊的 macOS，安裝程式會指出此版本的 macOS 太舊，無法在這一版的 macOS 中打開。</p><ul><li>macOS Big Sur 11 <a href="https://support.apple.com/zh-tw/HT211238">硬體需求</a></li><li>macOS Catalina 10.15 <a href="https://support.apple.com/zh-tw/HT210222">硬體需求</a></li><li>macOS Mojave 10.14 <a href="https://support.apple.com/kb/SP777?locale=zh_TW">硬體需求</a></li><li>macOS High Sierra 10.13 <a href="https://support.apple.com/kb/SP765?locale=zh_TW">硬體需求</a></li><li>macOS Sierra 10.12 <a href="https://support.apple.com/kb/SP742?locale=zh_TW">硬體需求</a></li><li>OS X El Capitan 10.11 <a href="https://support.apple.com/kb/SP728?locale=zh_TW">硬體需求</a></li><li>OS X Yosemite 10.10 <a href="https://support.apple.com/kb/SP711?locale=zh_TW">硬體需求</a></li></ul><hr><h2 id="製作備份"><a href="#製作備份" class="headerlink" title="製作備份"></a>製作備份</h2><p>安裝任何升級程式之前，最好先<a href="https://support.apple.com/zh-tw/HT201250">備份 Mac</a>。「時光機」可協助您輕鬆備份，而您也可以採取其他備份方法。</p><hr><h2 id="在-Mac-上使用-Safari-下載-macOS"><a href="#在-Mac-上使用-Safari-下載-macOS" class="headerlink" title="在 Mac 上使用 Safari 下載 macOS"></a>在 Mac 上使用 Safari 下載 macOS</h2><p>Safari 會利用這些連結在 App Store 中尋找舊版安裝程式。從 App Store 下載安裝程式後，安裝程式會自動打開。</p><ul><li><a href="macappstores://apps.apple.com/tw/app/macos-big-sur/id1526878132?mt=12">macOS Big Sur</a> 可以升級 Catalina、Mojave、High Sierra、Sierra、El Capitan、Yosemite、Mavericks</li><li><a href="macappstores://apps.apple.com/tw/app/macos-catalina/id1466841314?mt=12">macOS Catalina</a> 可以升級 Mojave、High Sierra、Sierra、El Capitan、Yosemite、Mavericks</li><li><a href="macappstores://apps.apple.com/tw/app/macos-mojave/id1398502828?mt=12">macOS Mojave</a> 可以升級 High Sierra、Sierra、El Capitan、Yosemite、Mavericks、Mountain Lion</li><li><a href="macappstores://apps.apple.com/tw/app/macos-high-sierra/id1246284741?mt=12">macOS High Sierra</a> 可以升級 Sierra、El Capitan、Yosemite、Mavericks、Mountain Lion</li></ul><p>Safari 會以名為 InstallOS.dmg 或 InstallMacOSX.dmg 的磁碟映像檔的形式，來下載以下舊版安裝程式。請開啟磁碟映像檔，然後開啟其中的 .pkg 安裝程式。它會安裝一個名為「安裝 [版本名稱]」的 App。從「應用程式」檔案夾中打開該 App，即可開始安裝作業系統。</p><ul><li><a href="http://updates-http.cdn-apple.com/2019/cert/061-39476-20191023-48f365f4-0015-4c41-9f44-39d3d2aca067/InstallOS.dmg">macOS Sierra</a> 可以升級 El Capitan、Yosemite、Mavericks、Mountain Lion 或 Lion</li><li><a href="http://updates-http.cdn-apple.com/2019/cert/061-41424-20191024-218af9ec-cf50-4516-9011-228c78eda3d2/InstallMacOSX.dmg">OS X El Capitan</a> 可以升級 Yosemite、Mavericks、Mountain Lion、Lion 或 Snow Leopard</li><li><a href="http://updates-http.cdn-apple.com/2019/cert/061-41343-20191023-02465f92-3ab5-4c92-bfe2-b725447a070d/InstallMacOSX.dmg">OS X Yosemite</a> 可以升級 Mavericks、Mountain Lion、Lion 或 Snow Leopard</li></ul><p>發佈日期： 2022 年 03 月 03 日</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> macOS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> macOS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>靶面尺寸和镜头焦距配套对应的视场角</title>
       <link href="/2022/05/23/ba-mian-chi-cun-he-jing-tou-jiao-ju-pei-tao-dui-ying-de-shi-chang-jiao/"/>
       <url>/2022/05/23/ba-mian-chi-cun-he-jing-tou-jiao-ju-pei-tao-dui-ying-de-shi-chang-jiao/</url>
