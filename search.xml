@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Node—RED 启用使用身份认证登录</title>
+      <link href="/2022/05/24/node-red-qi-yong-shi-yong-shen-fen-ren-zheng-deng-lu/"/>
+      <url>/2022/05/24/node-red-qi-yong-shi-yong-shen-fen-ren-zheng-deng-lu/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>Node-RED 预设是无帐号与密码的，因此若建立在公开的伺服器上就是不安全的，任何人都可以透过 IP 或网域连上平台，且直接修改及部属编辑器上的节点，因此我们要运用其内建的使用者身分验证机制来保护平台的资讯安全。</p></blockquote><h3 id="编辑器和管理员-API-安全性"><a href="#编辑器和管理员-API-安全性" class="headerlink" title="编辑器和管理员 API 安全性"></a>编辑器和管理员 API 安全性</h3><p><strong>Editor</strong> 和 <strong>Admin API</strong> 支持两种类型的身份验证：</p><ul><li>基于用户名/密码凭据的身份验证</li><li>针对任何 OAuth/OpenID 提供者（例如 Twitter 或 GitHub）进行身份验证<h3 id="基于用户名-密码的身份验证"><a href="#基于用户名-密码的身份验证" class="headerlink" title="基于用户名/密码的身份验证"></a>基于用户名/密码的身份验证</h3></li></ul><p>要在 Editor 和 Admin API 上启用用户身份验证，请取消注释<em>设置文件</em><strong>adminAuth</strong> 中的属性：<br><pre class="line-numbers language-none"><code class="language-none">adminAuth: &#123;    type: &quot;credentials&quot;,    users: [        &#123;            username: &quot;admin&quot;,            password: &quot;$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.&quot;,            permissions: &quot;*&quot;        &#125;,        &#123;            username: &quot;george&quot;,            password: &quot;$2b$08$wuAqPiKJlVN27eF5qJp.RuQYuy6ZYONW7a&#x2F;UWYxDTtwKFCdB8F19y&quot;,            permissions: &quot;read&quot;        &#125;    ]&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>该<em>users</em>属性是一个用户对象数组。这允许您定义多个用户，每个用户都可以拥有不同的权限。</p><p>上面的这个示例配置定义了两个用户。一个被称为<em>admin</em>有权在编辑器内执行所有操作且密码为<em>password</em>. 另一个调用<em>george</em> who 被授予只读访问权限。</p><p>请注意，密码是使用 bcrypt 算法安全地散列的。</p><blockquote><p>注意：在以前的 Node-RED 版本中，该设置httpAdminAuth 可用于在编辑器上启用 HTTP 基本身份验证。此选项已弃用，不应使用。</p></blockquote><h3 id="生成密码哈希"><a href="#生成密码哈希" class="headerlink" title="生成密码哈希"></a>生成密码哈希</h3><p>如果您使用的是 Node-RED 1.1.0 或更高版本，则可以使用以下命令：</p><p><code>node-red admin hash-pw</code></p><p>对于旧版本的 Node-RED，您可以：</p><ul><li>安装单独的node-red-admin命令行工具并使用以下命令：<br>  <code>node-red-admin hash-pw</code></li><li><p>或者，找到 Node-RED 的安装目录并使用以下命令：</p><p>  <code>node -e &quot;console.log(require(&#39;bcryptjs&#39;).hashSync(process.argv[1], 8));&quot; your-password-here</code></p></li></ul><p>在所有情况下，您都会取回密码的散列版本，然后您可以将其粘贴到您的设置文件中。</p><h3 id="Where-is-my-settings-file"><a href="#Where-is-my-settings-file" class="headerlink" title="Where is my settings file?"></a>Where is my settings file?</h3><p>容器中的位置    <em>/data/settings.js</em></p><p>如果您不确定 Node-RED 使用的是哪个设置文件，则应在 Node-RED 启动时检查日志输出。它将记录文件的完整路径：</p><p><code>22 Jun 12:34:56 - [info] Settings file  : /Users/nol/.node-red/settings.js</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Node-RED </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何取得舊版 macOS</title>
       <link href="/2022/05/23/ru-he-qu-de-jiu-ban-macos/"/>
       <url>/2022/05/23/ru-he-qu-de-jiu-ban-macos/</url>
