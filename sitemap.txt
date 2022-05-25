@@ -1,3 +1,4 @@
+https://knowledgething.github.io/2022/05/25/shi-yong-spring-jie-shao-websockets/
 https://knowledgething.github.io/2022/05/25/hexo-bo-ke-da-jian-zhi-zai-wen-zhang-zhong-cha-ru-tu-pian/
 https://knowledgething.github.io/2022/05/25/curl-ming-ling-de-zhuan-huan/
 https://knowledgething.github.io/2022/05/25/node-red-flows-cao-zuo/
@@ -32,6 +33,7 @@ https://knowledgething.github.io/categories/java/
 https://knowledgething.github.io/categories/markdown/
 https://knowledgething.github.io/categories/Node-RED/
 https://knowledgething.github.io/categories/curl/
+https://knowledgething.github.io/categories/Spring/
 https://knowledgething.github.io/categories/macOS/
 https://knowledgething.github.io/categories/%E6%91%84%E5%83%8F%E5%A4%B4%E7%9B%B8%E5%85%B3/
 https://knowledgething.github.io/categories/OAuth/

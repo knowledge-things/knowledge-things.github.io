@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://knowledgething.github.io/2022/05/25/shi-yong-spring-jie-shao-websockets/</loc>
+    
+    <lastmod>2022-05-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://knowledgething.github.io/2022/05/25/hexo-bo-ke-da-jian-zhi-zai-wen-zhang-zhong-cha-ru-tu-pian/</loc>
     
     <lastmod>2022-05-24</lastmod>
@@ -282,6 +291,13 @@
   
   <url>
     <loc>https://knowledgething.github.io/categories/curl/</loc>
+    <lastmod>2022-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://knowledgething.github.io/categories/Spring/</loc>
     <lastmod>2022-05-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
