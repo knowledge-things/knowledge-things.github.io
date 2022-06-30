@@ -1,3 +1,5 @@
+https://knowledgething.github.io/2022/06/30/telegraf-an-zhuang-bu-shu/
+https://knowledgething.github.io/2022/06/21/java-ji-ben-shu-ju-lei-xing/
 https://knowledgething.github.io/2022/06/11/chou-xiang-gong-han-mo-shi-abstract-factory-pattern/
 https://knowledgething.github.io/2022/06/02/omniplan-shi-yong-jiao-cheng/
 https://knowledgething.github.io/2022/06/02/shan-dao-de-shu-ju-ku-jie-gou/
@@ -35,6 +37,7 @@ https://knowledgething.github.io/tags/Bits/
 https://knowledgething.github.io/tags/java/
 https://knowledgething.github.io/tags/Optional/
 https://knowledgething.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/
+https://knowledgething.github.io/tags/Telegraf/
 https://knowledgething.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/
 https://knowledgething.github.io/tags/macOS/
 https://knowledgething.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
@@ -47,6 +50,7 @@ https://knowledgething.github.io/tags/%E8%A7%86%E5%9C%BA%E8%A7%92/
 https://knowledgething.github.io/tags/%E4%BA%8C%E5%88%86%E6%B3%95/
 https://knowledgething.github.io/categories/hexo/
 https://knowledgething.github.io/categories/java/
+https://knowledgething.github.io/categories/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/
 https://knowledgething.github.io/categories/markdown/
 https://knowledgething.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/
 https://knowledgething.github.io/categories/Node-RED/
