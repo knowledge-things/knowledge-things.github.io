@@ -3,11 +3,11 @@
   <title>Kevin Blog</title>
   
   <subtitle>always-be-coding</subtitle>
-  <link href="https://knowledgething.github.io/atom.xml" rel="self"/>
+  <link href="https://knowledge-things.github.io/atom.xml" rel="self"/>
   
-  <link href="https://knowledgething.github.io/"/>
+  <link href="https://knowledge-things.github.io/"/>
   <updated>2022-06-30T08:42:33.845Z</updated>
-  <id>https://knowledgething.github.io/</id>
+  <id>https://knowledge-things.github.io/</id>
   
   <author>
     <name>Kevin</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Telegraf安装部署</title>
-    <link href="https://knowledgething.github.io/2022/06/30/telegraf-an-zhuang-bu-shu/"/>
-    <id>https://knowledgething.github.io/2022/06/30/telegraf-an-zhuang-bu-shu/</id>
+    <link href="https://knowledge-things.github.io/2022/06/30/telegraf-an-zhuang-bu-shu/"/>
+    <id>https://knowledge-things.github.io/2022/06/30/telegraf-an-zhuang-bu-shu/</id>
     <published>2022-06-30T08:31:00.000Z</published>
     <updated>2022-06-30T08:42:33.845Z</updated>
     
@@ -33,17 +33,17 @@
     
     
     
-    <category term="系统监控" scheme="https://knowledgething.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/"/>
+    <category term="系统监控" scheme="https://knowledge-things.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/"/>
     
     
-    <category term="Telegraf" scheme="https://knowledgething.github.io/tags/Telegraf/"/>
+    <category term="Telegraf" scheme="https://knowledge-things.github.io/tags/Telegraf/"/>
     
   </entry>
   
   <entry>
     <title>Java 基本数据类型</title>
-    <link href="https://knowledgething.github.io/2022/06/21/java-ji-ben-shu-ju-lei-xing/"/>
-    <id>https://knowledgething.github.io/2022/06/21/java-ji-ben-shu-ju-lei-xing/</id>
+    <link href="https://knowledge-things.github.io/2022/06/21/java-ji-ben-shu-ju-lei-xing/"/>
+    <id>https://knowledge-things.github.io/2022/06/21/java-ji-ben-shu-ju-lei-xing/</id>
     <published>2022-06-21T04:00:00.000Z</published>
     <updated>2022-06-21T04:03:45.816Z</updated>
     
@@ -57,15 +57,15 @@
     
     
     
-    <category term="java基本数据类型" scheme="https://knowledgething.github.io/categories/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <category term="java基本数据类型" scheme="https://knowledge-things.github.io/categories/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
     
     
   </entry>
   
   <entry>
     <title>抽象工厂模式（Abstract Factory Pattern）</title>
-    <link href="https://knowledgething.github.io/2022/06/11/chou-xiang-gong-han-mo-shi-abstract-factory-pattern/"/>
-    <id>https://knowledgething.github.io/2022/06/11/chou-xiang-gong-han-mo-shi-abstract-factory-pattern/</id>
+    <link href="https://knowledge-things.github.io/2022/06/11/chou-xiang-gong-han-mo-shi-abstract-factory-pattern/"/>
+    <id>https://knowledge-things.github.io/2022/06/11/chou-xiang-gong-han-mo-shi-abstract-factory-pattern/</id>
     <published>2022-06-10T16:36:01.000Z</published>
     <updated>2022-06-10T16:51:11.523Z</updated>
     
@@ -79,19 +79,19 @@
     
     
     
-    <category term="设计模式" scheme="https://knowledgething.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://knowledge-things.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-    <category term="设计模式" scheme="https://knowledgething.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <category term="设计模式" scheme="https://knowledge-things.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
-    <category term="抽象工厂" scheme="https://knowledgething.github.io/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/"/>
+    <category term="抽象工厂" scheme="https://knowledge-things.github.io/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/"/>
     
   </entry>
   
   <entry>
     <title>OmniPlan使用教程</title>
-    <link href="https://knowledgething.github.io/2022/06/02/omniplan-shi-yong-jiao-cheng/"/>
-    <id>https://knowledgething.github.io/2022/06/02/omniplan-shi-yong-jiao-cheng/</id>
+    <link href="https://knowledge-things.github.io/2022/06/02/omniplan-shi-yong-jiao-cheng/"/>
+    <id>https://knowledge-things.github.io/2022/06/02/omniplan-shi-yong-jiao-cheng/</id>
     <published>2022-06-01T17:21:57.000Z</published>
     <updated>2022-06-10T16:36:32.578Z</updated>
     
@@ -105,15 +105,15 @@
     
     
     
-    <category term="项目管理" scheme="https://knowledgething.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
+    <category term="项目管理" scheme="https://knowledge-things.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
     
     
   </entry>
   
   <entry>
     <title>禅道的数据库结构</title>
-    <link href="https://knowledgething.github.io/2022/06/02/shan-dao-de-shu-ju-ku-jie-gou/"/>
-    <id>https://knowledgething.github.io/2022/06/02/shan-dao-de-shu-ju-ku-jie-gou/</id>
+    <link href="https://knowledge-things.github.io/2022/06/02/shan-dao-de-shu-ju-ku-jie-gou/"/>
+    <id>https://knowledge-things.github.io/2022/06/02/shan-dao-de-shu-ju-ku-jie-gou/</id>
     <published>2022-06-01T17:17:37.000Z</published>
     <updated>2022-06-01T17:20:40.015Z</updated>
     
@@ -128,17 +128,17 @@
     
     
     
-    <category term="禅道" scheme="https://knowledgething.github.io/categories/%E7%A6%85%E9%81%93/"/>
+    <category term="禅道" scheme="https://knowledge-things.github.io/categories/%E7%A6%85%E9%81%93/"/>
     
     
-    <category term="数据结构" scheme="https://knowledgething.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    <category term="数据结构" scheme="https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
     <title>数学-开区间和闭区间</title>
-    <link href="https://knowledgething.github.io/2022/05/28/shu-xue-kai-qu-jian-he-bi-qu-jian/"/>
-    <id>https://knowledgething.github.io/2022/05/28/shu-xue-kai-qu-jian-he-bi-qu-jian/</id>
+    <link href="https://knowledge-things.github.io/2022/05/28/shu-xue-kai-qu-jian-he-bi-qu-jian/"/>
+    <id>https://knowledge-things.github.io/2022/05/28/shu-xue-kai-qu-jian-he-bi-qu-jian/</id>
     <published>2022-05-28T08:00:17.000Z</published>
     <updated>2022-05-28T08:06:57.841Z</updated>
     
@@ -153,17 +153,17 @@
     
     
     
-    <category term="数学目录" scheme="https://knowledgething.github.io/categories/%E6%95%B0%E5%AD%A6%E7%9B%AE%E5%BD%95/"/>
+    <category term="数学目录" scheme="https://knowledge-things.github.io/categories/%E6%95%B0%E5%AD%A6%E7%9B%AE%E5%BD%95/"/>
     
     
-    <category term="开闭区间" scheme="https://knowledgething.github.io/tags/%E5%BC%80%E9%97%AD%E5%8C%BA%E9%97%B4/"/>
+    <category term="开闭区间" scheme="https://knowledge-things.github.io/tags/%E5%BC%80%E9%97%AD%E5%8C%BA%E9%97%B4/"/>
     
   </entry>
   
   <entry>
     <title>二分搜索算法</title>
-    <link href="https://knowledgething.github.io/2022/05/28/er-fen-sou-suo-suan-fa/"/>
-    <id>https://knowledgething.github.io/2022/05/28/er-fen-sou-suo-suan-fa/</id>
+    <link href="https://knowledge-things.github.io/2022/05/28/er-fen-sou-suo-suan-fa/"/>
+    <id>https://knowledge-things.github.io/2022/05/28/er-fen-sou-suo-suan-fa/</id>
     <published>2022-05-28T07:46:25.000Z</published>
     <updated>2022-05-28T07:49:22.476Z</updated>
     
@@ -178,17 +178,17 @@
     
     
     
-    <category term="algorithm" scheme="https://knowledgething.github.io/categories/algorithm/"/>
+    <category term="algorithm" scheme="https://knowledge-things.github.io/categories/algorithm/"/>
     
     
-    <category term="二分法" scheme="https://knowledgething.github.io/tags/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
+    <category term="二分法" scheme="https://knowledge-things.github.io/tags/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>Netdata—NAS性能监控工具</title>
-    <link href="https://knowledgething.github.io/2022/05/28/netdata-nas-xing-neng-jian-kong-gong-ju/"/>
-    <id>https://knowledgething.github.io/2022/05/28/netdata-nas-xing-neng-jian-kong-gong-ju/</id>
+    <link href="https://knowledge-things.github.io/2022/05/28/netdata-nas-xing-neng-jian-kong-gong-ju/"/>
+    <id>https://knowledge-things.github.io/2022/05/28/netdata-nas-xing-neng-jian-kong-gong-ju/</id>
     <published>2022-05-28T07:03:10.000Z</published>
     <updated>2022-05-28T07:22:13.365Z</updated>
     
@@ -203,17 +203,17 @@
     
     
     
-    <category term="系统监控" scheme="https://knowledgething.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/"/>
+    <category term="系统监控" scheme="https://knowledge-things.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/"/>
     
     
-    <category term="系统监控" scheme="https://knowledgething.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/"/>
+    <category term="系统监控" scheme="https://knowledge-things.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/"/>
     
   </entry>
   
   <entry>
     <title>主机异常重启排查</title>
-    <link href="https://knowledgething.github.io/2022/05/26/zhu-ji-yi-chang-chong-qi-pai-cha/"/>
-    <id>https://knowledgething.github.io/2022/05/26/zhu-ji-yi-chang-chong-qi-pai-cha/</id>
+    <link href="https://knowledge-things.github.io/2022/05/26/zhu-ji-yi-chang-chong-qi-pai-cha/"/>
+    <id>https://knowledge-things.github.io/2022/05/26/zhu-ji-yi-chang-chong-qi-pai-cha/</id>
     <published>2022-05-26T12:18:53.000Z</published>
     <updated>2022-05-26T12:54:45.213Z</updated>
     
@@ -228,15 +228,15 @@
     
     
     
-    <category term="Linux" scheme="https://knowledgething.github.io/categories/Linux/"/>
+    <category term="Linux" scheme="https://knowledge-things.github.io/categories/Linux/"/>
     
     
   </entry>
   
   <entry>
     <title>top命令按内存和cpu排序</title>
-    <link href="https://knowledgething.github.io/2022/05/26/top-ming-ling-an-nei-cun-he-cpu-pai-xu/"/>
-    <id>https://knowledgething.github.io/2022/05/26/top-ming-ling-an-nei-cun-he-cpu-pai-xu/</id>
+    <link href="https://knowledge-things.github.io/2022/05/26/top-ming-ling-an-nei-cun-he-cpu-pai-xu/"/>
+    <id>https://knowledge-things.github.io/2022/05/26/top-ming-ling-an-nei-cun-he-cpu-pai-xu/</id>
     <published>2022-05-26T10:00:32.000Z</published>
     <updated>2022-05-26T10:05:55.366Z</updated>
     
@@ -251,17 +251,17 @@
     
     
     
-    <category term="Linux" scheme="https://knowledgething.github.io/categories/Linux/"/>
+    <category term="Linux" scheme="https://knowledge-things.github.io/categories/Linux/"/>
     
     
-    <category term="系统运维" scheme="https://knowledgething.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
+    <category term="系统运维" scheme="https://knowledge-things.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   
   <entry>
     <title>服务器宕机原因排查思路</title>
-    <link href="https://knowledgething.github.io/2022/05/26/fu-wu-qi-dang-ji-yuan-yin-pai-cha-si-lu/"/>
-    <id>https://knowledgething.github.io/2022/05/26/fu-wu-qi-dang-ji-yuan-yin-pai-cha-si-lu/</id>
+    <link href="https://knowledge-things.github.io/2022/05/26/fu-wu-qi-dang-ji-yuan-yin-pai-cha-si-lu/"/>
+    <id>https://knowledge-things.github.io/2022/05/26/fu-wu-qi-dang-ji-yuan-yin-pai-cha-si-lu/</id>
     <published>2022-05-26T09:56:04.000Z</published>
     <updated>2022-05-26T09:59:41.524Z</updated>
     
@@ -277,19 +277,19 @@
     
     
     
-    <category term="系统日志" scheme="https://knowledgething.github.io/categories/%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97/"/>
+    <category term="系统日志" scheme="https://knowledge-things.github.io/categories/%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97/"/>
     
-    <category term="硬件故障" scheme="https://knowledgething.github.io/categories/%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97/%E7%A1%AC%E4%BB%B6%E6%95%85%E9%9A%9C/"/>
+    <category term="硬件故障" scheme="https://knowledge-things.github.io/categories/%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97/%E7%A1%AC%E4%BB%B6%E6%95%85%E9%9A%9C/"/>
     
     
-    <category term="转载" scheme="https://knowledgething.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    <category term="转载" scheme="https://knowledge-things.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
     
   </entry>
   
   <entry>
     <title>使用 Spring 介绍 WebSockets</title>
-    <link href="https://knowledgething.github.io/2022/05/25/shi-yong-spring-jie-shao-websockets/"/>
-    <id>https://knowledgething.github.io/2022/05/25/shi-yong-spring-jie-shao-websockets/</id>
+    <link href="https://knowledge-things.github.io/2022/05/25/shi-yong-spring-jie-shao-websockets/"/>
+    <id>https://knowledge-things.github.io/2022/05/25/shi-yong-spring-jie-shao-websockets/</id>
     <published>2022-05-25T03:13:06.000Z</published>
     <updated>2022-05-25T03:18:43.984Z</updated>
     
@@ -304,15 +304,15 @@
     
     
     
-    <category term="Spring" scheme="https://knowledgething.github.io/categories/Spring/"/>
+    <category term="Spring" scheme="https://knowledge-things.github.io/categories/Spring/"/>
     
     
   </entry>
   
   <entry>
     <title>Hexo博客搭建之在文章中插入图片</title>
-    <link href="https://knowledgething.github.io/2022/05/25/hexo-bo-ke-da-jian-zhi-zai-wen-zhang-zhong-cha-ru-tu-pian/"/>
-    <id>https://knowledgething.github.io/2022/05/25/hexo-bo-ke-da-jian-zhi-zai-wen-zhang-zhong-cha-ru-tu-pian/</id>
+    <link href="https://knowledge-things.github.io/2022/05/25/hexo-bo-ke-da-jian-zhi-zai-wen-zhang-zhong-cha-ru-tu-pian/"/>
+    <id>https://knowledge-things.github.io/2022/05/25/hexo-bo-ke-da-jian-zhi-zai-wen-zhang-zhong-cha-ru-tu-pian/</id>
     <published>2022-05-24T17:59:26.000Z</published>
     <updated>2022-05-24T18:06:48.552Z</updated>
     
@@ -327,15 +327,15 @@
     
     
     
-    <category term="hexo" scheme="https://knowledgething.github.io/categories/hexo/"/>
+    <category term="hexo" scheme="https://knowledge-things.github.io/categories/hexo/"/>
     
     
   </entry>
   
   <entry>
     <title>curl命令的转换</title>
-    <link href="https://knowledgething.github.io/2022/05/25/curl-ming-ling-de-zhuan-huan/"/>
-    <id>https://knowledgething.github.io/2022/05/25/curl-ming-ling-de-zhuan-huan/</id>
+    <link href="https://knowledge-things.github.io/2022/05/25/curl-ming-ling-de-zhuan-huan/"/>
+    <id>https://knowledge-things.github.io/2022/05/25/curl-ming-ling-de-zhuan-huan/</id>
     <published>2022-05-24T17:31:23.000Z</published>
     <updated>2022-05-24T18:06:46.400Z</updated>
     
@@ -350,15 +350,15 @@
     
     
     
-    <category term="curl" scheme="https://knowledgething.github.io/categories/curl/"/>
+    <category term="curl" scheme="https://knowledge-things.github.io/categories/curl/"/>
     
     
   </entry>
   
   <entry>
     <title>Node-RED flows 操作</title>
-    <link href="https://knowledgething.github.io/2022/05/25/node-red-flows-cao-zuo/"/>
-    <id>https://knowledgething.github.io/2022/05/25/node-red-flows-cao-zuo/</id>
+    <link href="https://knowledge-things.github.io/2022/05/25/node-red-flows-cao-zuo/"/>
+    <id>https://knowledge-things.github.io/2022/05/25/node-red-flows-cao-zuo/</id>
     <published>2022-05-24T17:25:36.000Z</published>
     <updated>2022-05-24T18:06:20.005Z</updated>
     
@@ -373,15 +373,15 @@
     
     
     
-    <category term="Node-RED" scheme="https://knowledgething.github.io/categories/Node-RED/"/>
+    <category term="Node-RED" scheme="https://knowledge-things.github.io/categories/Node-RED/"/>
     
     
   </entry>
   
   <entry>
     <title>Node-RED api Authentication</title>
-    <link href="https://knowledgething.github.io/2022/05/25/node-red-api-authentication/"/>
-    <id>https://knowledgething.github.io/2022/05/25/node-red-api-authentication/</id>
+    <link href="https://knowledge-things.github.io/2022/05/25/node-red-api-authentication/"/>
+    <id>https://knowledge-things.github.io/2022/05/25/node-red-api-authentication/</id>
     <published>2022-05-24T17:19:08.000Z</published>
     <updated>2022-05-24T17:22:27.653Z</updated>
     
@@ -395,15 +395,15 @@
     
     
     
-    <category term="Node-RED" scheme="https://knowledgething.github.io/categories/Node-RED/"/>
+    <category term="Node-RED" scheme="https://knowledge-things.github.io/categories/Node-RED/"/>
     
     
   </entry>
   
   <entry>
     <title>Bearer Token 的使用方法</title>
-    <link href="https://knowledgething.github.io/2022/05/25/bearer-token-de-shi-yong-fang-fa/"/>
-    <id>https://knowledgething.github.io/2022/05/25/bearer-token-de-shi-yong-fang-fa/</id>
+    <link href="https://knowledge-things.github.io/2022/05/25/bearer-token-de-shi-yong-fang-fa/"/>
+    <id>https://knowledge-things.github.io/2022/05/25/bearer-token-de-shi-yong-fang-fa/</id>
     <published>2022-05-24T17:15:04.000Z</published>
     <updated>2022-05-24T18:06:18.367Z</updated>
     
@@ -418,15 +418,15 @@
     
     
     
-    <category term="OAuth" scheme="https://knowledgething.github.io/categories/OAuth/"/>
+    <category term="OAuth" scheme="https://knowledge-things.github.io/categories/OAuth/"/>
     
     
   </entry>
   
   <entry>
     <title>Markdown 语法速查表</title>
-    <link href="https://knowledgething.github.io/2022/05/25/markdown-yu-fa-su-cha-biao/"/>
-    <id>https://knowledgething.github.io/2022/05/25/markdown-yu-fa-su-cha-biao/</id>
+    <link href="https://knowledge-things.github.io/2022/05/25/markdown-yu-fa-su-cha-biao/"/>
+    <id>https://knowledge-things.github.io/2022/05/25/markdown-yu-fa-su-cha-biao/</id>
     <published>2022-05-24T16:22:58.000Z</published>
     <updated>2022-05-24T16:35:39.016Z</updated>
     
@@ -440,15 +440,15 @@
     
     
     
-    <category term="markdown" scheme="https://knowledgething.github.io/categories/markdown/"/>
+    <category term="markdown" scheme="https://knowledge-things.github.io/categories/markdown/"/>
     
     
   </entry>
   
   <entry>
     <title>Markdown 扩展语法</title>
-    <link href="https://knowledgething.github.io/2022/05/25/markdown-kuo-zhan-yu-fa/"/>
-    <id>https://knowledgething.github.io/2022/05/25/markdown-kuo-zhan-yu-fa/</id>
+    <link href="https://knowledge-things.github.io/2022/05/25/markdown-kuo-zhan-yu-fa/"/>
+    <id>https://knowledge-things.github.io/2022/05/25/markdown-kuo-zhan-yu-fa/</id>
     <published>2022-05-24T16:20:47.000Z</published>
     <updated>2022-05-24T17:39:39.239Z</updated>
     
@@ -462,15 +462,15 @@
     
     
     
-    <category term="markdown" scheme="https://knowledgething.github.io/categories/markdown/"/>
+    <category term="markdown" scheme="https://knowledge-things.github.io/categories/markdown/"/>
     
     
   </entry>
   
   <entry>
     <title>markdown基本语法</title>
-    <link href="https://knowledgething.github.io/2022/05/25/markdown-ji-ben-yu-fa/"/>
-    <id>https://knowledgething.github.io/2022/05/25/markdown-ji-ben-yu-fa/</id>
+    <link href="https://knowledge-things.github.io/2022/05/25/markdown-ji-ben-yu-fa/"/>
+    <id>https://knowledge-things.github.io/2022/05/25/markdown-ji-ben-yu-fa/</id>
     <published>2022-05-24T16:04:40.000Z</published>
     <updated>2022-05-24T16:15:32.077Z</updated>
     
@@ -487,7 +487,7 @@
     
     
     
-    <category term="markdown" scheme="https://knowledgething.github.io/categories/markdown/"/>
+    <category term="markdown" scheme="https://knowledge-things.github.io/categories/markdown/"/>
     
     
   </entry>
