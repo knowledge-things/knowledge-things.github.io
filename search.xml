@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Micrometer自定义业务监控指标</title>
+      <link href="/2022/08/18/micrometer-zi-ding-yi-ye-wu-jian-kong-zhi-biao/"/>
+      <url>/2022/08/18/micrometer-zi-ding-yi-ye-wu-jian-kong-zhi-biao/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>[原文链接] <a href="https://github.com/TFdream/blog/issues/340">https://github.com/TFdream/blog/issues/340</a></p><h1 id="SpringBoot-2-0-Micrometer-自定义业务指标监控"><a href="#SpringBoot-2-0-Micrometer-自定义业务指标监控" class="headerlink" title="SpringBoot 2.0 Micrometer 自定义业务指标监控"></a>SpringBoot 2.0 Micrometer 自定义业务指标监控</h1><p>1、简介</p></blockquote><p>Micrometer 为 Java 平台上的性能数据收集提供了一个通用的 API，它提供了多种度量指标类型（Timers、Guauges、Counters等），同时支持接入不同的监控系统，例如 Influxdb、Graphite、Prometheus 等。我们可以通过 Micrometer 收集 Java 性能数据，配合 Prometheus 监控系统实时获取数据，并最终在 Grafana 上展示出来，从而很容易实现应用的监控。</p><p>1.1 核心概念</p><p>Micrometer 中有两个最核心的概念，分别是计量器（Meter）和计量器注册表（MeterRegistry）。计量器用来收集不同类型的性能指标信息，Micrometer 提供了如下几种不同类型的计量器：</p><p>计数器（Counter）: 表示收集的数据是按照某个趋势（增加／减少）一直变化的，也是最常用的一种计量器，例如接口请求总数、请求错误总数、队列数量变化等。<br>计量仪（Gauge）: 表示搜集的瞬时的数据，可以任意变化的，例如常用的 CPU Load、Mem 使用量、Network 使用量、实时在线人数统计等，<br>计时器（Timer）: 用来记录事件的持续时间，这个用的比较少。<br>分布概要（Distribution summary）: 用来记录事件的分布情况，表示一段时间范围内对数据进行采样，可以用于统计网络请求平均延迟、请求延迟占比等。<br>1.2 MeterRegistry</p><p>Meter是收集关于你的应用的一系列指标的接口。Meter是由MeterRegistry创建的。每个支持的监控系统都必须实现MeterRegistry。Micrometer中包含一个SimpleMeterRegistry，它在内存中维护每个meter的最新值，并且不支持将数据导出到任何地方，主要用来进行本地开发和测试。<br>Micrometer 支持多个不同的监控系统。通过计量器注册表实现类 CompositeMeterRegistry 可以把多个计量器注册表组合起来，从而允许同时发布数据到多个监控系统。对于由这个类创建的计量器，它们所产生的数据会对 CompositeMeterRegistry中包含的所有计量器注册表都产生影响。</p><p>1.3 Actuator</p><p>你可以通过文末的参考文章获取它的详细概念和具体使用方法。这里只是简述下他的概念和使用方式，本文重点在micrometer。</p><p>Spring Boot Actuator是Spring Boot的一个组件，可以帮助你监控和管理Spring Boot应用，比如健康检查、审计、统计和HTTP追踪等。所有的这些特性可以通过JMX或者HTTP endpoints来获得。<br>你可以访问 <a href="http://ip:端口/actuator">http://ip:端口/actuator</a> 查看系统中暴露的endpoint信息，也可以加上具体的 endpoint 查看他们的详细情况，例如 <a href="http://127.0.0.1:7001/actuator/health">http://127.0.0.1:7001/actuator/health</a> 查看健康信息。Spring Boot 2中的依赖actuator中集成的度量统计API使用的框架是Micrometer。官网</p><p>本文重点介绍/actuator/metrics，其他的就属于抛砖了。</p><p>1.4 metrics</p><p>打开 ip:端口/actuator/metrics 网址就可以看到当前微服务的所有metrics，每一个metric都相当于influx数据库的一个measurement，也就是传统数据库的数据表的概念。</p><p>2、自定义metrics</p><p>本篇以监控线程池中的待执行任务数量监控为例</p><p>首先，添加以下依赖：</p><pre><code>    &lt;!-- 微服务运行监控  --&gt;    &lt;dependency&gt;        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;        &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;    &lt;/dependency&gt;    &lt;dependency&gt;        &lt;groupId&gt;io.micrometer&lt;/groupId&gt;        &lt;artifactId&gt;micrometer-core&lt;/artifactId&gt;        &lt;version&gt;$&#123;micrometer.version&#125;&lt;/version&gt;    &lt;/dependency&gt;    &lt;!-- 统计信息输出到 prometheus --&gt;    &lt;dependency&gt;        &lt;groupId&gt;io.micrometer&lt;/groupId&gt;        &lt;artifactId&gt;micrometer-registry-prometheus&lt;/artifactId&gt;        &lt;version&gt;$&#123;micrometer.version&#125;&lt;/version&gt;    &lt;/dependency&gt;</code></pre><ol><li>两种常用指标类型(Metric Type)</li></ol><p>gauge: 可增可减计数器，反应某值当前一刻状态。比如称重传感器的当前重量，温度传感器的当前温度。<br>方式一:</p><p>Gauge.builder(“lego.thread-pool.pending_task”, new AtomicInteger(37), AtomicInteger::get)<br>方式二：</p><p>registry.gauge(“lego.thread-pool.pending_task”, Tags.of(“site”, “SiteA”, “cab”, “cab01”), new AtomicInteger(37));<br>两者等价</p><ol><li>接入到系统的方式</li></ol><p>方式一，业务系统埋点：</p><p>@Component<br>public class SampleBean {<br>    private final Counter counter;</p><pre><code>public SampleBean(MeterRegistry registry) &#123;    this.counter = registry.counter(&quot;request.counter&quot;);&#125;public void handleMessage(String message) &#123;    this.counter.increment();    // handle message implementation&#125;</code></pre><p>}<br>方式二：MeterBinder</p><p>SpringBoot中提供了MeterBinder接口用于申明与注册meterRegistry。自定义Metrics只需要实现MeterBinder接口，Spring会自动发现并完成后续的杂活。</p><p>/**</p><ul><li><p>@author Ricky Fung<br>*/<br>public class DynamicThreadPoolExecutorMetrics implements MeterBinder {<br> private final Logger LOG = LoggerFactory.getLogger(this.getClass());</p><p> @Autowired(required = false)<br> private List<DynamicThreadPoolExecutor> executors = Collections.EMPTY_LIST;</DynamicThreadPoolExecutor></p><p> @Override<br> public void bindTo(MeterRegistry meterRegistry) {</p><pre><code> String localIp = IpUtils.getLocalIp(); LOG.info(&quot;动态线程池-监控自动装配开始, localIp:&#123;&#125;, meterRegistry:&#123;&#125;&quot;, localIp, meterRegistry.getClass()); for (DynamicThreadPoolExecutor executor : executors) &#123;     String name = executor.getName();     AtomicInteger pendingTask = new AtomicInteger(0);     Gauge.builder(&quot;lego.thread-pool.pending_task&quot;, pendingTask, AtomicInteger::get)             .tag(&quot;name&quot;, name)             .tag(&quot;IP&quot;, localIp)             .description(&quot;动态线程池待执行任务数&quot;)             .register(meterRegistry);     Counter totalTask = Counter.builder(&quot;lego.thread-pool.total_task&quot;)             .tag(&quot;name&quot;, name)             .tag(&quot;IP&quot;, localIp)             .description(&quot;动态线程池累计提交任务数&quot;)             .register(meterRegistry); &#125;</code></pre><p> }<br>}</p></li></ul><p>相关资料</p><p>Dzone - Using Micrometer With Spring Boot 2<br>Defining custom metrics in a Spring Boot application using Micrometer<br>Monitoring Spring Boot Application With Micrometer, Prometheus And Grafana Using Custom Metrics</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> spring </category>
+          
+          <category> micrometer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 系统监控 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Telegraf安装部署</title>
       <link href="/2022/06/30/telegraf-an-zhuang-bu-shu/"/>
       <url>/2022/06/30/telegraf-an-zhuang-bu-shu/</url>
