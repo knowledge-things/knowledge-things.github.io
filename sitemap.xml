@@ -440,14 +440,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/java/</loc>
+    <loc>https://knowledge-things.github.io/categories/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
     <lastmod>2022-08-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    <loc>https://knowledge-things.github.io/categories/java/</loc>
     <lastmod>2022-08-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
