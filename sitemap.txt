@@ -41,9 +41,9 @@ https://knowledge-things.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/
 https://knowledge-things.github.io/tags/Telegraf/
 https://knowledge-things.github.io/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/
 https://knowledge-things.github.io/tags/macOS/
-https://knowledge-things.github.io/tags/%E5%BC%80%E9%97%AD%E5%8C%BA%E9%97%B4/
 https://knowledge-things.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
 https://knowledge-things.github.io/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/
+https://knowledge-things.github.io/tags/%E5%BC%80%E9%97%AD%E5%8C%BA%E9%97%B4/
 https://knowledge-things.github.io/tags/%E8%BD%AC%E8%BD%BD/
 https://knowledge-things.github.io/tags/camera-onvif/
 https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/
@@ -61,8 +61,8 @@ https://knowledge-things.github.io/categories/Linux/
 https://knowledge-things.github.io/categories/Spring/
 https://knowledge-things.github.io/categories/spring/micrometer/
 https://knowledge-things.github.io/categories/macOS/
-https://knowledge-things.github.io/categories/%E6%95%B0%E5%AD%A6%E7%9B%AE%E5%BD%95/
 https://knowledge-things.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
+https://knowledge-things.github.io/categories/%E6%95%B0%E5%AD%A6%E7%9B%AE%E5%BD%95/
 https://knowledge-things.github.io/categories/%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97/
 https://knowledge-things.github.io/categories/%E7%A6%85%E9%81%93/
 https://knowledge-things.github.io/categories/%E6%91%84%E5%83%8F%E5%A4%B4%E7%9B%B8%E5%85%B3/
