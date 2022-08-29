@@ -6,7 +6,7 @@
   <link href="https://knowledge-things.github.io/atom.xml" rel="self"/>
   
   <link href="https://knowledge-things.github.io/"/>
-  <updated>2022-08-24T03:01:32.319Z</updated>
+  <updated>2022-08-29T03:09:46.908Z</updated>
   <id>https://knowledge-things.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker Restart policies</title>
+    <link href="https://knowledge-things.github.io/2022/08/29/docker-restart-policies/"/>
+    <id>https://knowledge-things.github.io/2022/08/29/docker-restart-policies/</id>
+    <published>2022-08-29T03:04:15.000Z</published>
+    <updated>2022-08-29T03:09:46.908Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Docker重启策略"><a href="#Docker重启策略" class="headerlink" title="Docker重启策略"></a>Docker重启策略</h2><blockquote><p>参考：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.docker.com%2Fengine%2Freference%2Frun%2F%23restart-policies---restart">https://docs.docker.com/engine/reference/run/#restart-policies—-restart</a></p></blockquote><p>使用<code>--restart</code>Docker run 上的标志，您可以指定容器在退出时应该或不应该如何重新启动的重新启动策略。当容器上的重启策略处于活动状态时，它将显示为<code>Up</code> 或<code>Restarting</code>。</p><p>Docker 支持以下重启策略：</p><div class="table-container"><table><thead><tr><th>策略</th><th>描述</th></tr></thead><tbody><tr><td>no</td><td>不自动重启（默认模式）</td></tr><tr><td>on-failure[:max-retries]</td><td>重启因出错停止的容器（非0退出码）。可以通过指定max-retries来限定docker daemon的最大尝试重启次数</td></tr><tr><td>always</td><td>docker daemon会无限尝试重启退出的容器（无论以什么退出码退出）。手动停止容器后，容器策略不再生效。除非重启docker daemon</td></tr><tr><td>unless-stopped</td><td>与<code>always</code>类似，区别在于手动停止容器后，就算重启docker daemon，容器策略也不再生效。</td></tr></tbody></table></div><p>在每次重新启动之前添加一个增加的延迟（是先前延迟的两倍，从 100 毫秒开始），以防止服务器泛滥。这意味着守护进程将等待 100 毫秒，然后等待 200 毫秒、400、800、1600 等等，直到达到<code>on-failure</code>限制、最大延迟 1 分钟，或者当您<code>docker stop</code>或<code>docker rm -f</code>容器时。</p><p>如果容器重新启动成功（<strong>容器启动并运行至少 10 秒</strong>），则延迟将重置为其默认值 100 毫秒。</p><p><strong>您可以指定 Docker 在使用on-failure</strong>策略时尝试重新启动容器的最大次数。默认情况下，Docker 将永远尝试重新启动容器。容器的（尝试）重启次数可以通过<a href="https://docs.docker.com/engine/reference/commandline/inspect/"><code>docker inspect</code></a>. 例如，获取容器“my-container”的重启次数；</p><pre class="line-numbers language-none"><code class="language-none">$ docker inspect -f &quot;&#123;&#123; .RestartCount &#125;&#125;&quot; my-container# 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>或者，获取容器上次（重新）启动的时间；</p><pre class="line-numbers language-none"><code class="language-none">$ docker inspect -f &quot;&#123;&#123; .State.StartedAt &#125;&#125;&quot; my-container# 2015-03-04T23:47:07.691840179Z<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>将<code>--restart</code>(restart policy) 与<code>--rm</code>(clean up) 标志结合使用会导致错误。在容器重新启动时，附加的客户端会断开连接。请参阅本页后面有关使用<a href="https://docs.docker.com/engine/reference/run/#clean-up---rm"><code>--rm</code>(clean up)</a>标志的示例。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Docker重启策略&quot;&gt;&lt;a href=&quot;#Docker重启策略&quot; class=&quot;headerlink&quot; title=&quot;Docker重启策略&quot;&gt;&lt;/a&gt;Docker重启策略&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;参考：&lt;a href=&quot;https://links</summary>
+      
+    
+    
+    
+    
+    <category term="Docker" scheme="https://knowledge-things.github.io/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>Binary Repository</title>
@@ -474,28 +497,6 @@
     
     
     <category term="OAuth" scheme="https://knowledge-things.github.io/categories/OAuth/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown 语法速查表</title>
-    <link href="https://knowledge-things.github.io/2022/05/25/markdown-yu-fa-su-cha-biao/"/>
-    <id>https://knowledge-things.github.io/2022/05/25/markdown-yu-fa-su-cha-biao/</id>
-    <published>2022-05-24T16:22:58.000Z</published>
-    <updated>2022-05-24T16:35:39.016Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Markdown-语法速查表"><a href="#Markdown-语法速查表" class="headerlink" title="Markdown 语法速查表"></a>Markdown 语法速查表</h1><p>Markdown 语法参考手册 / 速查表。</p><h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p>此 Markdown 语法速查表提供了所有 Markdown 语法元素的快速参考。但是此速查表无法涵盖所有极限用法，因此，如果您需要某些语法元素的详细信息，请参阅我们的 <a href="https://www.markdown.xyz/basic-syntax">基本语法</a> 和 <a href="https://www.markdown.xyz/extended-syntax">扩展语法</a> 手册。</p><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p>这些是 John Gruber 的原始设计文档中列出的元素。所有 Markdown 应用程序都支持这些元素。</p><div class="table-container"><table><thead><tr><th>元素</th><th>Markdown 语法</th></tr></thead><tbody><tr><td><a href="https://www.markdown.xyz/basic-syntax/#headings">标题（Heading）</a></td><td><code># H1## H2### H3</code></td></tr><tr><td><a href="https://www.markdown.xyz/basic-syntax/#bold">粗体（Bold）</a></td><td><code>**bold text**</code></td></tr><tr><td><a href="https://www.markdown.xyz/basic-syntax/#italic">斜体（Italic）</a></td><td><code>*italicized text*</code></td></tr><tr><td><a href="https://www.markdown.xyz/basic-syntax/#blockquotes-1">引用块（Blockquote）</a></td><td><code>&gt; blockquote</code></td></tr><tr><td><a href="https://www.markdown.xyz/basic-syntax/#ordered-lists">有序列表（Ordered List）</a></td><td><code>1. First item2. Second item3. Third item</code></td></tr><tr><td><a href="https://www.markdown.xyz/basic-syntax/#unordered-lists">无序列表（Unordered List）</a></td><td><code>- First item- Second item- Third item</code></td></tr><tr><td><a href="https://www.markdown.xyz/basic-syntax/#code">代码（Code）</a></td><td><code>code</code></td></tr><tr><td><a href="https://www.markdown.xyz/basic-syntax/#horizontal-rules">分隔线（Horizontal Rule）</a></td><td><code>---</code></td></tr><tr><td><a href="https://www.markdown.xyz/basic-syntax/#links">链接（Link）</a></td><td><code>[title](https://www.example.com)</code></td></tr><tr><td><a href="https://www.markdown.xyz/basic-syntax/#images">图片（Image）</a></td><td><code>![alt text](image.jpg)</code></td></tr></tbody></table></div><h2 id="扩展语法"><a href="#扩展语法" class="headerlink" title="扩展语法"></a>扩展语法</h2><p>这些元素通过添加额外的功能扩展了基本语法。但是，并非所有 Markdown 应用程序都支持这些元素。</p><div class="table-container"><table><thead><tr><th>元素</th><th>Markdown 语法</th></tr></thead><tbody><tr><td><a href="https://www.markdown.xyz/extended-syntax/#tables">表格（Table）</a></td><td>&#124; Syntax &#124; Description &#124;<br>&#124; —————- &#124; —————- &#124;<br>&#124; Header &#124; Title &#124;<br>&#124; Paragraph &#124; Text &#124;</td></tr><tr><td><a href="https://www.markdown.xyz/extended-syntax/#fenced-code-blocks">代码块（Fenced Code Block）</a></td><td><code>&#123; &quot;firstName&quot;: &quot;John&quot;, &quot;lastName&quot;: &quot;Smith&quot;, &quot;age&quot;: 25&#125;</code></td></tr><tr><td><a href="https://www.markdown.xyz/extended-syntax/#footnotes">脚注（Footnote）</a></td><td><code>Here&#39;s a sentence with a footnote. [^1][^1]: This is the footnote.</code></td></tr><tr><td><a href="https://www.markdown.xyz/extended-syntax/#heading-ids">标题编号（Heading ID）</a></td><td>`### My Great Heading </td></tr></tbody></table></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Markdown-语法速查表&quot;&gt;&lt;a href=&quot;#Markdown-语法速查表&quot; class=&quot;headerlink&quot; title=&quot;Markdown 语法速查表&quot;&gt;&lt;/a&gt;Markdown 语法速查表&lt;/h1&gt;&lt;p&gt;Markdown 语法参考手册 / 速查表。</summary>
-      
-    
-    
-    
-    <category term="markdown" scheme="https://knowledge-things.github.io/categories/markdown/"/>
     
     
   </entry>

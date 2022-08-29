@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Docker Restart policies</title>
+      <link href="/2022/08/29/docker-restart-policies/"/>
+      <url>/2022/08/29/docker-restart-policies/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Docker重启策略"><a href="#Docker重启策略" class="headerlink" title="Docker重启策略"></a>Docker重启策略</h2><blockquote><p>参考：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.docker.com%2Fengine%2Freference%2Frun%2F%23restart-policies---restart">https://docs.docker.com/engine/reference/run/#restart-policies—-restart</a></p></blockquote><p>使用<code>--restart</code>Docker run 上的标志，您可以指定容器在退出时应该或不应该如何重新启动的重新启动策略。当容器上的重启策略处于活动状态时，它将显示为<code>Up</code> 或<code>Restarting</code>。</p><p>Docker 支持以下重启策略：</p><div class="table-container"><table><thead><tr><th>策略</th><th>描述</th></tr></thead><tbody><tr><td>no</td><td>不自动重启（默认模式）</td></tr><tr><td>on-failure[:max-retries]</td><td>重启因出错停止的容器（非0退出码）。可以通过指定max-retries来限定docker daemon的最大尝试重启次数</td></tr><tr><td>always</td><td>docker daemon会无限尝试重启退出的容器（无论以什么退出码退出）。手动停止容器后，容器策略不再生效。除非重启docker daemon</td></tr><tr><td>unless-stopped</td><td>与<code>always</code>类似，区别在于手动停止容器后，就算重启docker daemon，容器策略也不再生效。</td></tr></tbody></table></div><p>在每次重新启动之前添加一个增加的延迟（是先前延迟的两倍，从 100 毫秒开始），以防止服务器泛滥。这意味着守护进程将等待 100 毫秒，然后等待 200 毫秒、400、800、1600 等等，直到达到<code>on-failure</code>限制、最大延迟 1 分钟，或者当您<code>docker stop</code>或<code>docker rm -f</code>容器时。</p><p>如果容器重新启动成功（<strong>容器启动并运行至少 10 秒</strong>），则延迟将重置为其默认值 100 毫秒。</p><p><strong>您可以指定 Docker 在使用on-failure</strong>策略时尝试重新启动容器的最大次数。默认情况下，Docker 将永远尝试重新启动容器。容器的（尝试）重启次数可以通过<a href="https://docs.docker.com/engine/reference/commandline/inspect/"><code>docker inspect</code></a>. 例如，获取容器“my-container”的重启次数；</p><pre class="line-numbers language-none"><code class="language-none">$ docker inspect -f &quot;&#123;&#123; .RestartCount &#125;&#125;&quot; my-container# 2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>或者，获取容器上次（重新）启动的时间；</p><pre class="line-numbers language-none"><code class="language-none">$ docker inspect -f &quot;&#123;&#123; .State.StartedAt &#125;&#125;&quot; my-container# 2015-03-04T23:47:07.691840179Z<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>将<code>--restart</code>(restart policy) 与<code>--rm</code>(clean up) 标志结合使用会导致错误。在容器重新启动时，附加的客户端会断开连接。请参阅本页后面有关使用<a href="https://docs.docker.com/engine/reference/run/#clean-up---rm"><code>--rm</code>(clean up)</a>标志的示例。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Binary Repository</title>
       <link href="/2022/08/24/binary-repository/"/>
       <url>/2022/08/24/binary-repository/</url>

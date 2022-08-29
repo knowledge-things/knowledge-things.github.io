@@ -1,3 +1,4 @@
+https://knowledge-things.github.io/2022/08/29/docker-restart-policies/
 https://knowledge-things.github.io/2022/08/24/binary-repository/
 https://knowledge-things.github.io/2022/08/18/micrometer-zi-ding-yi-ye-wu-jian-kong-zhi-biao/
 https://knowledge-things.github.io/2022/06/30/telegraf-an-zhuang-bu-shu/
