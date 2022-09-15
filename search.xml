@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>git如何移除某文件夹的版本控制</title>
+      <link href="/2022/09/15/git-ru-he-yi-chu-mou-wen-jian-jia-de-ban-ben-kong-zhi/"/>
+      <url>/2022/09/15/git-ru-he-yi-chu-mou-wen-jian-jia-de-ban-ben-kong-zhi/</url>
+      
+        <content type="html"><![CDATA[<p>#目录结构如下</p><pre class="line-numbers language-none"><code class="language-none">project    bin    lib    src    ...... <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>#执行如下的操作</p><pre class="line-numbers language-none"><code class="language-none">git add .git commit -m &quot;add bin&#x2F; lib&#x2F; src&#x2F;&quot;git push origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>突然发现原来 <code>lib</code> 目录不需要提交到版本库，但是现在远程已经存在该目录，what should I do.（吐出去的东西还能收回来吗）</p><p>万能的 git 啊，help me！</p><p>功夫不负有心人，找到了解决问题的方法，其实就是 <code>git rm</code> 的命令行参数。</p><h2 id="git-rm-命令参数"><a href="#git-rm-命令参数" class="headerlink" title="git rm 命令参数"></a><code>git rm</code> 命令参数</h2><pre class="line-numbers language-none"><code class="language-none">-n --dry-run Don’t actually remove any file(s). Instead, just show if they exist in the index and would otherwise be removed by the command.-r Allow recursive removal when a leading directory name is given. --cached Use this option to unstage and remove paths only from the index. Working tree files, whether modified or not, will be left alone.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>#解决方法</p><pre class="line-numbers language-none"><code class="language-none">git rm -r -n --cached &quot;bin&#x2F;&quot; &#x2F;&#x2F;-n：加上这个参数，执行命令时，是不会删除任何文件，而是展示此命令要删除的文件列表预览。git rm -r --cached  &quot;bin&#x2F;&quot;      &#x2F;&#x2F;最终执行命令. git commit -m&quot; remove bin folder all file out of control&quot;    &#x2F;&#x2F;提交git push origin master   &#x2F;&#x2F;提交到远程服务器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>此时 <code>git status</code> 看到 bin / 目录状态变为<code>untracked</code> 可以修改<code>.gitignore</code> 文件 添加 <code>bin/</code> 并提交<code>.gitignore</code> 文件到远程服务器，这样就可以不对 bin 目录进行版本管理了。 以后需要的时候，只需要注释<code>.gitignore</code> 里<code>#bin/</code> 内容，重新执行 <code>git bin/</code>, 即可重新纳入版本管理。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Docker Restart policies</title>
       <link href="/2022/08/29/docker-restart-policies/"/>
       <url>/2022/08/29/docker-restart-policies/</url>
