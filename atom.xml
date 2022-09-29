@@ -6,7 +6,7 @@
   <link href="https://knowledge-things.github.io/atom.xml" rel="self"/>
   
   <link href="https://knowledge-things.github.io/"/>
-  <updated>2022-09-29T02:04:01.050Z</updated>
+  <updated>2022-09-29T02:56:22.425Z</updated>
   <id>https://knowledge-things.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>系统过载时施加背压</title>
+    <link href="https://knowledge-things.github.io/2022/09/29/xi-tong-guo-zai-shi-shi-jia-bei-ya/"/>
+    <id>https://knowledge-things.github.io/2022/09/29/xi-tong-guo-zai-shi-shi-jia-bei-ya/</id>
+    <published>2022-09-29T02:54:21.000Z</published>
+    <updated>2022-09-29T02:56:22.425Z</updated>
+    
+    <content type="html"><![CDATA[<p>系统在持续负载下应如何响应？它是否应该继续接受请求，直到它的响应时间跟随致命的曲棍球棒，然后是崩溃？除非系统设计为处理到达的请求多于其处理能力的情况，否则通常会发生这种情况。如果我们看到请求的持续到达率超过了我们的系统能够处理的能力，那么就必须付出一些代价。让整个系统降级并不是我们想要为客户提供的理想服务。更好的方法是以我们系统的最大可能吞吐率处理事务，同时保持良好的响应时间，并拒绝超过此到达率的请求。</p><p>让我们将一个小型美术馆作为一个隐喻。在这个画廊中，典型的观众平均花费 20 分钟浏览，画廊最多可容纳 30 位观众。如果超过 30 位观众同时占据画廊，那么客户就会因为无法清楚地看到画作而变得不高兴。如果发生这种情况，他们不太可能购买或退货。为了让我们的观众满意，最好建议一些观众去几扇门下的咖啡馆，然后在画廊不那么忙的时候回来。这样，画廊里的观众就可以在没有其他观众的情况下看到所有的画作，同时那些我们无法容纳的人享用咖啡。如果我们应用<a href="http://en.wikipedia.org/wiki/Little&#39;s_law">利特尔定律</a>我们不能让客户到达每小时超过 90 个，否则会超出最大容量。如果他们在 9:00-10:00 之间以每小时 100 人的速度到达，那么我相信路边的咖啡馆会感谢额外的 10 位顾客。</p><p>在我们的系统中，可用容量通常取决于我们的线程池大小和处理单个事务的时间。这些线程池通常以队列为前端，以处理高于我们最大到达率的流量突发。如果队列是无界的，并且我们的到达率持续高于最大容量，那么队列将不受限制地增长。随着队列的增长，它们越来越多地增加了超出可接受响应时间的延迟，最终它们将消耗所有内存，导致我们的系统出现故障。将溢出的请求发送到咖啡馆，同时仍以最大可能的速度为其他人提供服务不是更好吗？我们可以通过设计我们的系统来应用“背压”来做到这一点。</p><div class="table-container"><table><thead><tr><th><a href="https://4.bp.blogspot.com/-H5j78ebce9w/T7erBJ8X-gI/AAAAAAAAADM/F_ak3B9Wdl0/s1600/back-pressure.png"><img src="https://4.bp.blogspot.com/-H5j78ebce9w/T7erBJ8X-gI/AAAAAAAAADM/F_ak3B9Wdl0/s1600/back-pressure.png" alt="img"></a></th></tr></thead><tbody><tr><td>图1。</td></tr></tbody></table></div><p><a href="http://en.wikipedia.org/wiki/Separation_of_concerns">关注点分离</a>鼓励在所有级别进行良好的系统设计。我喜欢分层设计，以便第三方网关与主要交易服务分开。这可以通过让网关只负责协议转换和边界安全来实现。典型的网关可以是运行<a href="http://jcp.org/en/jsr/detail?id=315">Servlets</a>的 Web 容器。<a href="http://martinfowler.com/eaaCatalog/domainModel.html">网关接受客户请求，应用适当的安全性，并转换通道协议以转发到托管域模型</a>的事务服务. 如果需要保留事务，事务服务可以使用持久存储。例如，聊天服务器域模型的状态可能不需要保存，而出于合规和业务原因，金融交易模型必须保存多年。</p><p>图 1. 上面是许多系统中典型请求流的简化视图。网关中的线程池接受用户请求并将它们转发给事务服务。假设我们有一个异步事务服务，前面有一个输入和输出队列，或类似的<a href="http://en.wikipedia.org/wiki/FIFO">FIFO</a>结构。如果我们希望系统满足响应时间服务质量（QoS）保证，那么我们需要考虑以下三个变量：</p><ol><li>线程上单个事务所花费的时间</li><li>池中可以并行执行事务的线程数</li><li><p>设置最大可接受延迟的输入队列长度</p><p><strong>最大延迟=（事务时间/线程数）*队列长度</strong></p><p><strong>队列长度=最大延迟/（事务时间/线程数）</strong></p></li></ol><p>通过允许队列不受限制，延迟将继续增加。因此，如果我们想设置最大响应时间，那么我们需要限制队列长度。</p><p>通过限制输入队列，我们阻止了接收网络数据包的线程，这将向上游施加背压。如果网络协议是 TCP，则通过填充网络缓冲区对发送方施加类似的背压。这个过程可以通过网关一直重复到客户那里。对于每项服务，我们都需要配置队列，以便它们在实现端到端客户体验所需的服务质量方面发挥作用。</p><p>我经常发现的最大胜利之一是缩短处理单个事务延迟所需的时间。这有助于最好和最坏的情况。</p><h5 id="最坏"><a href="#最坏" class="headerlink" title="最坏"></a><strong>最坏</strong></h5><p>的情况假设队列是无限的，系统处于持续的重负载下。在内存耗尽之前，事情可能会以微妙的方式很快开始出错。当队列大于处理器缓存时，您认为会发生什么？消费者线程将在他们努力跟上的时候遭受缓存未命中，从而使问题更加复杂。这可能会导致系统很快陷入困境并最终崩溃。在 Linux 下，这尤其令人讨厌，因为<a href="http://en.wikipedia.org/wiki/C_dynamic_memory_allocation">malloc</a>或其朋友之一会成功，因为 Linux 默认允许“<a href="http://www.win.tue.nl/~aeb/linux/lk/lk-9.html#ss9.6">过度提交</a>”，然后在使用该内存时，<a href="http://lwn.net/Articles/317814/"> OOM Killer</a>将开始拍摄过程。当操作系统开始拍摄过程时，你就知道事情不会有好的结局！</p><p><strong>那么同步设计呢？</strong></p><p>你可能会说同步设计没有队列。好吧，不是那么明显。如果您有一个线程池，那么它将有一个锁或信号量等待队列来分配线程。如果您足够疯狂地为每个请求分配一个新线程，那么一旦您克服了创建线程的巨大成本，您的线程就会在运行队列中等待处理器执行。此外，这些队列涉及上下文切换和条件变量，这大大增加了<a href="http://mechanical-sympathy.blogspot.co.uk/2011/11/locks-condition-variables-latency.html">成本</a>. 你不能逃避排队，他们无处不在！最好接受它们并设计您的系统需要向其客户提供的服务质量。如果我们必须有队列，那就为它们设计，也许选择一些性能很好的无锁队列。</p><p>当我们需要支持像 REST 这样的同步协议时，使用背压（由我们在网关处的完整传入队列发出信号）发送有意义的“服务器繁忙”消息，例如 HTTP 503 状态代码。然后，客户可以将此解释为在路边的咖啡馆享用咖啡和蛋糕的时间。</p><p><strong>需要注意的细微之处…</strong></p><p>您需要考虑整个端到端服务。如果客户端从您的系统中使用数据的速度非常慢怎么办？它可能会在网关中绑定一个线程，使其停止工作。现在你有更少的线程在队列中工作，所以响应时间会增加。需要监控队列和线程，并且在超过阈值时需要采取适当的措施。例如，当队列已满 70% 时，是否应该发出警报以便进行调查？此外，还需要对交易时间进行抽样，以确保它们在预期范围内。</p><h5 id="概括"><a href="#概括" class="headerlink" title="概括"></a><strong>概括</strong></h5><p>如果我们不考虑我们的系统在重负载下的表现，那么它们很可能会严重退化，最坏的情况是崩溃。当它们以这种方式崩溃时，我们会发现是否有任何真正邪恶的数据损坏漏洞潜伏在那些黑暗的地方。应用背压是应对持续高负载的一种有效技术，这样可以在不降低已接受请求和事务的系统性能的情况下提供最大吞吐量。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;系统在持续负载下应如何响应？它是否应该继续接受请求，直到它的响应时间跟随致命的曲棍球棒，然后是崩溃？除非系统设计为处理到达的请求多于其处理能力的情况，否则通常会发生这种情况。如果我们看到请求的持续到达率超过了我们的系统能够处理的能力，那么就必须付出一些代价。让整个系统降级并</summary>
+      
+    
+    
+    
+    <category term="并发编程" scheme="https://knowledge-things.github.io/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="backpressure" scheme="https://knowledge-things.github.io/tags/backpressure/"/>
+    
+  </entry>
   
   <entry>
     <title>git撤销commit</title>
@@ -485,29 +509,6 @@
     
     
     <category term="Spring" scheme="https://knowledge-things.github.io/categories/Spring/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo博客搭建之在文章中插入图片</title>
-    <link href="https://knowledge-things.github.io/2022/05/25/hexo-bo-ke-da-jian-zhi-zai-wen-zhang-zhong-cha-ru-tu-pian/"/>
-    <id>https://knowledge-things.github.io/2022/05/25/hexo-bo-ke-da-jian-zhi-zai-wen-zhang-zhong-cha-ru-tu-pian/</id>
-    <published>2022-05-24T17:59:26.000Z</published>
-    <updated>2022-05-24T18:06:48.552Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>转载内容 如有侵权 或 不希望被转载 可以留言或私发告诉我，我会及时处理，尊重你的权利。<br>原文地址[<a href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/">https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/</a>]</p></blockquote><p>在写文章时，常常有配图说明的需求。Hexo有多种图片插入方式，可以将图片存放在本地引用或者将图片放在CDN上引用。</p><h3 id="本地引用"><a href="#本地引用" class="headerlink" title="本地引用"></a>本地引用</h3><h4 id="绝对路径"><a href="#绝对路径" class="headerlink" title="绝对路径"></a>绝对路径</h4><p>当Hexo项目中只用到少量图片时，可以将图片统一放在<code>source/images</code>文件夹中，通过markdown语法访问它们。</p><pre class="line-numbers language-none"><code class="language-none">source&#x2F;images&#x2F;image.jpg![](&#x2F;images&#x2F;image.jpg)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>图片既可以在首页内容中访问到，也可以在文章正文中访问到。</p><h4 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h4><p>图片除了可以放在统一的<code>images</code>文件夹中，还可以放在文章自己的目录中。文章的目录可以通过配置<code>_config.yml</code>来生成。</p><pre class="line-numbers language-none"><code class="language-none">_config.ymlpost_asset_folder: true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将<code>_config.yml</code>文件中的配置项<code>post_asset_folder</code>设为<code>true</code>后，执行命令<code>$ hexo new post_name</code>，在<code>source/_posts</code>中会生成文章<code>post_name.md</code>和同名文件夹<code>post_name</code>。将图片资源放在<code>post_name</code>中，文章就可以使用相对路径引用图片资源了。</p><pre class="line-numbers language-none"><code class="language-none">_posts&#x2F;post_name&#x2F;image.jpg![](image.jpg)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>上述是markdown的引用方式，图片只能在文章中显示，但无法在首页中正常显示。</p><p>如果希望图片在文章和首页中同时显示，可以使用标签插件语法。</p><pre class="line-numbers language-none"><code class="language-none">_posts&#x2F;post_name&#x2F;image.jpg&#123;% asset_img image.jpg This is an image %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="CDN引用"><a href="#CDN引用" class="headerlink" title="CDN引用"></a>CDN引用</h3><p>除了在本地存储图片，还可以将图片上传到一些免费的CDN服务中。比如<a href="http://cloudinary.com/">Cloudinary</a>提供的图片CDN服务，在Cloudinary中上传图片后，会生成对应的url地址，将地址直接拿来引用即可。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;转载内容 如有侵权 或 不希望被转载 可以留言或私发告诉我，我会及时处理，尊重你的权利。&lt;br&gt;原文地址[&lt;a href=&quot;https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in</summary>
-      
-    
-    
-    
-    <category term="hexo" scheme="https://knowledge-things.github.io/categories/hexo/"/>
     
     
   </entry>

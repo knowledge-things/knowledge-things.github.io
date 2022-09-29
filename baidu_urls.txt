@@ -1,3 +1,4 @@
+https://knowledge-things.github.io/2022/09/29/xi-tong-guo-zai-shi-shi-jia-bei-ya/
 https://knowledge-things.github.io/2022/09/29/git-che-xiao-commit/
 https://knowledge-things.github.io/2022/09/28/jcp-jsr166/
 https://knowledge-things.github.io/2022/09/28/simple-binary-encoding/
