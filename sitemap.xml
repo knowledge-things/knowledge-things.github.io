@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://knowledge-things.github.io/2022/09/29/git-che-xiao-commit/</loc>
+    <loc>https://knowledge-things.github.io/2022/09/28/jcp-jsr166/</loc>
     
     <lastmod>2022-09-29</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/2022/09/28/jcp-jsr166/</loc>
+    <loc>https://knowledge-things.github.io/2022/09/29/git-che-xiao-commit/</loc>
     
-    <lastmod>2022-09-28</lastmod>
+    <lastmod>2022-09-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -401,6 +401,13 @@
   </url>
   
   <url>
+    <loc>https://knowledge-things.github.io/tags/JUC/</loc>
+    <lastmod>2022-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://knowledge-things.github.io/tags/java/</loc>
     <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -478,14 +485,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>https://knowledge-things.github.io/tags/camera-onvif/</loc>
     <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/camera-onvif/</loc>
+    <loc>https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2022-09-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
