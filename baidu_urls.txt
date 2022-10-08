@@ -1,3 +1,5 @@
+https://knowledge-things.github.io/2022/10/08/kubernetes-kubectl-an-zhuang/
+https://knowledge-things.github.io/2022/10/08/kubernetes-an-zhuang/
 https://knowledge-things.github.io/2022/09/29/xi-tong-guo-zai-shi-shi-jia-bei-ya/
 https://knowledge-things.github.io/2022/09/29/git-che-xiao-commit/
 https://knowledge-things.github.io/2022/09/28/jcp-jsr166/
@@ -32,4 +34,3 @@ https://knowledge-things.github.io/2022/05/23/ba-mian-chi-cun-he-jing-tou-jiao-j
 https://knowledge-things.github.io/2022/05/22/bits-su-cha-biao/
 https://knowledge-things.github.io/2022/05/21/java-han-shu-shi-bian-cheng-zhi-optional/
 https://knowledge-things.github.io/2022/05/21/qiu-ji-ptz-he-shi-chang-jiao-yu-onvif-he-ptz-dui-ying-guan-xi/
-https://knowledge-things.github.io/2022/05/19/hello-world/

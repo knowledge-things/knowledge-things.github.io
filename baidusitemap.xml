@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://knowledge-things.github.io/2022/10/08/kubernetes-kubectl-an-zhuang/</loc>
+    <lastmod>2022-10-08</lastmod>
+  </url>
+  <url>
+    <loc>https://knowledge-things.github.io/2022/10/08/kubernetes-an-zhuang/</loc>
+    <lastmod>2022-10-08</lastmod>
+  </url>
+  <url>
     <loc>https://knowledge-things.github.io/2022/09/29/xi-tong-guo-zai-shi-shi-jia-bei-ya/</loc>
     <lastmod>2022-09-29</lastmod>
   </url>
@@ -135,9 +143,5 @@
   <url>
     <loc>https://knowledge-things.github.io/2022/05/21/qiu-ji-ptz-he-shi-chang-jiao-yu-onvif-he-ptz-dui-ying-guan-xi/</loc>
     <lastmod>2022-05-20</lastmod>
-  </url>
-  <url>
-    <loc>https://knowledge-things.github.io/2022/05/19/hello-world/</loc>
-    <lastmod>2022-05-19</lastmod>
   </url>
 </urlset> 
