@@ -29,7 +29,7 @@
     
     
     <entry>
-      <title>Kubernetes-kubeadm安装</title>
+      <title>Kubernetes安装</title>
       <link href="/2022/10/08/kubernetes-an-zhuang/"/>
       <url>/2022/10/08/kubernetes-an-zhuang/</url>
       
@@ -45,7 +45,7 @@
       
         <tags>
             
-            <tag> kubeadm </tag>
+            <tag> kubernetes </tag>
             
         </tags>
       

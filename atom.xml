@@ -41,11 +41,11 @@
   </entry>
   
   <entry>
-    <title>Kubernetes-kubeadm安装</title>
+    <title>Kubernetes安装</title>
     <link href="https://knowledge-things.github.io/2022/10/08/kubernetes-an-zhuang/"/>
     <id>https://knowledge-things.github.io/2022/10/08/kubernetes-an-zhuang/</id>
     <published>2022-10-08T07:10:19.000Z</published>
-    <updated>2022-10-08T07:14:24.567Z</updated>
+    <updated>2022-10-10T01:10:33.636Z</updated>
     
     
     
@@ -53,7 +53,7 @@
     <category term="k8s" scheme="https://knowledge-things.github.io/categories/k8s/"/>
     
     
-    <category term="kubeadm" scheme="https://knowledge-things.github.io/tags/kubeadm/"/>
+    <category term="kubernetes" scheme="https://knowledge-things.github.io/tags/kubernetes/"/>
     
   </entry>
   
