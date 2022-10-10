@@ -405,14 +405,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/Docker/</loc>
+    <loc>https://knowledge-things.github.io/tags/Bits/</loc>
     <lastmod>2022-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/Bits/</loc>
+    <loc>https://knowledge-things.github.io/tags/Docker/</loc>
     <lastmod>2022-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -524,13 +524,6 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2022-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://knowledge-things.github.io/tags/backpressure/</loc>
     <lastmod>2022-10-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -539,6 +532,13 @@
   
   <url>
     <loc>https://knowledge-things.github.io/tags/%E8%A7%86%E5%9C%BA%E8%A7%92/</loc>
+    <lastmod>2022-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2022-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -708,13 +708,6 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/%E7%A6%85%E9%81%93/</loc>
-    <lastmod>2022-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://knowledge-things.github.io/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2022-10-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -723,6 +716,13 @@
   
   <url>
     <loc>https://knowledge-things.github.io/categories/%E6%91%84%E5%83%8F%E5%A4%B4%E7%9B%B8%E5%85%B3/</loc>
+    <lastmod>2022-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://knowledge-things.github.io/categories/%E7%A6%85%E9%81%93/</loc>
     <lastmod>2022-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
