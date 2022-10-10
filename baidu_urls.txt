@@ -1,3 +1,4 @@
+https://knowledge-things.github.io/2022/10/10/kubernetes-dashboard/
 https://knowledge-things.github.io/2022/10/08/kubernetes-kubectl-an-zhuang/
 https://knowledge-things.github.io/2022/10/08/kubernetes-an-zhuang/
 https://knowledge-things.github.io/2022/09/29/xi-tong-guo-zai-shi-shi-jia-bei-ya/
