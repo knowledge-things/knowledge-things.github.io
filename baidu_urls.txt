@@ -1,3 +1,4 @@
+https://knowledge-things.github.io/2022/10/14/microk8s-qu-xian-jiu-guo/
 https://knowledge-things.github.io/2022/10/14/install-onepanel/
 https://knowledge-things.github.io/2022/10/13/ubuntu-install-vnc/
 https://knowledge-things.github.io/2022/10/13/microk8s-an-zhuang-onepanel/

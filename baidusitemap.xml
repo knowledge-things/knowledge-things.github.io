@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://knowledge-things.github.io/2022/10/14/microk8s-qu-xian-jiu-guo/</loc>
+    <lastmod>2022-10-14</lastmod>
+  </url>
+  <url>
     <loc>https://knowledge-things.github.io/2022/10/14/install-onepanel/</loc>
     <lastmod>2022-10-14</lastmod>
   </url>
