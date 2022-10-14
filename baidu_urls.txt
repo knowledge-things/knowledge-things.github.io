@@ -1,3 +1,6 @@
+https://knowledge-things.github.io/2022/10/14/install-onepanel/
+https://knowledge-things.github.io/2022/10/13/ubuntu-install-vnc/
+https://knowledge-things.github.io/2022/10/13/microk8s-an-zhuang-onepanel/
 https://knowledge-things.github.io/2022/10/10/kubernetes-dashboard/
 https://knowledge-things.github.io/2022/10/08/kubernetes-kubectl-an-zhuang/
 https://knowledge-things.github.io/2022/10/08/kubernetes-an-zhuang/
