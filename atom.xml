@@ -6,7 +6,7 @@
   <link href="https://knowledge-things.github.io/atom.xml" rel="self"/>
   
   <link href="https://knowledge-things.github.io/"/>
-  <updated>2022-10-14T09:01:25.659Z</updated>
+  <updated>2022-10-21T14:30:21.974Z</updated>
   <id>https://knowledge-things.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阅读记录（2022年10月）</title>
+    <link href="https://knowledge-things.github.io/2022/10/20/yue-du-ji-lu/"/>
+    <id>https://knowledge-things.github.io/2022/10/20/yue-du-ji-lu/</id>
+    <published>2022-10-20T08:21:11.000Z</published>
+    <updated>2022-10-21T14:30:21.974Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="2022-10-20"><a href="#2022-10-20" class="headerlink" title="2022-10-20"></a>2022-10-20</h2><ul><li><strong>mmdection环境搭建</strong><br><a href="https://pytorch.org/get-started/previous-versions/">PyThorch历史版本安装</a><br><a href="https://blog.csdn.net/Singlepledge/article/details/107138749">Ubuntu 20.04 : 几个BT下载软件和命令</a><br><a href="https://blog.csdn.net/weixin_45385568/article/details/115084264">ubuntu20.04显卡驱动 cuda cudnn安装</a><br><a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA历史版本官方下载地址</a><br><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">显卡驱动与CUDA版本对应关系</a><br><a href="https://blog.csdn.net/Yana_Zeng/article/details/119539835">pytorch安装</a><br><a href="https://pytorch.org/get-started/previous-versions/">pytorch历史版本</a></li></ul><h2 id="2022-10-20-1"><a href="#2022-10-20-1" class="headerlink" title="2022-10-20"></a>2022-10-20</h2><p><a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">Nvidia-docker install guide</a><br><a href="https://support.strongvpn.com/hc/en-us/articles/360039667713-IKEv2-Setup-Ubuntu-18-and-above-on-Command-Line">Ubuntu IPSec vpn安装</a><br><a href="https://hub.docker.com/r/fengzhou/ipsec-vpn-client">ipsec-vpn-client docker</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;2022-10-20&quot;&gt;&lt;a href=&quot;#2022-10-20&quot; class=&quot;headerlink&quot; title=&quot;2022-10-20&quot;&gt;&lt;/a&gt;2022-10-20&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;mmdection环境搭建&lt;/strong&gt;&lt;b</summary>
+      
+    
+    
+    
+    
+    <category term="阅读记录" scheme="https://knowledge-things.github.io/tags/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>microk8s曲线救国</title>
@@ -475,31 +498,6 @@
     
     <category term="项目管理" scheme="https://knowledge-things.github.io/categories/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>禅道的数据库结构</title>
-    <link href="https://knowledge-things.github.io/2022/06/02/shan-dao-de-shu-ju-ku-jie-gou/"/>
-    <id>https://knowledge-things.github.io/2022/06/02/shan-dao-de-shu-ju-ku-jie-gou/</id>
-    <published>2022-06-01T17:17:37.000Z</published>
-    <updated>2022-06-01T17:20:40.015Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="禅道的数据库结构"><a href="#禅道的数据库结构" class="headerlink" title="禅道的数据库结构"></a>禅道的数据库结构</h2><blockquote><p>官网相关地址：<a href="https://www.zentao.net/book/zentaopmshelp/157.html?fullScreen=zentao">https://www.zentao.net/book/zentaopmshelp/157.html?fullScreen=zentao</a></p></blockquote><p>禅道的数据库命名都比较简明扼要，从字面意思应该都可以猜出来表的用途。如果还不是很清楚的话，可以到每个表对应的模块下面的语言文件里面查找。</p><p>最新版本可以在 禅道 <strong>后台—-二次开发—-数据库</strong> 中查看相应的表介绍。</p><h4 id="一、我的地盘相关的表"><a href="#一、我的地盘相关的表" class="headerlink" title="一、我的地盘相关的表"></a>一、我的地盘相关的表</h4><ul><li>zt_todo，待办事宜表。</li></ul><h4 id="二、产品相关的表"><a href="#二、产品相关的表" class="headerlink" title="二、产品相关的表"></a>二、产品相关的表</h4><ul><li>zt_product，记录了产品相关的信息。</li><li>zt_productplan，记录了产品的计划信息。</li><li>zt_story，是非常重要的一张表，记录了系统中所有的需求记录。</li><li>zt_storyspec，记录了需求的描述信息。</li><li>zt_storystage，记录需求的阶段信息。</li><li>zt_release，记录了产品的发布信息。这张表同时也和zt_build互相关联。</li><li>zt_branch，记录产品的分支和平台信息。</li></ul><h4 id="三、项目相关的表"><a href="#三、项目相关的表" class="headerlink" title="三、项目相关的表"></a>三、项目相关的表</h4><ul><li>zt_project，项目表。</li><li>zt_projectproduct，记录了项目和产品之间的关联关系。</li><li>zt_projectstory，记录了项目中需要做的需求列表。</li><li>zt_task，任务表。</li><li>zt_burn，燃尽图数据表。燃尽图就是根据这张表的数据画出来的。</li><li>zt_team，记录了项目中的团队成员。</li><li>zt_build，记录了项目中产品的版本列表。</li><li>zt_taskestimate，项目任务工时表。</li></ul><h4 id="四、测试相关的表"><a href="#四、测试相关的表" class="headerlink" title="四、测试相关的表"></a>四、测试相关的表</h4><ul><li>zt_bug，bug表，也是大家非常熟悉的一张表了。</li><li>zt_case，用例表。记录了所有的测试用例。</li><li>zt_casestep，则是记录了用例相关的步骤，包括历史。</li><li>zt_testtask，测试版本表，记录了历次的测试任务。</li><li>zt_testrun，则记录了每个测试任务所对应的用例执行情况。</li><li>zt_testresult，记录了每个用例历次执行的结果。</li><li>zt_testsuite，测试套件表。</li><li>zt_suitecase，套件用例表。</li><li>zt_testreport，测试报告表。</li></ul><h4 id="五、文档库相关的表"><a href="#五、文档库相关的表" class="headerlink" title="五、文档库相关的表"></a>五、文档库相关的表</h4><ul><li>zt_doclib，记录了自定义文档库列表。</li><li>zt_doc，则记录了所有的文档。</li><li>zt_doccontent，文档的内容表。</li></ul><h4 id="六、组织管理相关的表"><a href="#六、组织管理相关的表" class="headerlink" title="六、组织管理相关的表"></a>六、组织管理相关的表</h4><ul><li>zt_user，用户表。</li><li>zt_group，分组表。</li><li>zt_usergroup，用户和分组之间的对应关系。</li><li>zt_grouppriv，分组的权限。</li><li>zt_dept，部门结构表。</li><li>zt_userquery，用户自定义查询表。</li><li>zt_usertpl，用户的自定义模板表。</li><li>zt_usercontact，用户联系人表。</li><li>zt_company，这张表记录了当前公司的信息，也是顶级的一张表。</li></ul><h4 id="七、后台管理相关的表"><a href="#七、后台管理相关的表" class="headerlink" title="七、后台管理相关的表"></a>七、后台管理相关的表</h4><ul><li>zt_action，系统日志表。</li><li>zt_cron，定时任务表，记录计划任务。</li><li>zt_extension，插件表。</li><li>zt_history，操作历史表， 记录对任何一个对象的所有修改记录， 前后值的变化。</li><li>zt_lang，语言定义表。</li></ul><h4 id="八、其他模块相关的表"><a href="#八、其他模块相关的表" class="headerlink" title="八、其他模块相关的表"></a>八、其他模块相关的表</h4><ul><li>zt_module，也是非常重要的一张表，它维护了禅道系统中的模块划分数据，比如需求的模块划分。</li><li>zt_effort，日志表。</li><li>zt_entry，应用表。</li><li>zt_log，接口日志表。</li><li>zt_mailqueue，邮件列队表。</li><li>zt_module，模块表，记录模块信息。</li><li>zt_notify，提醒信息表，记录所有的提醒信息。</li><li>zt_score，积分表，记录积分信息。</li><li>zt_file，附件表。记录了所有的附件。</li><li>zt_block，区块表，记录我的地盘首页，产品主页，项目主页，测试主页的区块信息。</li><li>zt_config，系统配置表，记录所有的基本配置信息。</li><li>zt_webhook，记录webhook信息。</li><li>zt_webhookdatas，记录webhook的数据表。</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;禅道的数据库结构&quot;&gt;&lt;a href=&quot;#禅道的数据库结构&quot; class=&quot;headerlink&quot; title=&quot;禅道的数据库结构&quot;&gt;&lt;/a&gt;禅道的数据库结构&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;官网相关地址：&lt;a href=&quot;https://www.zenta</summary>
-      
-    
-    
-    
-    <category term="禅道" scheme="https://knowledge-things.github.io/categories/%E7%A6%85%E9%81%93/"/>
-    
-    
-    <category term="数据结构" scheme="https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   

@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>阅读记录（2022年10月）</title>
+      <link href="/2022/10/20/yue-du-ji-lu/"/>
+      <url>/2022/10/20/yue-du-ji-lu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="2022-10-20"><a href="#2022-10-20" class="headerlink" title="2022-10-20"></a>2022-10-20</h2><ul><li><strong>mmdection环境搭建</strong><br><a href="https://pytorch.org/get-started/previous-versions/">PyThorch历史版本安装</a><br><a href="https://blog.csdn.net/Singlepledge/article/details/107138749">Ubuntu 20.04 : 几个BT下载软件和命令</a><br><a href="https://blog.csdn.net/weixin_45385568/article/details/115084264">ubuntu20.04显卡驱动 cuda cudnn安装</a><br><a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA历史版本官方下载地址</a><br><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">显卡驱动与CUDA版本对应关系</a><br><a href="https://blog.csdn.net/Yana_Zeng/article/details/119539835">pytorch安装</a><br><a href="https://pytorch.org/get-started/previous-versions/">pytorch历史版本</a></li></ul><h2 id="2022-10-20-1"><a href="#2022-10-20-1" class="headerlink" title="2022-10-20"></a>2022-10-20</h2><p><a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">Nvidia-docker install guide</a><br><a href="https://support.strongvpn.com/hc/en-us/articles/360039667713-IKEv2-Setup-Ubuntu-18-and-above-on-Command-Line">Ubuntu IPSec vpn安装</a><br><a href="https://hub.docker.com/r/fengzhou/ipsec-vpn-client">ipsec-vpn-client docker</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 阅读记录 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>microk8s曲线救国</title>
       <link href="/2022/10/14/microk8s-qu-xian-jiu-guo/"/>
       <url>/2022/10/14/microk8s-qu-xian-jiu-guo/</url>
