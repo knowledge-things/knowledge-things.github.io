@@ -4,11 +4,38 @@
   
     
     <entry>
+      <title>VPN 心跳保护</title>
+      <link href="/2022/10/25/vpn-xin-tiao-bao-hu/"/>
+      <url>/2022/10/25/vpn-xin-tiao-bao-hu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="VPN-心跳保护"><a href="#VPN-心跳保护" class="headerlink" title="VPN 心跳保护"></a>VPN 心跳保护</h2><ul><li><p>添加ppp0网络检测<br><code>nano health_vpn.sh</code></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#!&#x2F;bin&#x2F;bash# &quot;100%&quot;在ping的输出结果中(证明未ping该网段)if ping -w 1 -c 3 192.168.42.1 | grep &quot;100%&quot; &gt;&#x2F;dev&#x2F;null  #未ping通则重启网卡,并重新添加路由表then        echo &quot;192.168.42.1 is Not reachable&quot;        echo &quot;restart docker vpn-client ...&quot;        docker restart vpn-client        echo &quot;ending start vpn...&quot;#ping通则不作处理else        echo &quot;192.168.42.1 is reachable&quot;fi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">#添加执行权限chmod +x health_vpn.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li><li><p>crontab -e 选择要使用的vi工具</p></li><li><p>添加定时计划</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">* * * * * sleep 10; &#x2F;home&#x2F;rtzh&#x2F;health_vpn.sh  &gt;&gt;&#x2F;tmp&#x2F;health-vpn.txt#验证成功后可关闭日志，避免日志文件过大* * * * * sleep 10; &#x2F;home&#x2F;rtzh&#x2F;health_vpn.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li><li><p>重启cron服务</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo service cron restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li><li><p>查看是否启动成功</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">systemctl status croncrontab -l<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li></ul><h2 id="打开cron日志"><a href="#打开cron日志" class="headerlink" title="打开cron日志"></a>打开cron日志</h2><p>Ubuntu系统默认是不打开cron日志的</p><p>如何打开，很简单，控制台输入</p><p><code>vi /etc/rsyslog.d/50-default.conf</code></p><p>打开文件，在文件中找到cron.*，把前面的#去掉，保存退出，输入</p><p><code>sudo service rsyslog restart</code></p><p>重启系统日志，然后稍微等下应该就能在/var/log目录下看到cron.log，vi cron.log就可以查看cron运行日志了。</p><pre class="line-numbers language-none"><code class="language-none">tail -f &#x2F;var&#x2F;log&#x2F;cron.log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+          <category> VPN </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vpn client </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>阅读记录（2022年10月）</title>
       <link href="/2022/10/20/yue-du-ji-lu/"/>
       <url>/2022/10/20/yue-du-ji-lu/</url>
       
-        <content type="html"><![CDATA[<h2 id="2022-10-20"><a href="#2022-10-20" class="headerlink" title="2022-10-20"></a>2022-10-20</h2><ul><li><strong>mmdection环境搭建</strong><br><a href="https://pytorch.org/get-started/previous-versions/">PyThorch历史版本安装</a><br><a href="https://blog.csdn.net/Singlepledge/article/details/107138749">Ubuntu 20.04 : 几个BT下载软件和命令</a><br><a href="https://blog.csdn.net/weixin_45385568/article/details/115084264">ubuntu20.04显卡驱动 cuda cudnn安装</a><br><a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA历史版本官方下载地址</a><br><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">显卡驱动与CUDA版本对应关系</a><br><a href="https://blog.csdn.net/Yana_Zeng/article/details/119539835">pytorch安装</a><br><a href="https://pytorch.org/get-started/previous-versions/">pytorch历史版本</a></li></ul><h2 id="2022-10-20-1"><a href="#2022-10-20-1" class="headerlink" title="2022-10-20"></a>2022-10-20</h2><p><a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">Nvidia-docker install guide</a><br><a href="https://support.strongvpn.com/hc/en-us/articles/360039667713-IKEv2-Setup-Ubuntu-18-and-above-on-Command-Line">Ubuntu IPSec vpn安装</a><br><a href="https://hub.docker.com/r/fengzhou/ipsec-vpn-client">ipsec-vpn-client docker</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="2022-10-20"><a href="#2022-10-20" class="headerlink" title="2022-10-20"></a>2022-10-20</h2><ul><li><strong>mmdection环境搭建</strong><br><a href="https://pytorch.org/get-started/previous-versions/">PyThorch历史版本安装</a><br><a href="https://blog.csdn.net/Singlepledge/article/details/107138749">Ubuntu 20.04 : 几个BT下载软件和命令</a><br><a href="https://blog.csdn.net/weixin_45385568/article/details/115084264">ubuntu20.04显卡驱动 cuda cudnn安装</a><br><a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA历史版本官方下载地址</a><br><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">显卡驱动与CUDA版本对应关系</a><br><a href="https://blog.csdn.net/Yana_Zeng/article/details/119539835">pytorch安装</a><br><a href="https://pytorch.org/get-started/previous-versions/">pytorch历史版本</a></li></ul><h2 id="2022-10-20-1"><a href="#2022-10-20-1" class="headerlink" title="2022-10-20"></a>2022-10-20</h2><p><a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">Nvidia-docker install guide</a><br><a href="https://support.strongvpn.com/hc/en-us/articles/360039667713-IKEv2-Setup-Ubuntu-18-and-above-on-Command-Line">Ubuntu IPSec vpn安装</a><br><a href="https://hub.docker.com/r/fengzhou/ipsec-vpn-client">ipsec-vpn-client docker</a></p><h2 id="2022-10-24"><a href="#2022-10-24" class="headerlink" title="2022-10-24"></a>2022-10-24</h2><p><a href="https://blog.csdn.net/qq_41627642/article/details/124803970">Swin-Transformer-Object-Detection V2.11.0环境搭建</a><br><a href="https://blog.csdn.net/CSDN_X_W/article/details/123664326">Swin Transformer Object Detection 目标检测-1</a></p>]]></content>
       
       
       
