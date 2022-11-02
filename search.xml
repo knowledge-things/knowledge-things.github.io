@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title>Hyper parameter调优</title>
+      <link href="/2022/11/02/hyper-parameter-diao-you/"/>
+      <url>/2022/11/02/hyper-parameter-diao-you/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/images/5681667359188_.pic.jpg" alt></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Object detection </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Ubuntu 18.04安装NCCL</title>
+      <link href="/2022/11/01/ubuntu-18-04-an-zhuang-nccl/"/>
+      <url>/2022/11/01/ubuntu-18-04-an-zhuang-nccl/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Ubuntu-18-04安装NCCL"><a href="#Ubuntu-18-04安装NCCL" class="headerlink" title="Ubuntu 18.04安装NCCL"></a>Ubuntu 18.04安装NCCL</h1><blockquote><p><a href="https://developer.nvidia.com/nccl/nccl-legacy-downloads">https://developer.nvidia.com/nccl/nccl-legacy-downloads</a></p></blockquote><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h3><p>官网下载地址：<a href="https://developer.nvidia.com/nccl/nccl-download">https://developer.nvidia.com/nccl/nccl-download</a><br>注意版本与你的cuda适配。</p><p>2.安装</p><p>获得.deb安装文件如：nccl-local-repo-ubuntu1804-2.8.4-cuda11.1_1.0-1_amd64.deb后</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo dpkg -i nccl-local-repo-ubuntu1804-2.8.4-cuda11.1_1.0-1_amd64.deb  # 安装# 如果提示缺少公共CUDA GPG秘钥sudo apt-key add &#x2F;var&#x2F;nccl-repo-2.8.3-ga-cuda10.2&#x2F;7fa2af80.pub# 必不可少更新sudo apt updatesudo apt install libnccl2 libnccl-dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> NVIDIA </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> nccl </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SSH tunnel</title>
       <link href="/2022/11/01/ssh-tunnel/"/>
       <url>/2022/11/01/ssh-tunnel/</url>
@@ -60,7 +104,7 @@
       <link href="/2022/10/20/yue-du-ji-lu/"/>
       <url>/2022/10/20/yue-du-ji-lu/</url>
       
-        <content type="html"><![CDATA[<h2 id="2022-10-20"><a href="#2022-10-20" class="headerlink" title="2022-10-20"></a>2022-10-20</h2><ul><li><strong>mmdection环境搭建</strong><br><a href="https://pytorch.org/get-started/previous-versions/">PyThorch历史版本安装</a><br><a href="https://blog.csdn.net/Singlepledge/article/details/107138749">Ubuntu 20.04 : 几个BT下载软件和命令</a><br><a href="https://blog.csdn.net/weixin_45385568/article/details/115084264">ubuntu20.04显卡驱动 cuda cudnn安装</a><br><a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA历史版本官方下载地址</a><br><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">显卡驱动与CUDA版本对应关系</a><br><a href="https://blog.csdn.net/Yana_Zeng/article/details/119539835">pytorch安装</a><br><a href="https://pytorch.org/get-started/previous-versions/">pytorch历史版本</a></li></ul><h2 id="2022-10-21"><a href="#2022-10-21" class="headerlink" title="2022-10-21"></a>2022-10-21</h2><p>  <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">Nvidia-docker install guide</a><br>  <a href="https://support.strongvpn.com/hc/en-us/articles/360039667713-IKEv2-Setup-Ubuntu-18-and-above-on-Command-Line">Ubuntu IPSec vpn安装</a><br>  <a href="https://hub.docker.com/r/fengzhou/ipsec-vpn-client">ipsec-vpn-client docker</a></p><h2 id="2022-10-24"><a href="#2022-10-24" class="headerlink" title="2022-10-24"></a>2022-10-24</h2><p>  <a href="https://blog.csdn.net/qq_41627642/article/details/124803970">Swin-Transformer-Object-Detection V2.11.0环境搭建</a><br>  <a href="https://blog.csdn.net/CSDN_X_W/article/">Swin Transformer Object Detection 目标检测-1</a><br>  <a href="https://blog.csdn.net/weixin_44347020/article/details/116153242">基于mmdetection训练Swin Transformer Object Detection</a></p><h2 id="2022-10-27"><a href="#2022-10-27" class="headerlink" title="2022-10-27"></a>2022-10-27</h2><p>  <a href="https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html">PaddlePaddle安装包</a><br>  <a href="https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/version/cudnn_cn.html">PaddlePaddle Api</a><br>  <a href="https://github.com/alibaba/EasyCV/blob/master/docs/source/data_hub.md">alibaba EasyCV datahub</a><br>  <a href="https://blog.csdn.net/qq_38410428/article/details/103645212">遥感数据集</a><br>  <a href="https://xie.infoq.cn/article/3c4afe81a2e2693eb23406752">alibaba EasyCV datahub</a><br>  <a href="https://github.com/mcordts/cityscapesScripts">cityscapesScripts</a><br>  <a href="https://blog.csdn.net/hanruiding/article/details/89493466">按文件大小排序</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="2022-10-20"><a href="#2022-10-20" class="headerlink" title="2022-10-20"></a>2022-10-20</h2><ul><li><strong>mmdection环境搭建</strong><br><a href="https://pytorch.org/get-started/previous-versions/">PyThorch历史版本安装</a><br><a href="https://blog.csdn.net/Singlepledge/article/details/107138749">Ubuntu 20.04 : 几个BT下载软件和命令</a><br><a href="https://blog.csdn.net/weixin_45385568/article/details/115084264">ubuntu20.04显卡驱动 cuda cudnn安装</a><br><a href="https://developer.nvidia.com/cuda-toolkit-archive">CUDA历史版本官方下载地址</a><br><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">显卡驱动与CUDA版本对应关系</a><br><a href="https://blog.csdn.net/Yana_Zeng/article/details/119539835">pytorch安装</a><br><a href="https://pytorch.org/get-started/previous-versions/">pytorch历史版本</a></li></ul><h2 id="2022-10-21"><a href="#2022-10-21" class="headerlink" title="2022-10-21"></a>2022-10-21</h2><p>  <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">Nvidia-docker install guide</a><br>  <a href="https://support.strongvpn.com/hc/en-us/articles/360039667713-IKEv2-Setup-Ubuntu-18-and-above-on-Command-Line">Ubuntu IPSec vpn安装</a><br>  <a href="https://hub.docker.com/r/fengzhou/ipsec-vpn-client">ipsec-vpn-client docker</a></p><h2 id="2022-10-24"><a href="#2022-10-24" class="headerlink" title="2022-10-24"></a>2022-10-24</h2><p>  <a href="https://blog.csdn.net/qq_41627642/article/details/124803970">Swin-Transformer-Object-Detection V2.11.0环境搭建</a><br>  <a href="https://blog.csdn.net/CSDN_X_W/article/">Swin Transformer Object Detection 目标检测-1</a><br>  <a href="https://blog.csdn.net/weixin_44347020/article/details/116153242">基于mmdetection训练Swin Transformer Object Detection</a></p><h2 id="2022-10-27"><a href="#2022-10-27" class="headerlink" title="2022-10-27"></a>2022-10-27</h2><p>  <a href="https://www.paddlepaddle.org.cn/whl/linux/mkl/avx/stable.html">PaddlePaddle安装包</a><br>  <a href="https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/version/cudnn_cn.html">PaddlePaddle Api</a><br>  <a href="https://github.com/alibaba/EasyCV/blob/master/docs/source/data_hub.md">alibaba EasyCV datahub</a><br>  <a href="https://blog.csdn.net/qq_38410428/article/details/103645212">遥感数据集</a><br>  <a href="https://xie.infoq.cn/article/3c4afe81a2e2693eb23406752">alibaba EasyCV datahub</a><br>  <a href="https://github.com/mcordts/cityscapesScripts">cityscapesScripts</a><br>  <a href="https://blog.csdn.net/hanruiding/article/details/89493466">按文件大小排序</a></p><h2 id="2022-11-1"><a href="#2022-11-1" class="headerlink" title="2022-11-1"></a>2022-11-1</h2><p>  <a href="https://blog.csdn.net/weixin_43152331/article/details/124929760">conda自动补全</a><br>  <a href="https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/version/cudnn_cn.html">Paddle cudnn</a></p><h2 id="2022-11-2"><a href="#2022-11-2" class="headerlink" title="2022-11-2"></a>2022-11-2</h2><p>  <a href="https://blog.csdn.net/qq_40265247/article/details/121275111">数据集处理</a></p>]]></content>
       
       
       

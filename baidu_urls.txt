@@ -1,3 +1,5 @@
+https://knowledge-things.github.io/2022/11/02/hyper-parameter-diao-you/
+https://knowledge-things.github.io/2022/11/01/ubuntu-18-04-an-zhuang-nccl/
 https://knowledge-things.github.io/2022/11/01/ssh-tunnel/
 https://knowledge-things.github.io/2022/10/25/vpn-xin-tiao-bao-hu/
 https://knowledge-things.github.io/2022/10/20/yue-du-ji-lu/
