@@ -6,7 +6,7 @@
   <link href="https://knowledge-things.github.io/atom.xml" rel="self"/>
   
   <link href="https://knowledge-things.github.io/"/>
-  <updated>2022-11-03T08:06:03.864Z</updated>
+  <updated>2022-11-03T08:15:35.955Z</updated>
   <id>https://knowledge-things.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://knowledge-things.github.io/2022/11/03/map-ji-suan/"/>
     <id>https://knowledge-things.github.io/2022/11/03/map-ji-suan/</id>
     <published>2022-11-03T08:03:32.000Z</published>
-    <updated>2022-11-03T08:06:03.864Z</updated>
+    <updated>2022-11-03T08:15:35.955Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>转载内容 如有侵权 或 不希望被转载 可以留言或私发告诉我，我会及时处理，尊重你的权利。<br>原文链接[<a href="https://aistudio.baidu.com/aistudio/projectdetail/2213799">https://aistudio.baidu.com/aistudio/projectdetail/2213799</a>]<br>在机器学习领域中，用于评价一个模型的性能有多种指标，其中几项就是FP、FN、TP、TN、精确率(Precision)、召回率(Recall)、准确率(Accuracy)。</p></blockquote><p>mean Average Precision, 即各类别AP的平均值，是AP：PR 曲线下面积。</p><p>此前先了解一下IOU评判标准：</p><p><img src="https://ai-studio-static-online.cdn.bcebos.com/156a2736163b482d9405bbf1a7fc76c8d818d372669642c88f26d7f8f9ad6a1f" alt="img"></p><p>TP、FP、FN、TN</p><p>常见的评判方式，第一位的T,F代表正确或者错误。第二位的P和N代表判断的正确或者错误</p><ul><li>True Positive (TP): IoU&gt;IOUthreshold IoU&gt;<em>I<strong>O</strong>U</em>threshold  (IOU的阈值一般取0.5)的所有检测框数量（同一Ground Truth只计算一次），可以理解为真实框，或者标准答案</li><li>False Positive (FP): IoU&lt;IOUthreshold IoU&lt;<em>I<strong>O</strong>U</em>threshold  的所有检测框数量</li><li>False Negative (FN): 没有检测到的 GT 的数量</li><li>True Negative (TN): mAP中无用到</li></ul><p><img src="https://ai-studio-static-online.cdn.bcebos.com/c9ddb96d1bc94786903d6e3186a951fe7042c831c2ad4d329aaf95298c2eda79" alt="img"></p><p>查准率（Precision）: Precision =TPTP+FP=TP all detections =<em>T**P</em>+<em>F<strong>P</strong>T**P</em>= all detections <em>T**P</em></p><p>查全率（Recall）: Recall =TPTP+FN=TP all ground truths =<em>T**P</em>+<em>F<strong>N</strong>T**P</em>= all ground truths <em>T**P</em></p><p>二者绘制的曲线称为 P-R 曲线： 查准率：P 为纵轴y 查全率：R 为横轴x轴，如下图</p><p><img src="https://ai-studio-static-online.cdn.bcebos.com/2505d5e4ce9040879553d2a3252785e9d5cf697d278543999e77ef0b51d2847a" alt="img"></p><p>mAP值即为，PR曲线下的面积。</p>]]></content>
     
@@ -46,8 +46,16 @@
     <link href="https://knowledge-things.github.io/2022/11/03/xun-lian-guo-cheng-ji-lu-yi/"/>
     <id>https://knowledge-things.github.io/2022/11/03/xun-lian-guo-cheng-ji-lu-yi/</id>
     <published>2022-11-03T07:59:26.000Z</published>
-    <updated>2022-11-03T08:00:10.312Z</updated>
+    <updated>2022-11-03T08:15:31.014Z</updated>
     
+    <content type="html"><![CDATA[<p>根据基建赛方提供的数据集进行训练，</p><h3 id="一、首先对数据集进行转换，转化步骤如下"><a href="#一、首先对数据集进行转换，转化步骤如下" class="headerlink" title="一、首先对数据集进行转换，转化步骤如下"></a>一、首先对数据集进行转换，转化步骤如下</h3><h4 id="1、VOC数据集拆分-运行脚本，并设置训练集和验证集比例"><a href="#1、VOC数据集拆分-运行脚本，并设置训练集和验证集比例" class="headerlink" title="1、VOC数据集拆分  运行脚本，并设置训练集和验证集比例"></a>1、VOC数据集拆分  运行脚本，并设置训练集和验证集比例</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">python tools&#x2F;splitData_labelImg.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://cd.bjrtzh.com/zentao/file-read-3156.png" alt="img"></p><h4 id="2、voc数据集转coco数据集，转化命令如下"><a href="#2、voc数据集转coco数据集，转化命令如下" class="headerlink" title="2、voc数据集转coco数据集，转化命令如下"></a>2、voc数据集转coco数据集，转化命令如下</h4><p><img src="https://cd.bjrtzh.com/zentao/file-read-3157.png" alt="img"></p><h4 id="3、coco-box转segmentation"><a href="#3、coco-box转segmentation" class="headerlink" title="3、coco box转segmentation"></a>3、coco box转segmentation</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">python tools&#x2F;Segmentations.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="https://cd.bjrtzh.com/zentao/file-read-3158.png" alt="img"></p><h3 id="二、开始训练"><a href="#二、开始训练" class="headerlink" title="二、开始训练"></a>二、开始训练</h3><h4 id="1、设定学习率为"><a href="#1、设定学习率为" class="headerlink" title="1、设定学习率为"></a>1、设定学习率为</h4><p><code>base_lr: 0.00125</code></p><h4 id="2、训练epoch为92轮"><a href="#2、训练epoch为92轮" class="headerlink" title="2、训练epoch为92轮"></a>2、训练epoch为92轮</h4><p>经过观察当训练到60轮次左右时Loss值已经停止下降保持在0.19243如下图所示，下一步将调整学习率增加一倍，并且对数据集进行增强，</p><p>采用线下增强方式，采用 移位（translation）、视角（viewpoint）、大小（size）、照明（illumination）</p><p>（*Paddle也支持线上增强，即在输入模型之前做resize处理）</p><p><img src="https://cd.bjrtzh.com/zentao/file-read-3159.png" alt="img"></p><p><em>optimization分析当前发生local minima或saddle point的原因</em></p><p><img src="https://cd.bjrtzh.com/zentao/file-read-3160.png" alt="img"><img src="https://cd.bjrtzh.com/zentao/file-read-3161.png" alt="img"></p><p>当前训练集仅为800张，数据增强后继续观察。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;根据基建赛方提供的数据集进行训练，&lt;/p&gt;
+&lt;h3 id=&quot;一、首先对数据集进行转换，转化步骤如下&quot;&gt;&lt;a href=&quot;#一、首先对数据集进行转换，转化步骤如下&quot; class=&quot;headerlink&quot; title=&quot;一、首先对数据集进行转换，转化步骤如下&quot;&gt;&lt;/a&gt;一、首先</summary>
+      
     
     
     
