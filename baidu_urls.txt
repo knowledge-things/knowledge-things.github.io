@@ -1,3 +1,5 @@
+https://knowledge-things.github.io/2022/11/03/map-ji-suan/
+https://knowledge-things.github.io/2022/11/03/xun-lian-guo-cheng-ji-lu-yi/
 https://knowledge-things.github.io/2022/11/02/hyper-parameter-diao-you/
 https://knowledge-things.github.io/2022/11/01/ubuntu-18-04-an-zhuang-nccl/
 https://knowledge-things.github.io/2022/11/01/ssh-tunnel/
