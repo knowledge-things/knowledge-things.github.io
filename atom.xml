@@ -6,7 +6,7 @@
   <link href="https://knowledge-things.github.io/atom.xml" rel="self"/>
   
   <link href="https://knowledge-things.github.io/"/>
-  <updated>2022-11-03T08:15:35.955Z</updated>
+  <updated>2022-11-03T08:15:50.897Z</updated>
   <id>https://knowledge-things.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://knowledge-things.github.io/2022/11/03/map-ji-suan/"/>
     <id>https://knowledge-things.github.io/2022/11/03/map-ji-suan/</id>
     <published>2022-11-03T08:03:32.000Z</published>
-    <updated>2022-11-03T08:15:35.955Z</updated>
+    <updated>2022-11-03T08:15:50.897Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>转载内容 如有侵权 或 不希望被转载 可以留言或私发告诉我，我会及时处理，尊重你的权利。<br>原文链接[<a href="https://aistudio.baidu.com/aistudio/projectdetail/2213799">https://aistudio.baidu.com/aistudio/projectdetail/2213799</a>]<br>在机器学习领域中，用于评价一个模型的性能有多种指标，其中几项就是FP、FN、TP、TN、精确率(Precision)、召回率(Recall)、准确率(Accuracy)。</p></blockquote><p>mean Average Precision, 即各类别AP的平均值，是AP：PR 曲线下面积。</p><p>此前先了解一下IOU评判标准：</p><p><img src="https://ai-studio-static-online.cdn.bcebos.com/156a2736163b482d9405bbf1a7fc76c8d818d372669642c88f26d7f8f9ad6a1f" alt="img"></p><p>TP、FP、FN、TN</p><p>常见的评判方式，第一位的T,F代表正确或者错误。第二位的P和N代表判断的正确或者错误</p><ul><li>True Positive (TP): IoU&gt;IOUthreshold IoU&gt;<em>I<strong>O</strong>U</em>threshold  (IOU的阈值一般取0.5)的所有检测框数量（同一Ground Truth只计算一次），可以理解为真实框，或者标准答案</li><li>False Positive (FP): IoU&lt;IOUthreshold IoU&lt;<em>I<strong>O</strong>U</em>threshold  的所有检测框数量</li><li>False Negative (FN): 没有检测到的 GT 的数量</li><li>True Negative (TN): mAP中无用到</li></ul><p><img src="https://ai-studio-static-online.cdn.bcebos.com/c9ddb96d1bc94786903d6e3186a951fe7042c831c2ad4d329aaf95298c2eda79" alt="img"></p><p>查准率（Precision）: Precision =TPTP+FP=TP all detections =<em>T**P</em>+<em>F<strong>P</strong>T**P</em>= all detections <em>T**P</em></p><p>查全率（Recall）: Recall =TPTP+FN=TP all ground truths =<em>T**P</em>+<em>F<strong>N</strong>T**P</em>= all ground truths <em>T**P</em></p><p>二者绘制的曲线称为 P-R 曲线： 查准率：P 为纵轴y 查全率：R 为横轴x轴，如下图</p><p><img src="https://ai-studio-static-online.cdn.bcebos.com/2505d5e4ce9040879553d2a3252785e9d5cf697d278543999e77ef0b51d2847a" alt="img"></p><p>mAP值即为，PR曲线下的面积。</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>转载内容 如有侵权 或 不希望被转载 可以留言或私发告诉我，我会及时处理，尊重你的权利。<br>原文链接[<a href="https://aistudio.baidu.com/aistudio/projectdetail/2213799">https://aistudio.baidu.com/aistudio/projectdetail/2213799</a>] </p></blockquote><p>在机器学习领域中，用于评价一个模型的性能有多种指标，其中几项就是FP、FN、TP、TN、精确率(Precision)、召回率(Recall)、准确率(Accuracy)。</p><p>mean Average Precision, 即各类别AP的平均值，是AP：PR 曲线下面积。</p><p>此前先了解一下IOU评判标准：</p><p><img src="https://ai-studio-static-online.cdn.bcebos.com/156a2736163b482d9405bbf1a7fc76c8d818d372669642c88f26d7f8f9ad6a1f" alt="img"></p><p>TP、FP、FN、TN</p><p>常见的评判方式，第一位的T,F代表正确或者错误。第二位的P和N代表判断的正确或者错误</p><ul><li>True Positive (TP): IoU&gt;IOUthreshold IoU&gt;<em>I<strong>O</strong>U</em>threshold  (IOU的阈值一般取0.5)的所有检测框数量（同一Ground Truth只计算一次），可以理解为真实框，或者标准答案</li><li>False Positive (FP): IoU&lt;IOUthreshold IoU&lt;<em>I<strong>O</strong>U</em>threshold  的所有检测框数量</li><li>False Negative (FN): 没有检测到的 GT 的数量</li><li>True Negative (TN): mAP中无用到</li></ul><p><img src="https://ai-studio-static-online.cdn.bcebos.com/c9ddb96d1bc94786903d6e3186a951fe7042c831c2ad4d329aaf95298c2eda79" alt="img"></p><p>查准率（Precision）: Precision =TPTP+FP=TP all detections =<em>T**P</em>+<em>F<strong>P</strong>T**P</em>= all detections <em>T**P</em></p><p>查全率（Recall）: Recall =TPTP+FN=TP all ground truths =<em>T**P</em>+<em>F<strong>N</strong>T**P</em>= all ground truths <em>T**P</em></p><p>二者绘制的曲线称为 P-R 曲线： 查准率：P 为纵轴y 查全率：R 为横轴x轴，如下图</p><p><img src="https://ai-studio-static-online.cdn.bcebos.com/2505d5e4ce9040879553d2a3252785e9d5cf697d278543999e77ef0b51d2847a" alt="img"></p><p>mAP值即为，PR曲线下的面积。</p>]]></content>
     
     
       
