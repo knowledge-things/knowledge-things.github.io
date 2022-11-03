@@ -1,6 +1,8 @@
+https://knowledge-things.github.io/2022/11/03/paddle-rcnn-xi-lie-can-shu-pei-zhi/
+https://knowledge-things.github.io/2022/10/20/yue-du-ji-lu/
+https://knowledge-things.github.io/2022/11/03/linux-chang-yong-ming-ling/
 https://knowledge-things.github.io/2022/11/03/map-ji-suan/
 https://knowledge-things.github.io/2022/11/03/xun-lian-guo-cheng-ji-lu-yi/
-https://knowledge-things.github.io/2022/10/20/yue-du-ji-lu/
 https://knowledge-things.github.io/2022/11/02/hyper-parameter-diao-you/
 https://knowledge-things.github.io/2022/11/01/ubuntu-18-04-an-zhuang-nccl/
 https://knowledge-things.github.io/2022/11/01/ssh-tunnel/
@@ -65,6 +67,7 @@ https://knowledge-things.github.io/tags/dashboard/
 https://knowledge-things.github.io/tags/kubectl/
 https://knowledge-things.github.io/tags/kubernetes/
 https://knowledge-things.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/
+https://knowledge-things.github.io/tags/RCNN-%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE/
 https://knowledge-things.github.io/tags/autossh/
 https://knowledge-things.github.io/tags/Telegraf/
 https://knowledge-things.github.io/tags/nccl/
@@ -79,8 +82,8 @@ https://knowledge-things.github.io/tags/macOS/
 https://knowledge-things.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
 https://knowledge-things.github.io/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/
 https://knowledge-things.github.io/tags/%E5%BC%80%E9%97%AD%E5%8C%BA%E9%97%B4/
-https://knowledge-things.github.io/tags/camera-onvif/
 https://knowledge-things.github.io/tags/%E8%BD%AC%E8%BD%BD/
+https://knowledge-things.github.io/tags/camera-onvif/
 https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/
 https://knowledge-things.github.io/tags/backpressure/
 https://knowledge-things.github.io/tags/mask-rcnn/
@@ -99,6 +102,7 @@ https://knowledge-things.github.io/categories/markdown/
 https://knowledge-things.github.io/categories/spring/
 https://knowledge-things.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/
 https://knowledge-things.github.io/categories/Node-RED/
+https://knowledge-things.github.io/categories/Paddle/
 https://knowledge-things.github.io/categories/SSH-tunnel/
 https://knowledge-things.github.io/categories/NVIDIA/
 https://knowledge-things.github.io/categories/Linux/
@@ -106,10 +110,10 @@ https://knowledge-things.github.io/categories/curl/
 https://knowledge-things.github.io/categories/git/
 https://knowledge-things.github.io/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/
 https://knowledge-things.github.io/categories/Deep-Learning/
-https://knowledge-things.github.io/categories/microk8s/
 https://knowledge-things.github.io/categories/spring/micrometer/
-https://knowledge-things.github.io/categories/linux/
+https://knowledge-things.github.io/categories/microk8s/
 https://knowledge-things.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/
+https://knowledge-things.github.io/categories/linux/
 https://knowledge-things.github.io/categories/Spring/
 https://knowledge-things.github.io/categories/macOS/
 https://knowledge-things.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
