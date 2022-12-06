@@ -65,6 +65,7 @@ https://knowledge-things.github.io/tags/Object-detection/
 https://knowledge-things.github.io/tags/JUC/
 https://knowledge-things.github.io/tags/java/
 https://knowledge-things.github.io/tags/Optional/
+https://knowledge-things.github.io/tags/Jupyter-%E5%BF%AB%E6%8D%B7%E9%94%AE/
 https://knowledge-things.github.io/tags/dashboard/
 https://knowledge-things.github.io/tags/kubectl/
 https://knowledge-things.github.io/tags/kubernetes/
@@ -74,7 +75,6 @@ https://knowledge-things.github.io/tags/RCNN-%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%A
 https://knowledge-things.github.io/tags/autossh/
 https://knowledge-things.github.io/tags/Telegraf/
 https://knowledge-things.github.io/tags/nccl/
-https://knowledge-things.github.io/tags/Jupyter-%E5%BF%AB%E6%8D%B7%E9%94%AE/
 https://knowledge-things.github.io/tags/vpn-client/
 https://knowledge-things.github.io/tags/git/
 https://knowledge-things.github.io/tags/onepanel/
@@ -98,8 +98,8 @@ https://knowledge-things.github.io/categories/binary-repo/
 https://knowledge-things.github.io/categories/hexo/
 https://knowledge-things.github.io/categories/binary-repo/DevOps/
 https://knowledge-things.github.io/categories/concurrent/
-https://knowledge-things.github.io/categories/java/
 https://knowledge-things.github.io/categories/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/
+https://knowledge-things.github.io/categories/java/
 https://knowledge-things.github.io/categories/kubernetes/
 https://knowledge-things.github.io/categories/k8s/
 https://knowledge-things.github.io/categories/Linux/
@@ -112,8 +112,8 @@ https://knowledge-things.github.io/categories/SSH-tunnel/
 https://knowledge-things.github.io/categories/NVIDIA/
 https://knowledge-things.github.io/categories/Linux/VPN/
 https://knowledge-things.github.io/categories/curl/
-https://knowledge-things.github.io/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/
 https://knowledge-things.github.io/categories/git/
+https://knowledge-things.github.io/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/
 https://knowledge-things.github.io/categories/Deep-Learning/
 https://knowledge-things.github.io/categories/spring/micrometer/
 https://knowledge-things.github.io/categories/microk8s/

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Kevin Blog</title>
   
-  <subtitle>我们总是高估一项科技所带来的短期效益，却又低估它的长期影响</subtitle>
+  <subtitle>always-be-coding</subtitle>
   <link href="https://knowledge-things.github.io/atom.xml" rel="self"/>
   
   <link href="https://knowledge-things.github.io/"/>
