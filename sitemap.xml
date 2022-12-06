@@ -577,13 +577,6 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/Jupyter-%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
-    <lastmod>2022-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://knowledge-things.github.io/tags/java/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -661,6 +654,13 @@
   </url>
   
   <url>
+    <loc>https://knowledge-things.github.io/tags/Jupyter-%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    <lastmod>2022-12-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://knowledge-things.github.io/tags/vpn-client/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -676,6 +676,13 @@
   
   <url>
     <loc>https://knowledge-things.github.io/tags/onepanel/</loc>
+    <lastmod>2022-12-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://knowledge-things.github.io/tags/mAP/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -725,13 +732,6 @@
   
   <url>
     <loc>https://knowledge-things.github.io/tags/%E5%BC%80%E9%97%AD%E5%8C%BA%E9%97%B4/</loc>
-    <lastmod>2022-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://knowledge-things.github.io/tags/mAP/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -824,14 +824,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
+    <loc>https://knowledge-things.github.io/categories/java/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/java/</loc>
+    <loc>https://knowledge-things.github.io/categories/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -922,13 +922,6 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/git/</loc>
-    <lastmod>2022-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://knowledge-things.github.io/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -936,7 +929,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</loc>
+    <loc>https://knowledge-things.github.io/categories/git/</loc>
+    <lastmod>2022-12-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://knowledge-things.github.io/categories/Deep-Learning/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -957,6 +957,13 @@
   </url>
   
   <url>
+    <loc>https://knowledge-things.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</loc>
+    <lastmod>2022-12-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://knowledge-things.github.io/categories/linux/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -964,14 +971,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/macOS/</loc>
+    <loc>https://knowledge-things.github.io/categories/Spring/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/Spring/</loc>
+    <loc>https://knowledge-things.github.io/categories/macOS/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -986,13 +993,6 @@
   
   <url>
     <loc>https://knowledge-things.github.io/categories/%E6%95%B0%E5%AD%A6%E7%9B%AE%E5%BD%95/</loc>
-    <lastmod>2022-12-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://knowledge-things.github.io/categories/Deep-Learning/</loc>
     <lastmod>2022-12-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
