@@ -1,3 +1,6 @@
+https://knowledge-things.github.io/2023/01/03/s3fs-gua-zai-minio-cun-chu/
+https://knowledge-things.github.io/2022/12/28/tensorrt-huan-jing-an-zhuang/
+https://knowledge-things.github.io/2022/12/20/jetson-tx2-shang-sheng-ji-cmake-fang-fa/
 https://knowledge-things.github.io/2022/12/06/yue-du-ji-lu-2022-12/
 https://knowledge-things.github.io/2022/11/10/jupyter-notebook-de-kuai-jie-jian/
 https://knowledge-things.github.io/2022/11/03/paddle-rcnn-xi-lie-can-shu-pei-zhi/

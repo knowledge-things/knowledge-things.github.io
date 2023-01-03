@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://knowledge-things.github.io/2023/01/03/s3fs-gua-zai-minio-cun-chu/</loc>
+    <lastmod>2023-01-03</lastmod>
+  </url>
+  <url>
+    <loc>https://knowledge-things.github.io/2022/12/28/tensorrt-huan-jing-an-zhuang/</loc>
+    <lastmod>2023-01-03</lastmod>
+  </url>
+  <url>
     <loc>https://knowledge-things.github.io/2022/12/06/yue-du-ji-lu-2022-12/</loc>
-    <lastmod>2022-12-06</lastmod>
+    <lastmod>2022-12-30</lastmod>
+  </url>
+  <url>
+    <loc>https://knowledge-things.github.io/2022/12/20/jetson-tx2-shang-sheng-ji-cmake-fang-fa/</loc>
+    <lastmod>2022-12-20</lastmod>
   </url>
   <url>
     <loc>https://knowledge-things.github.io/2022/11/03/linux-chang-yong-ming-ling/</loc>
