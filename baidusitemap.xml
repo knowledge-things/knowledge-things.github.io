@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://knowledge-things.github.io/2023/01/04/paddle-xi-lie-jetson-tui-li/</loc>
+    <lastmod>2023-01-04</lastmod>
+  </url>
+  <url>
+    <loc>https://knowledge-things.github.io/2023/01/03/git-dai-li-she-zhi/</loc>
+    <lastmod>2023-01-03</lastmod>
+  </url>
+  <url>
+    <loc>https://knowledge-things.github.io/2023/01/03/jeston-paddle-tui-li/</loc>
+    <lastmod>2023-01-03</lastmod>
+  </url>
+  <url>
     <loc>https://knowledge-things.github.io/2023/01/03/s3fs-gua-zai-minio-cun-chu/</loc>
     <lastmod>2023-01-03</lastmod>
   </url>
