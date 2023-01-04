@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> Paddle FastDeploy TensorRT </category>
+          <category> FastDeploy TensorRT </category>
           
       </categories>
       
@@ -34,19 +34,6 @@
       <url>/2023/01/03/git-dai-li-she-zhi/</url>
       
         <content type="html"><![CDATA[<pre class="line-numbers language-none"><code class="language-none">git config --global https.proxy http:&#x2F;&#x2F;127.0.0.1:1080git config --global https.proxy https:&#x2F;&#x2F;127.0.0.1:1080git config --global --unset http.proxygit config --global --unset https.proxynpm config delete proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Jeston Paddle 推理</title>
-      <link href="/2023/01/03/jeston-paddle-tui-li/"/>
-      <url>/2023/01/03/jeston-paddle-tui-li/</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
       
       
