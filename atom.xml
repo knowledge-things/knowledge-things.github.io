@@ -6,7 +6,7 @@
   <link href="https://knowledge-things.github.io/atom.xml" rel="self"/>
   
   <link href="https://knowledge-things.github.io/"/>
-  <updated>2023-01-04T08:25:43.246Z</updated>
+  <updated>2023-01-09T03:51:06.958Z</updated>
   <id>https://knowledge-things.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>公开数据集</title>
+    <link href="https://knowledge-things.github.io/2023/01/09/gong-kai-shu-ju-ji/"/>
+    <id>https://knowledge-things.github.io/2023/01/09/gong-kai-shu-ju-ji/</id>
+    <published>2023-01-09T03:40:36.000Z</published>
+    <updated>2023-01-09T03:51:06.958Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="https://captain-whu.github.io/DOTA/">DOTA遥感数据集</a><br>类别：飞机、轮船、储罐、棒球场、网球场、篮球场、田径场、港口、桥梁、大型车辆、小型车辆、直升机、环岛、足球场、游泳池、集装箱起重机、机场和直升机停机坪<br><a href="https://bj.bcebos.com/v1/paddledet/data/smalldet/visdrone.zip">VisDrone-DET无人机航拍小目标数据集</a><br><a href="https://bj.bcebos.com/v1/paddledet/data/smalldet/xview_sliced.zip">Xview大型遥感监测数据集</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://captain-whu.github.io/DOTA/&quot;&gt;DOTA遥感数据集&lt;/a&gt;&lt;br&gt;类别：飞机、轮船、储罐、棒球场、网球场、篮球场、田径场、港口、桥梁、大型车辆、小型车辆、直升机、环岛、足球场、游泳池、集装</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Paddle系列Jetson推理</title>
@@ -463,19 +484,6 @@ $ identify xxx.jpg
     
     
     <category term="remote vnc" scheme="https://knowledge-things.github.io/tags/remote-vnc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>microk8s安装onepanel</title>
-    <link href="https://knowledge-things.github.io/2022/10/13/microk8s-an-zhuang-onepanel/"/>
-    <id>https://knowledge-things.github.io/2022/10/13/microk8s-an-zhuang-onepanel/</id>
-    <published>2022-10-13T03:11:42.000Z</published>
-    <updated>2022-10-13T03:11:42.217Z</updated>
-    
-    
-    
-    
     
   </entry>
   

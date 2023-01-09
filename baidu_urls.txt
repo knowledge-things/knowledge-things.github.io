@@ -1,3 +1,4 @@
+https://knowledge-things.github.io/2023/01/09/gong-kai-shu-ju-ji/
 https://knowledge-things.github.io/2023/01/04/paddle-xi-lie-jetson-tui-li/
 https://knowledge-things.github.io/2023/01/03/git-dai-li-she-zhi/
 https://knowledge-things.github.io/2023/01/03/s3fs-gua-zai-minio-cun-chu/
