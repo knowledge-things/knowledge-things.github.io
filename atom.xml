@@ -6,7 +6,7 @@
   <link href="https://knowledge-things.github.io/atom.xml" rel="self"/>
   
   <link href="https://knowledge-things.github.io/"/>
-  <updated>2023-01-10T09:34:39.306Z</updated>
+  <updated>2023-01-10T09:48:56.637Z</updated>
   <id>https://knowledge-things.github.io/</id>
   
   <author>
@@ -21,8 +21,17 @@
     <link href="https://knowledge-things.github.io/2023/01/10/imx219-camera/"/>
     <id>https://knowledge-things.github.io/2023/01/10/imx219-camera/</id>
     <published>2023-01-10T09:34:39.000Z</published>
-    <updated>2023-01-10T09:34:39.306Z</updated>
+    <updated>2023-01-10T09:48:56.637Z</updated>
     
+    <content type="html"><![CDATA[<blockquote><p> 参数</p><p><a href="https://www.waveshare.net/wiki/IMX219-77IR_Camera#.E9.80.9A.E7.94.A8.E7.9A.84.E6.8C.87.E4.BB.A4.E8.AE.BE.E7.BD.AE.E9.80.89.E9.A1.B9">https://www.waveshare.net/wiki/IMX219-77IR_Camera#.E9.80.9A.E7.94.A8.E7.9A.84.E6.8C.87.E4.BB.A4.E8.AE.BE.E7.BD.AE.E9.80.89.E9.A1.B9</a></p></blockquote><ul><li>800万像素</li><li>感光芯片： IMX219</li><li>分辨率: 3280 x 2464</li><li>Support 1080p30, 720p60 and 640x480p90 video record</li><li>摄像头参数:<ul><li>CMOS尺寸：1/4英寸</li><li>光圈（F）：2.35</li><li>焦距（Focal Length）：3.15mm</li><li>对角视场角（FOV）：160度</li><li>畸变（Distortion）：&lt; 14.3%</li><li>镜头尺寸：6.5mm × 6.5mm</li></ul></li></ul><h2 id="如果摄像头拍摄效果偏红的话，可以按照以下步骤操作"><a href="#如果摄像头拍摄效果偏红的话，可以按照以下步骤操作" class="headerlink" title="如果摄像头拍摄效果偏红的话，可以按照以下步骤操作"></a>如果摄像头拍摄效果偏红的话，可以按照以下步骤操作</h2><p>1.下载camera-override.isp文件，解压到特定文件夹</p><pre class="line-numbers language-none"><code class="language-none">wget http:&#x2F;&#x2F;www.waveshare.net&#x2F;w&#x2F;upload&#x2F;e&#x2F;eb&#x2F;Camera_overrides.tar.gztar zxvf Camera_overrides.tar.gz sudo cp camera_overrides.isp &#x2F;var&#x2F;nvidia&#x2F;nvcam&#x2F;settings&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>2.安装文件：</p><pre class="line-numbers language-none"><code class="language-none">sudo chmod 664 &#x2F;var&#x2F;nvidia&#x2F;nvcam&#x2F;settings&#x2F;camera_overrides.ispsudo chown root:root &#x2F;var&#x2F;nvidia&#x2F;nvcam&#x2F;settings&#x2F;camera_overrides.isp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="测试命令"><a href="#测试命令" class="headerlink" title="测试命令"></a>测试命令</h3><pre class="line-numbers language-none"><code class="language-none">gst-launch-1.0 nvarguscamerasrc sensor_mode&#x3D;0 sensor_id&#x3D;0 wbmode&#x3D;3 !  &#39;video&#x2F;x-raw(memory:NVMM),width&#x3D;3280, height&#x3D;2464, framerate&#x3D;21&#x2F;1, format&#x3D;NV12&#39; ! nvvidconv flip-method&#x3D;0 ! &#39;video&#x2F;x-raw, width&#x3D;1920, height&#x3D;1080&#39; ! nvvidconv ! nvegltransform ! nveglglessink -e<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt; 参数&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.waveshare.net/wiki/IMX219-77IR_Camera#.E9.80.9A.E7.94.A8.E7.9A.84.E6.8C.87.E4.BB.A4.E8.AE.BE</summary>
+      
     
     
     
