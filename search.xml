@@ -4,13 +4,45 @@
   
     
     <entry>
+      <title>IMX219 Camera</title>
+      <link href="/2023/01/10/imx219-camera/"/>
+      <url>/2023/01/10/imx219-camera/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Jupyter Lab 设置</title>
+      <link href="/2023/01/10/jupyter-lab-she-zhi/"/>
+      <url>/2023/01/10/jupyter-lab-she-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-Jupyter-Lab-安装"><a href="#1-Jupyter-Lab-安装" class="headerlink" title="1. Jupyter Lab 安装"></a>1. Jupyter Lab 安装</h2><p>安装 JupyterLab 非常简单，只需一行命令即可：</p><h3 id="conda-安装-Miniconda"><a href="#conda-安装-Miniconda" class="headerlink" title="conda 安装 [Miniconda]"></a>conda 安装 [Miniconda]</h3><pre class="line-numbers language-none"><code class="language-none">conda install -c conda-forge jupyterlab<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="pip-安装"><a href="#pip-安装" class="headerlink" title="pip 安装"></a>pip 安装</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip install jupyterlab<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="2-JupyterLab-安全验证"><a href="#2-JupyterLab-安全验证" class="headerlink" title="2. JupyterLab 安全验证"></a>2. JupyterLab 安全验证</h3><p>JupyterLab 使用密码保证服务的安全，从而确保其他用户无法登录使用。默认情况下，会自动生成随机密码，如 ： <a href="http://127.0.0.1:8888/lab?token=2cefb80900a38689d9d0d2c4927832fa4ae322b1e441c601，其中">http://127.0.0.1:8888/lab?token=2cefb80900a38689d9d0d2c4927832fa4ae322b1e441c601，其中</a> token=密码。</p><p>为方便远程登录，可手动设置密码，方法如下：</p><ul><li><p>生成配置文件</p><pre class="line-numbers language-none"><code class="language-none">jupyter server --generate-config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ul><p>该命令会在 ~/.jupyter 目录下生成配置文件 jupyter_server_config.py, 如果该配置文件已经存在，则会提示是否替换该文件。</p><ul><li><p>手动设置密码</p><pre class="line-numbers language-none"><code class="language-none">jupyter server password<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li></ul><ul><li><p>启动Jupyter</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"># 后台启动  nohup jupyter-lab --ip&#x3D;0.0.0.0 --port&#x3D;8088 --allow-root --notebook-dir&#x3D;&#x2F;data&#x2F;workspace&#x2F;PaddleDetection&#x2F; &gt; &#x2F;dev&#x2F;null &amp;l &amp;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li></ul><h2 id="安装NVDashboard插件"><a href="#安装NVDashboard插件" class="headerlink" title="安装NVDashboard插件"></a>安装NVDashboard插件</h2><p><em>该插件依赖nodejs</em>,安装插件之后重启Jupyter</p>  <pre class="line-numbers language-none"><code class="language-none">conda install -c conda-forge&#x2F;label&#x2F;cf202003 nodejs<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul><li>JupyterLab &gt;= 3.0</li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre class="line-numbers language-none"><code class="language-none">pip install jupyterlab_nvdashboard<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="疑难解答"><a href="#疑难解答" class="headerlink" title="疑难解答"></a>疑难解答</h2><p>如果您看到前端扩展，但它不工作，请检查服务器扩展是否已启用：</p><pre class="line-numbers language-none"><code class="language-none">jupyter server extension list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>如果服务器扩展已安装并启用，但您没有看到前端扩展，请检查前端扩展是否已安装：</p><pre class="line-numbers language-none"><code class="language-none">jupyter labextension list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>公开数据集</title>
       <link href="/2023/01/09/gong-kai-shu-ju-ji/"/>
       <url>/2023/01/09/gong-kai-shu-ju-ji/</url>
       
-        <content type="html"><![CDATA[<blockquote><p><a href="https://captain-whu.github.io/DOTA/">DOTA遥感数据集</a><br>类别：飞机、轮船、储罐、棒球场、网球场、篮球场、田径场、港口、桥梁、大型车辆、小型车辆、直升机、环岛、足球场、游泳池、集装箱起重机、机场和直升机停机坪<br><a href="https://bj.bcebos.com/v1/paddledet/data/smalldet/visdrone.zip">VisDrone-DET无人机航拍小目标数据集</a><br><a href="https://bj.bcebos.com/v1/paddledet/data/smalldet/xview_sliced.zip">Xview大型遥感监测数据集</a></p></blockquote>]]></content>
+        <content type="html"><![CDATA[<blockquote><p><a href="https://captain-whu.github.io/DOTA/">DOTA遥感数据集</a><br>类别：飞机、轮船、储罐、棒球场、网球场、篮球场、田径场、港口、桥梁、大型车辆、小型车辆、直升机、环岛、足球场、游泳池、集装箱起重机、机场和直升机停机坪</p></blockquote><p><a href="https://bj.bcebos.com/v1/paddledet/data/smalldet/visdrone.zip">VisDrone-DET无人机航拍小目标数据集</a><br><a href="https://bj.bcebos.com/v1/paddledet/data/smalldet/xview_sliced.zip">Xview大型遥感监测数据集</a></p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 数据集 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -104,7 +136,7 @@
       <link href="/2022/12/06/yue-du-ji-lu-2022-12/"/>
       <url>/2022/12/06/yue-du-ji-lu-2022-12/</url>
       
-        <content type="html"><![CDATA[<p><a href="https://www.51cto.com/article/677110.html">digiKam使用</a><br><a href="https://snapcraft.io/install/digikam/ubuntu">snap digiKam</a><br><a href="https://linuxhint.com/setup-configure-autocomplete-zsh/">Ubuntu zsh autoComplete</a><br><a href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/paddlepaddle/tags">Paddle Nvidia Containers</a><br><a href="https://github.com/NVIDIA/DeepLearningExamples">NVIDIA DeepLearningExamples</a><br><a href="https://github.com/PINTO0309/openvino2tensorflow">openvino2tensorflow</a><br><a href="https://netron.app/">netron可视化网络</a></p>]]></content>
+        <content type="html"><![CDATA[<p><a href="https://www.51cto.com/article/677110.html">digiKam使用</a><br><a href="https://snapcraft.io/install/digikam/ubuntu">snap digiKam</a><br><a href="https://linuxhint.com/setup-configure-autocomplete-zsh/">Ubuntu zsh autoComplete</a><br><a href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/paddlepaddle/tags">Paddle Nvidia Containers</a><br><a href="https://github.com/NVIDIA/DeepLearningExamples">NVIDIA DeepLearningExamples</a><br><a href="https://github.com/PINTO0309/openvino2tensorflow">openvino2tensorflow</a><br><a href="https://netron.app/">netron可视化网络</a><br><a href="https://github.com/PaddlePaddle/PaddleClas/blob/v2.4.0/docs/zh_CN/PULC/PULC_safety_helmet.md">PULC 佩戴安全帽分类模型</a><br><a href="https://www.paddlepaddle.org.cn/documentation/docs/zh/api/paddle/distributed/launch_cn.html">Paddle多机多卡训练</a></p>]]></content>
       
       
       
