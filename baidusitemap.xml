@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://knowledge-things.github.io/2022/11/03/linux-chang-yong-ming-ling/</loc>
+    <lastmod>2023-01-12</lastmod>
+  </url>
+  <url>
+    <loc>https://knowledge-things.github.io/2023/01/12/cvat-gua-zai-minio/</loc>
+    <lastmod>2023-01-12</lastmod>
+  </url>
+  <url>
     <loc>https://knowledge-things.github.io/2023/01/10/imx219-camera/</loc>
     <lastmod>2023-01-10</lastmod>
   </url>
@@ -35,10 +43,6 @@
   <url>
     <loc>https://knowledge-things.github.io/2022/12/20/jetson-tx2-shang-sheng-ji-cmake-fang-fa/</loc>
     <lastmod>2022-12-20</lastmod>
-  </url>
-  <url>
-    <loc>https://knowledge-things.github.io/2022/11/03/linux-chang-yong-ming-ling/</loc>
-    <lastmod>2022-11-24</lastmod>
   </url>
   <url>
     <loc>https://knowledge-things.github.io/2022/10/20/yue-du-ji-lu/</loc>

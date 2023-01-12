@@ -1,3 +1,5 @@
+https://knowledge-things.github.io/2022/11/03/linux-chang-yong-ming-ling/
+https://knowledge-things.github.io/2023/01/12/cvat-gua-zai-minio/
 https://knowledge-things.github.io/2023/01/10/imx219-camera/
 https://knowledge-things.github.io/2022/12/06/yue-du-ji-lu-2022-12/
 https://knowledge-things.github.io/2023/01/10/jupyter-lab-she-zhi/
@@ -7,7 +9,6 @@ https://knowledge-things.github.io/2023/01/03/git-dai-li-she-zhi/
 https://knowledge-things.github.io/2023/01/03/s3fs-gua-zai-minio-cun-chu/
 https://knowledge-things.github.io/2022/12/28/tensorrt-huan-jing-an-zhuang/
 https://knowledge-things.github.io/2022/12/20/jetson-tx2-shang-sheng-ji-cmake-fang-fa/
-https://knowledge-things.github.io/2022/11/03/linux-chang-yong-ming-ling/
 https://knowledge-things.github.io/2022/10/20/yue-du-ji-lu/
 https://knowledge-things.github.io/2022/11/10/jupyter-notebook-de-kuai-jie-jian/
 https://knowledge-things.github.io/2022/11/03/xun-lian-guo-cheng-ji-lu-yi/
@@ -68,6 +69,7 @@ https://knowledge-things.github.io/categories/index.html
 https://knowledge-things.github.io/
 https://knowledge-things.github.io/tags/DevOps/
 https://knowledge-things.github.io/tags/Bits/
+https://knowledge-things.github.io/tags/cvat/
 https://knowledge-things.github.io/tags/Docker/
 https://knowledge-things.github.io/tags/Object-detection/
 https://knowledge-things.github.io/tags/JUC/
@@ -96,9 +98,9 @@ https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/
 https://knowledge-things.github.io/tags/macOS/
 https://knowledge-things.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
 https://knowledge-things.github.io/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/
+https://knowledge-things.github.io/tags/%E5%BC%80%E9%97%AD%E5%8C%BA%E9%97%B4/
 https://knowledge-things.github.io/tags/%E8%BD%AC%E8%BD%BD/
 https://knowledge-things.github.io/tags/camera-onvif/
-https://knowledge-things.github.io/tags/%E5%BC%80%E9%97%AD%E5%8C%BA%E9%97%B4/
 https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/
 https://knowledge-things.github.io/tags/backpressure/
 https://knowledge-things.github.io/tags/mask-rcnn/
@@ -106,8 +108,9 @@ https://knowledge-things.github.io/tags/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/
 https://knowledge-things.github.io/tags/%E8%A7%86%E5%9C%BA%E8%A7%92/
 https://knowledge-things.github.io/tags/%E4%BA%8C%E5%88%86%E6%B3%95/
 https://knowledge-things.github.io/categories/binary-repo/
-https://knowledge-things.github.io/categories/hexo/
+https://knowledge-things.github.io/categories/cvat-minio/
 https://knowledge-things.github.io/categories/binary-repo/DevOps/
+https://knowledge-things.github.io/categories/hexo/
 https://knowledge-things.github.io/categories/concurrent/
 https://knowledge-things.github.io/categories/java%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/
 https://knowledge-things.github.io/categories/java/
@@ -125,8 +128,8 @@ https://knowledge-things.github.io/categories/NVIDIA/
 https://knowledge-things.github.io/categories/Linux/VPN/
 https://knowledge-things.github.io/categories/curl/
 https://knowledge-things.github.io/categories/spring/micrometer/
-https://knowledge-things.github.io/categories/git/
 https://knowledge-things.github.io/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/
+https://knowledge-things.github.io/categories/git/
 https://knowledge-things.github.io/categories/Deep-Learning/
 https://knowledge-things.github.io/categories/microk8s/
 https://knowledge-things.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/
@@ -134,8 +137,8 @@ https://knowledge-things.github.io/categories/linux/
 https://knowledge-things.github.io/categories/Spring/
 https://knowledge-things.github.io/categories/macOS/
 https://knowledge-things.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/
-https://knowledge-things.github.io/categories/%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97/
 https://knowledge-things.github.io/categories/%E6%95%B0%E5%AD%A6%E7%9B%AE%E5%BD%95/
+https://knowledge-things.github.io/categories/%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97/
 https://knowledge-things.github.io/categories/%E7%A6%85%E9%81%93/
 https://knowledge-things.github.io/categories/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/
 https://knowledge-things.github.io/categories/%E6%91%84%E5%83%8F%E5%A4%B4%E7%9B%B8%E5%85%B3/
