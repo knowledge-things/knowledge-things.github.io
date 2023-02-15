@@ -695,14 +695,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/dashboard/</loc>
+    <loc>https://knowledge-things.github.io/tags/kubectl/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/kubectl/</loc>
+    <loc>https://knowledge-things.github.io/tags/dashboard/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -758,14 +758,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/nccl/</loc>
+    <loc>https://knowledge-things.github.io/tags/vpn-client/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/vpn-client/</loc>
+    <loc>https://knowledge-things.github.io/tags/nccl/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -828,13 +828,6 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/macOS/</loc>
-    <lastmod>2023-02-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://knowledge-things.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -843,6 +836,13 @@
   
   <url>
     <loc>https://knowledge-things.github.io/tags/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/</loc>
+    <lastmod>2023-02-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://knowledge-things.github.io/tags/macOS/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -863,14 +863,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/camera-onvif/</loc>
+    <loc>https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>https://knowledge-things.github.io/tags/camera-onvif/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -884,14 +884,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/mask-rcnn/</loc>
+    <loc>https://knowledge-things.github.io/tags/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/tags/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://knowledge-things.github.io/tags/mask-rcnn/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -963,14 +963,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/kubernetes/</loc>
+    <loc>https://knowledge-things.github.io/categories/k8s/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/k8s/</loc>
+    <loc>https://knowledge-things.github.io/categories/kubernetes/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1033,14 +1033,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/NVIDIA/</loc>
+    <loc>https://knowledge-things.github.io/categories/Linux/VPN/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/Linux/VPN/</loc>
+    <loc>https://knowledge-things.github.io/categories/NVIDIA/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1054,7 +1054,7 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/github/</loc>
+    <loc>https://knowledge-things.github.io/categories/git/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1068,7 +1068,7 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/git/</loc>
+    <loc>https://knowledge-things.github.io/categories/github/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1117,14 +1117,14 @@
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/macOS/</loc>
+    <loc>https://knowledge-things.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://knowledge-things.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>https://knowledge-things.github.io/categories/macOS/</loc>
     <lastmod>2023-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
