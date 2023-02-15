@@ -1,3 +1,4 @@
+https://knowledge-things.github.io/2023/02/15/github-pei-zhi-ssh-mi-yao/
 https://knowledge-things.github.io/2022/11/03/linux-chang-yong-ming-ling/
 https://knowledge-things.github.io/2023/01/12/cvat-gua-zai-minio/
 https://knowledge-things.github.io/2023/01/10/imx219-camera/
@@ -127,13 +128,14 @@ https://knowledge-things.github.io/categories/SSH-tunnel/
 https://knowledge-things.github.io/categories/NVIDIA/
 https://knowledge-things.github.io/categories/Linux/VPN/
 https://knowledge-things.github.io/categories/curl/
+https://knowledge-things.github.io/categories/github/
 https://knowledge-things.github.io/categories/spring/micrometer/
-https://knowledge-things.github.io/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/
 https://knowledge-things.github.io/categories/git/
+https://knowledge-things.github.io/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/
 https://knowledge-things.github.io/categories/Deep-Learning/
 https://knowledge-things.github.io/categories/microk8s/
-https://knowledge-things.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/
 https://knowledge-things.github.io/categories/linux/
+https://knowledge-things.github.io/categories/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/
 https://knowledge-things.github.io/categories/Spring/
 https://knowledge-things.github.io/categories/macOS/
 https://knowledge-things.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/

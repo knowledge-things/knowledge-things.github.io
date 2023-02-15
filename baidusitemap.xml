@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://knowledge-things.github.io/2023/02/15/github-pei-zhi-ssh-mi-yao/</loc>
+    <lastmod>2023-02-15</lastmod>
+  </url>
+  <url>
     <loc>https://knowledge-things.github.io/2022/11/03/linux-chang-yong-ming-ling/</loc>
-    <lastmod>2023-01-12</lastmod>
+    <lastmod>2023-01-16</lastmod>
   </url>
   <url>
     <loc>https://knowledge-things.github.io/2023/01/12/cvat-gua-zai-minio/</loc>

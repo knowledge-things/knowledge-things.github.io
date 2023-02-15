@@ -1,3 +1,4 @@
+https://knowledge-things.github.io/2023/02/15/github-pei-zhi-ssh-mi-yao/
 https://knowledge-things.github.io/2023/01/12/cvat-gua-zai-minio/
 https://knowledge-things.github.io/2023/01/10/imx219-camera/
 https://knowledge-things.github.io/2023/01/10/jupyter-lab-she-zhi/
