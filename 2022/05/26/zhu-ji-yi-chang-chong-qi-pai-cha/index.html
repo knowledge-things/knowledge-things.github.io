@@ -1,0 +1,1779 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="主机异常重启排查, kevin,Blog,java,knowledge">
+    <meta name="description" content="排查资源使用情况：一般云计算平台或者传统的 IDC 主机都会有相应的监控平台
+通过分析历史的 CPU 、MEM、磁盘 IO、带宽大小等数值分析是不是因为资源占用异常导致的系统重启
+
+或者登录机器
+
+通过 free 命令查看内存信息
+
+$fr">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="baidu-site-verification" content="code-BReF9cpIqk" />
+    <meta name="google-site-verification" content="Bx0-TMXVoWYgGpQ72oTw4oLcVt_v587iMqv6S7Vrx0s" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>主机异常重启排查 | Kevin Blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Kevin Blog" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Kevin Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a target="_blank" rel="noopener" href="https://knowledge-5.gitbook.io/" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Books</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Kevin Blog</div>
+        <div class="logo-desc">
+            
+            All problems in computer science can be solved by another level of indirection.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a target="_blank" rel="noopener" href="https://knowledge-5.gitbook.io/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Books
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/knowledge-things" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/knowledge-things" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">主机异常重启排查</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Linux/" class="post-category">
+                                Linux
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-05-26
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="排查资源使用情况："><a href="#排查资源使用情况：" class="headerlink" title="排查资源使用情况："></a>排查资源使用情况：</h3><p>一般云计算平台或者传统的 IDC 主机都会有相应的监控平台</p>
+<p>通过分析历史的 CPU 、MEM、磁盘 IO、带宽大小等数值分析是不是因为资源占用异常导致的系统重启</p>
+<p><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F9bdff0e5-b108-4c0e-acf6-e32a530a6405%2FUntitled.png?table=block&amp;id=2c2847ae-7f32-4b91-ada5-72f36160a668&amp;spaceId=60e00767-57f7-487f-ba8b-b4272c0929a9&amp;width=1440&amp;userId=&amp;cache=v2" alt="img"></p>
+<p>或者登录机器</p>
+<ul>
+<li>通过 free 命令查看内存信息</li>
+</ul>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">$free             
+              total        used        free      shared  buff&#x2F;cache   available 
+Mem:        3880172      187996     1974484         544     1717692     3407556 
+Swap:             0           0           0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>top 命令查看占用较高内存 CPU 的进程有无异常</li>
+</ul>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">$top - 18:17:43 up 26 days,  7:19,  1 user,  load average: 0.00, 0.01, 0.05 
+Tasks:  94 total,   1 running,  93 sleeping,   0 stopped,   0 zombie 
+%Cpu(s):  0.2 us,  0.2 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+KiB Mem :  3880172 total,  1973048 free,   189016 used,  1718108 buff&#x2F;cache 
+KiB Swap:        0 total,        0 free,        0 used.  3406504 avail Mem   
+PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND    
+	1 root      20   0   43576   3964   2580 S   0.0  0.1   1:26.70 systemd    
+	2 root      20   0       0      0      0 S   0.0  0.0   0:00.68 kthreadd    
+	4 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker&#x2F;0:0H    
+	6 root      20   0       0      0      0 S   0.0  0.0   0:04.58 ksoftirqd&#x2F;0    
+	7 root      rt   0       0      0      0 S   0.0  0.0   0:07.54 migration&#x2F;0    
+	8 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_bh    
+	9 root      20   0       0      0      0 S   0.0  0.0   2:26.47 rcu_sched   
+	10 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 lru-add-drain   
+	11 root      rt   0       0      0      0 S   0.0  0.0   0:06.27 watchdog&#x2F;0   
+	12 root      rt   0       0      0      0 S   0.0  0.0   0:05.24 watchdog&#x2F;1   
+	13 root      rt   0       0      0      0 S   0.0  0.0   0:07.68 migration&#x2F;1   
+	14 root      20   0       0      0      0 S   0.0  0.0   0:04.44 ksoftirqd&#x2F;1   
+	16 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kworker&#x2F;1:0H   
+	18 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kdevtmpfs   
+	19 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 netns   
+	20 root      20   0       0      0      0 S   0.0  0.0   0:00.48 khungtaskd   
+	21 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 writeback   
+	22 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kintegrityd   
+	23 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset   
+	24 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset   
+	25 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 bioset   
+	26 root       0 -20       0      0      0 S   0.0  0.0   0:00.00 kblockd<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>通过 <strong>netstat -ant | awk ‘{split($5, arr, “:”); print arr[1]}’ | sort | uniq -c |sort -nr | head</strong> 命令查看建立连接数</li>
+</ul>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">$netstat -ant | awk &#39;&#123;split($5, arr, &quot;:&quot;); print arr[1]&#125;&#39; | sort | uniq -c |sort -nr | head      
+			12 0.0.0.0      
+			10 58.33.27.210      
+			7 180.164.153.113      
+			1 169.254.0.55<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过 iostat vmstat 或 lsof 查看系统盘的 IO 情况， 找到异常读写的进程</p>
+<h3 id="通过-linux-系统日志排查"><a href="#通过-linux-系统日志排查" class="headerlink" title="通过 linux 系统日志排查"></a>通过 linux 系统日志排查</h3><p> 系统日志通常在 /var/log 下：</p>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">&#x2F;var&#x2F;log&#x2F;message 记录Linux操作系统常见的系统和服务错误信息 
+&#x2F;var&#x2F;log&#x2F;secure 与安全相关的日志信息 
+&#x2F;var&#x2F;log&#x2F;maillog 与邮件相关的日志信息 
+&#x2F;var&#x2F;log&#x2F;cron 与定时任务相关的日志信息 
+&#x2F;var&#x2F;log&#x2F;spooler 与UUCP和news设备相关的日志信息 
+&#x2F;var&#x2F;log&#x2F;boot.log 守护进程启动和停止相关的日志消息 
+&#x2F;var&#x2F;log&#x2F;wtmp 永久记录每个用户登录、注销及系统的启动、停机的事件 
+&#x2F;var&#x2F;run&#x2F;utmp 记录当前正在登录系统的用户信息；
+&#x2F;var&#x2F;log&#x2F;btmp 记录失败的登录尝试信息。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>通常我们主要分析操作系统日志 <strong>/var/log/message</strong></li>
+</ul>
+<p>执行 <strong>grep -E -i -r “panic|error|exception|shutdown” /var/log/message</strong></p>
+<p>看看得到的信息是否有异常的情况</p>
+<p>例如出现下面类似的日志说明有人通过控制台或者电源键进行了关机</p>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">Mar 01 23:12:34 hostname shutdown: shutting down for system halt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>还可以通过 <strong>grep -iv ‘: starting|kernel: .<em>: Power Button|watching system buttons|Stopped Cleaning Up|Started Crash recovery kernel’ \  /var/log/messages /var/log/syslog /var/log/apcupsd</em> \  | grep -iw ‘recover[a-z]<em>|power[a-z]</em>|shut[a-z ]*down|rsyslogd|ups’</strong>     得到更多相关的日志</p>
+<p>当发生意外断电或者硬件故障的时候，文件系统不会被正常的卸载所以下次主机启动的时候你会看到类似下面的日志：</p>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">EXT4-fs ... INFO: recovery required ...  
+Starting XFS recovery filesystem ... 
+systemd-fsck: ... recovering journal 
+systemd-journald: File &#x2F;var&#x2F;log&#x2F;journal&#x2F;...&#x2F;system.journal corrupted or uncleanly shut down, renaming and replacing.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当用户通过电源键进行关机时会得到下面类似的日志：</p>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">systemd-logind: Power key pressed. 
+systemd-logind: Powering Off... 
+systemd-logind: System is powering down.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="主机重启历史和登录情况分析"><a href="#主机重启历史和登录情况分析" class="headerlink" title="主机重启历史和登录情况分析"></a>主机重启历史和登录情况分析</h3><p>通过<em> last reboot</em>  查看最近系统重启的信息：第一行个时间是重启时间-8 第二个是当前时间</p>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 21:56 - 14:40  (-7:-15) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 21:49 - 14:40  (-7:-8) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 21:41 - 14:40  (-7:00) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 21:25 - 14:40  (-6:-44) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 21:15 - 14:40  (-6:-34) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 20:57 - 14:40  (-6:-16) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 20:53 - 14:40  (-6:-13) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 20:49 - 14:40  (-6:-8) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 20:39 - 14:40  (-5:-58) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 18:41 - 14:40  (-4:00) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 17:57 - 14:40  (-3:-16) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 17:23 - 14:40  (-2:-42) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 17:11 - 14:40  (-2:-30) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 16:54 - 14:40  (-2:-13) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 16:27 - 14:40  (-1:-46) 
+reboot   system boot  3.10.0-957.5.1.e Fri Dec  4 15:44 - 14:40  (-1:-3)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>last 命令参数说明：</p>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">-a	将登录系统的主机名称或IP地址，显示在最后一行 
+-d	将IP地址转换成主机名称 
+-f	指定记录文件，默认是显示&#x2F;var&#x2F;log目录下的wtmp文件的记录，但&#x2F;var&#x2F;log目录下得btmp能显示的内容更丰富，可以显示远程登录，例如ssh登录 ，包括失败的登录请求。 
+-i	显示特定ip登录的情况。跟踪用 
+-o	Read an old-type wtmp file (written by linux-libc5 applications). 
+-n	&lt;显示列数&gt;或-&lt;显示列数&gt; 　设置列出名单的显示列数 
+-w	Display full user and domain names in the output 
+-R	不显示登入系统的主机名称或IP（省略 hostname 的栏位） 
+-t	显示YYYYMMDDHHMMSS之前的信息 
+-x	显示系统关闭、用户登录和退出的历史<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过 <strong>last -n 5 -a -i</strong> 排查最近异常登录情况, 排除入侵问题</p>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">root     pts&#x2F;5        Fri Dec  4 14:42   still logged in    58.33.27.210 
+root     pts&#x2F;3        Fri Dec  4 14:38   still logged in    58.33.27.210 
+root     pts&#x2F;3        Fri Dec  4 14:23 - 14:23  (00:00)     123.123.6.205 
+root     pts&#x2F;4        Fri Dec  4 14:12 - 14:43  (00:31)     192.168.0.67 
+root     pts&#x2F;3        Fri Dec  4 14:08 - 14:20  (00:12)     1.202.240.26<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="结合-Kdump-和-crash-工具排查"><a href="#结合-Kdump-和-crash-工具排查" class="headerlink" title="结合 Kdump 和 crash 工具排查"></a>结合 Kdump 和 crash 工具排查</h3><ul>
+<li>Kdump</li>
+</ul>
+<p>kdump是一种kernel crash dump的机制，它可以在内核crash时保存系统的内存信息用于后续的分析。kdump是基于kexec的。</p>
+<p>crash是一个用于交互式地分析正在运行的Linux系统或者kernel crash后的core dump数据的工具。</p>
+<p>dump的工作原理图：</p>
+<p><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F12213811-6b74-4231-973c-1eab31a4a544%2FUntitled.png?table=block&amp;id=f74ed7cb-08d7-41e1-92f6-e82d93d85f15&amp;spaceId=60e00767-57f7-487f-ba8b-b4272c0929a9&amp;width=2380&amp;userId=&amp;cache=v2" alt="img"></p>
+<p><img src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F66ac2ba3-6d56-492b-86a0-8804553d3fdf%2FUntitled.png?table=block&amp;id=b93c8475-e7c2-4084-895f-e1a808683263&amp;spaceId=60e00767-57f7-487f-ba8b-b4272c0929a9&amp;width=3390&amp;userId=&amp;cache=v2" alt="img"></p>
+<ul>
+<li>crash</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fcrash-utility%2Fcrash">crash</a>是redhat的工程师开发的，主要用来离线分析linux内核转存文件，它整合了gdb工具，功能非常强大。可以查看堆栈，dmesg日志，内核数据结构，反汇编等等。crash支持多种工具生成的转存文件格式，如kdump，LKCD，netdump和diskdump，而且还可以分析虚拟机Xen和Kvm上生成的内核转存文件。同时crash还可以调试运行时系统，直接运行crash即可，ubuntu下内核映象存放在/proc/kcore。</p>
+<p>使用这两个工具来排除异常重启问题必须符合后续还会继续发生异常重启的情况，这个时候我们通过</p>
+<p>kdump 工具保存内核在crash时的系统内存信息用于后续的分析；kdump 默认会在/var/crash/ 目录下保存生成的crash 信息</p>
+<p>通过crash 命令分析 </p>
+<pre class="line-numbers language-none"><code class="language-none">crash &#x2F;usr&#x2F;lib&#x2F;debug&#x2F;lib&#x2F;modules&#x2F;xxx&#x2F;vmlinux &#x2F;var&#x2F;crash&#x2F;xxx&#x2F;vmcore<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>使用 crash 调试转储文件，需要在命令行输入两个参数：debug kernel 和 dump file，其中 dump file 是内核 crash 时生成的 dump 文件的名称，debug kernel 是由内核调试信息包安装的，不同的发行版名称略有不同，以 RHEL为例：</p>
+<p>debug kernel 文件需要额外安装 kernel-debuginfo 才会有</p>
+<p>通常我们使用 yum 进行安装</p>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">yum install http:&#x2F;&#x2F;debuginfo.centos.org&#x2F;7&#x2F;x86_64&#x2F;kernel-debuginfo-common-x86_64-3.10.0-957.10.1.el7.x86_64.rpm yum install http:&#x2F;&#x2F;debuginfo.centos.org&#x2F;7&#x2F;x86_64&#x2F;kernel-debuginfo-3.10.0-957.10.1.el7.x86_64.rpm<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">$crash &#x2F;usr&#x2F;lib&#x2F;debug&#x2F;lib&#x2F;modules&#x2F;3.10.0-514.el7.x86_64&#x2F;vmlinux &#x2F;var&#x2F;crash&#x2F;127.0.0.1-2019-07-21-17\:07\:17&#x2F;vmcore<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>执行命令后可以看到 crash 工具分析报告的摘要</p>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">crash 7.1.5-2.el7 
+Copyright (C) 2002-2016  Red Hat, Inc.
+Copyright (C) 2004, 2005, 2006, 2010  IBM Corporation 
+Copyright (C) 1999-2006  Hewlett-Packard Co 
+Copyright (C) 2005, 2006, 2011, 2012  Fujitsu Limited 
+Copyright (C) 2006, 2007  VA Linux Systems Japan K.K. 
+Copyright (C) 2005, 2011  NEC Corporation 
+Copyright (C) 1999, 2002, 2007  Silicon Graphics, Inc. 
+Copyright (C) 1999, 2000, 2001, 2002  Mission Critical Linux, Inc. 
+This program is free software, covered by the GNU General Public License,
+and you are welcome to change it and&#x2F;or distribute copies of it under certain conditions.  
+Enter &quot;help copying&quot; to see the conditions. This program has absolutely no warranty.  Enter &quot;help warranty&quot; for details.  GNU gdb (GDB) 7.6 Copyright (C) 2013 Free Software Foundation, Inc. License GPLv3+: GNU GPL version 3 or later &lt;http:&#x2F;&#x2F;gnu.org&#x2F;licenses&#x2F;gpl.html&gt; This is free software: you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law.  Type &quot;show copying&quot; and &quot;show warranty&quot; for details. This GDB was configured as &quot;x86_64-unknown-linux-gnu&quot;...      
+			 KERNEL: &#x2F;usr&#x2F;lib&#x2F;debug&#x2F;lib&#x2F;modules&#x2F;3.10.0-514.el7.x86_64&#x2F;vmlinux    
+			 DUMPFILE: &#x2F;var&#x2F;crash&#x2F;127.0.0.1-2019-07-21-17:07:17&#x2F;vmcore  [PARTIAL DUMP]        
+			 CPUS: 56        
+			 DATE: Sun Jul 21 17:07:00 2019      
+			 UPTIME: 8 days, 03:43:48 
+			 LOAD AVERAGE: 1.98, 1.73, 1.73       
+			 TASKS: 4444    
+			 NODENAME: hyhive     
+			 RELEASE: 3.10.0-514.el7.x86_64     
+			 VERSION: #1 SMP Tue Nov 22 16:42:41 UTC 2016     
+			 MACHINE: x86_64  (2600 Mhz)      
+			 MEMORY: 255.9 GB       
+			 PANIC: &quot;BUG: unable to handle kernel paging request at ffff8800fc14dfb0&quot;         
+			 PID: 21793     
+			 COMMAND: &quot;sh&quot;        
+			 TASK: ffff883f97751f60  [THREAD_INFO: ffff8830e1b50000]         
+			 CPU: 49       
+			 STATE: TASK_RUNNING (PANIC) 
+crash&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在 crash 工具内我们可以输入 help 看到所有 crash 的子命令</p>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">crash&gt; help 
+*              files          mach           repeat         timer           alias          foreach        mod            runq           tree            ascii          fuser          mount          search         union           bt             gdb            net            set            vm              btop           help           p              sig            vtop            dev            ipcs           ps             struct         waitq           dis            irq            pte            swap           whatis          eval           kmem           ptob           sym            wr              exit           list           ptov           sys            q               extend         log            rd             task           
+crash version: 7.1.9-2   gdb version: 7.6 
+For help on any command above, enter &quot;help &lt;command&gt;&quot;. 
+For help on input options, enter &quot;help input&quot;. 
+For help on output options, enter &quot;help output&quot;.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>例如：</p>
+<p>bt显示内核堆栈跟踪</p>
+<pre class="line-numbers language-Shell" data-language="Shell"><code class="language-Shell">crash&gt; bt
+PID: 3320   TASK: ffff88017092dee0  CPU: 0   COMMAND: &quot;qemu-kvm-2.6&quot;
+ #0 [ffff88007b2aba48] machine_kexec at ffffffff8105c4cb
+ #1 [ffff88007b2abaa8] __crash_kexec at ffffffff81104a32
+ #2 [ffff88007b2abb78] crash_kexec at ffffffff81104b20
+ #3 [ffff88007b2abb90] oops_end at ffffffff816880f8
+ #4 [ffff88007b2abbb8] no_context at ffffffff8167829a
+ #5 [ffff88007b2abc08] __bad_area_nosemaphore at ffffffff81678330
+ #6 [ffff88007b2abc50] bad_area_nosemaphore at ffffffff8167849a
+ #7 [ffff88007b2abc60] __do_page_fault at ffffffff8168afbe
+ #8 [ffff88007b2abcc0] do_page_fault at ffffffff8168b165
+ #9 [ffff88007b2abcf0] page_fault at ffffffff81687388
+​    [exception RIP: unknown or invalid address]
+​    RIP: 00007ffd81487700  RSP: ffff88007b2abda0  RFLAGS: 00010002
+​    RAX: ffff880175733e38  RBX: 0000000075733f28  RCX: 0000000000000000
+​    RDX: 0000000000000000  RSI: 0000000000000003  RDI: ffff880175733e38
+​    RBP: ffff88007b2abde0   R8: 0000000000000000   R9: 0000000000000000
+​    R10: 00000000000103c0  R11: 0000000000000293  R12: ffffffff81a93648
+​    R13: 000055deb2c80ef8  R14: 0000000000000000  R15: 0000000000000003
+​    ORIG_RAX: ffffffffffffffff  CS: 0010  SS: 0018
+#10 [ffff88007b2abda0] __wake_up_common at ffffffff810ba588
+#11 [ffff88007b2abde8] __wake_up at ffffffff810bd4f9
+#12 [ffff88007b2abe20] __vga_put at ffffffff8143535e
+#13 [ffff88007b2abe48] vga_put at ffffffff814356ff
+#14 [ffff88007b2abe70] vfio_pci_vga_rw at ffffffffc04a8e54 [vfio_pci]
+#15 [ffff88007b2abed0] vfio_pci_rw at ffffffffc04a55c1 [vfio_pci]
+#16 [ffff88007b2abee0] vfio_pci_read at ffffffffc04a594c [vfio_pci]
+#17 [ffff88007b2abef0] vfio_device_fops_read at ffffffffc048b233 [vfio]
+#18 [ffff88007b2abf00] vfs_read at ffffffff81200b9c
+#19 [ffff88007b2abf30] sys_pread64 at ffffffff81201c32
+#20 [ffff88007b2abf80] system_call_fastpath at ffffffff8168fe49
+​    RIP: 00007feac42e1fc3  RSP: 00007feab9b6b908  RFLAGS: 00000206
+​    RAX: 0000000000000011  RBX: ffffffff8168fe49  RCX: 0000000000000025
+​    RDX: 0000000000000001  RSI: 00007feab9b6b700  RDI: 000000000000002b
+​    RBP: 0000000000000001   R8: 0000000000000008   R9: 00000000000000ff
+​    R10: 00000800000003da  R11: 0000000000000293  R12: 0000000000000000
+​    R13: 000000000000001a  R14: 0000000000000001  R15: 0000559178fb02b0
+​    ORIG_RAX: 0000000000000011  CS: 0033  SS: 002b<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>ps显示系统中进程的状态</p>
+<pre class="line-numbers language-Plain" data-language="Plain"><div class="caption"><span>Text</span></div><code class="language-Plain">crash&gt; ps | grep RU
+      0      0   0  ffffffff819c9480  RU   0.0       0      0  [swapper&#x2F;0]
+      0      0   1  ffff880177609fa0  RU   0.0       0      0  [swapper&#x2F;1]
+&gt;     0      0   2  ffff88017760af70  RU   0.0       0      0  [swapper&#x2F;2]
+      0      0   3  ffff88017760bf40  RU   0.0       0      0  [swapper&#x2F;3]
+&gt;  1889   1880   3  ffff8801727b3f40  RU   0.3  386192  21456  X
+&gt;  3320   3200   0  ffff88017092dee0  RU  47.7 3914004 2986980  qemu-kvm-2.6
+&gt;  3652   1879   1  ffff880053795ee0  RU   0.0  106640   2640  qemu-img
+crash&gt; ps | grep 3200
+   2276   1914   0  ffff880063320000  IN   0.0  784512   3096  gmain
+   3200   1879   1  ffff880174086eb0  IN   0.0   76728   1792  uniqb-runtime
+   3311   3200   1  ffff88017705cf10  IN  47.7 3914004 2986980  qemu-kvm-2.6
+   3316   3200   1  ffff88004f888fd0  IN  47.7 3914004 2986980  qemu-kvm-2.6
+   3319   3200   0  ffff88004f88bf40  IN  47.7 3914004 2986980  qemu-kvm-2.6
+&gt;  3320   3200   0  ffff88017092dee0  RU  47.7 3914004 2986980  qemu-kvm-2.6
+   3321   3200   3  ffff88017092af70  IN  47.7 3914004 2986980  qemu-kvm-2.6
+   3322   3200   1  ffff880170929fa0  IN  47.7 3914004 2986980  qemu-kvm-2.6
+   3323   3200   0  ffff88017092cf10  IN  47.7 3914004 2986980  qemu-kvm-2.6
+   3325   3200   3  ffff8800631d2f70  IN  47.7 3914004 2986980  qemu-kvm-2.6
+   3331   3200   0  ffff8801745daf70  IN  47.7 3914004 2986980  threaded-ml
+   3333   3200   3  ffff88004f88af70  IN  47.7 3914004 2986980  qemu-kvm-2.6
+   3334   3200   2  ffff880174082f70  IN  47.7 3914004 2986980  qemu-kvm-2.6
+   3337   3200   2  ffff880174080fd0  IN  47.7 3914004 2986980  qemu-kvm-2.6
+   3651   3200   3  ffff880077a30fd0  UN   0.0  142040   1680  sum<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>vm显示当前上下文的虚拟内存信息</p>
+<p>通过分析 crash 中的异常进程和堆栈信息可以更进一步发现异常重启的真正原因</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Kevin</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://knowledge-things.github.io/2022/05/26/zhu-ji-yi-chang-chong-qi-pai-cha/">https://knowledge-things.github.io/2022/05/26/zhu-ji-yi-chang-chong-qi-pai-cha/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Kevin</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+    #vcomments table, th, td {
+        border: 0;
+    }
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+    #vcomments table td {
+        min-width: 80px;
+    }
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+    #vcomments dfn {
+        font-style: italic;
+    }
+    #vcomments small {
+        font-size: 85%;
+    }
+    #vcomments cite {
+        font-style: normal;
+    }
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+    #vcomments table td {
+        min-width: 80px;
+    }
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'a3q2Mf1FJG9rh7rhJuBsrza5-gzGzoHsz',
+        appKey: 'cjHLESquOhedwDhebhbzyOa7',
+        serverURLs: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+<!--酷Q推送-->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/05/28/netdata-nas-xing-neng-jian-kong-gong-ju/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Netdata—NAS性能监控工具">
+                        
+                        <span class="card-title">Netdata—NAS性能监控工具</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-28
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/" class="post-category">
+                                    系统监控
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/">
+                        <span class="chip bg-color">系统监控</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/26/top-ming-ling-an-nei-cun-he-cpu-pai-xu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="top命令按内存和cpu排序">
+                        
+                        <span class="card-title">top命令按内存和cpu排序</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">
+                        <span class="chip bg-color">系统运维</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Kevin Blog<br />'
+            + '文章作者: Kevin<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">Kevin</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "5";
+                        var startDate = "20";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/knowledge-things" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:swx001pk@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=741131663" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 741131663" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+<!-- <link rel="stylesheet" href="/css/prism.css"> -->
+<script src="/js/prism.js" async></script> 
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+        <script src="//code.tidio.co/hunlysnjblnl4okfrrxyxzmgpgfzzxzz.js"></script>
+        <script>
+            $(document).ready(function () {
+                setInterval(change_Tidio, 50);
+                function change_Tidio() {
+                    var tidio=$("#tidio-chat iframe");
+                    if(tidio.css("display")=="block"&& $(window).width()>977 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" &&$(window).width()>977)>0? "-40px" : ($("div.toc-title").length&&$(window).width()>977)>0?"85px":"20px";
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.height=parseInt(tidio.css("height"))>=520?"520px":tidio.css("height");
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()>601 &&$(window).width()<992 ){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && 601< $(window).width()<992)>0? "-40px":"20px" ;
+                        document.getElementById("tidio-chat-iframe").style.right="-15px";
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    else if(tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))<230){
+                        document.getElementById("tidio-chat-iframe").style.bottom= ($("div#backTop.top-scroll").css("display")=="none" && $(window).width()<601)>0? "-10px":"45px" ;
+                        document.getElementById("tidio-chat-iframe").style.zIndex="997";
+                    }
+                    if( tidio.css("display")=="block"&&$(window).width()<601 && parseInt(tidio.css("height"))>=230){
+                        document.getElementById("tidio-chat-iframe").style.zIndex="998";
+                    }
+                }
+            });
+        </script>
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
