@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>通过深度信息计算世界坐标</title>
+      <link href="/2023/04/08/tong-guo-shen-du-xin-xi-ji-suan-shi-jie-zuo-biao/"/>
+      <url>/2023/04/08/tong-guo-shen-du-xin-xi-ji-suan-shi-jie-zuo-biao/</url>
+      
+        <content type="html"><![CDATA[<p>要将通过monodepth2得到的深度信息转换为世界坐标，您需要执行以下步骤。在这个过程中，我们需要内参矩阵（K）和位姿矩阵（T）。假设我们已经有了这些矩阵，那么可以采取以下步骤：</p><ol><li>将深度图像转换为像素坐标。</li><li>使用内参矩阵将像素坐标转换为相机坐标。</li><li>使用位姿矩阵将相机坐标转换为世界坐标。</li></ol><p>以下是实现这些步骤的公式：</p><h3 id="1-将深度图像转换为像素坐标"><a href="#1-将深度图像转换为像素坐标" class="headerlink" title="1. 将深度图像转换为像素坐标"></a>1. 将深度图像转换为像素坐标</h3><p>对于每个像素(u,v)及其对应的深度值d，我们可以得到像素坐标系中的3D点(x, y, z)。这里，z = d。</p><pre class="line-numbers language-none"><code class="language-none">(x, y, z) &#x3D; (u, v, d)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="2-使用内参矩阵将像素坐标转换为相机坐标"><a href="#2-使用内参矩阵将像素坐标转换为相机坐标" class="headerlink" title="2. 使用内参矩阵将像素坐标转换为相机坐标"></a>2. 使用内参矩阵将像素坐标转换为相机坐标</h3><p>我们使用内参矩阵K来将像素坐标转换为相机坐标。这里，K是一个3x3矩阵，包含相机的焦距和主点坐标。</p><pre class="line-numbers language-none"><code class="language-none">K &#x3D; |f_x,  0,  c_x|    | 0,  f_y, c_y|    | 0,   0,   1 |其中：f_x: x轴方向的焦距f_y: y轴方向的焦距c_x: x轴方向的主点坐标c_y: y轴方向的主点坐标<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>为了从像素坐标系到相机坐标系的转换，我们需要首先计算逆内参矩阵（K_inv）。然后将像素坐标与逆内参矩阵相乘。</p><pre class="line-numbers language-none"><code class="language-none">K_inv &#x3D; K^(-1)(X_c, Y_c, Z_c) &#x3D; K_inv * (x, y, z)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="3-使用位姿矩阵将相机坐标转换为世界坐标"><a href="#3-使用位姿矩阵将相机坐标转换为世界坐标" class="headerlink" title="3. 使用位姿矩阵将相机坐标转换为世界坐标"></a>3. 使用位姿矩阵将相机坐标转换为世界坐标</h3><p>位姿矩阵T是一个4x4矩阵，包含旋转矩阵R（3x3）和平移矩阵t（3x1）。</p><pre class="line-numbers language-none"><code class="language-none">T &#x3D; |R, t|    |0, 1|其中：R: 旋转矩阵（3x3）t: 平移矩阵（3x1）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>为了将相机坐标转换为世界坐标，我们需要将相机坐标表示为齐次坐标（添加一个1作为第四个元素），然后与位姿矩阵相乘。最后，将结果转换回非齐次坐标（去掉第四个元素）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> camera </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> monodepth </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Docker普通用户的权限设置</title>
       <link href="/2023/03/31/docker-pu-tong-yong-hu-de-quan-xian-she-zhi/"/>
       <url>/2023/03/31/docker-pu-tong-yong-hu-de-quan-xian-she-zhi/</url>

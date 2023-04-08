@@ -1,3 +1,4 @@
+https://knowledge-things.github.io/2023/04/08/tong-guo-shen-du-xin-xi-ji-suan-shi-jie-zuo-biao/
 https://knowledge-things.github.io/2023/03/31/docker-pu-tong-yong-hu-de-quan-xian-she-zhi/
 https://knowledge-things.github.io/2023/02/15/github-pei-zhi-ssh-mi-yao/
 https://knowledge-things.github.io/2023/01/12/cvat-gua-zai-minio/
