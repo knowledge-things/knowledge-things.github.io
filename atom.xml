@@ -6,7 +6,7 @@
   <link href="https://knowledge-things.github.io/atom.xml" rel="self"/>
   
   <link href="https://knowledge-things.github.io/"/>
-  <updated>2023-04-08T14:30:26.388Z</updated>
+  <updated>2023-04-20T02:11:02.023Z</updated>
   <id>https://knowledge-things.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CLIP论文精读</title>
+    <link href="https://knowledge-things.github.io/2023/04/20/clip-lun-wen-jing-du/"/>
+    <id>https://knowledge-things.github.io/2023/04/20/clip-lun-wen-jing-du/</id>
+    <published>2023-04-20T02:04:40.000Z</published>
+    <updated>2023-04-20T02:11:02.023Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="CLIP论文精读（Learning-Transferable-Visual-Models-From-Natural-Language-Supervision）"><a href="#CLIP论文精读（Learning-Transferable-Visual-Models-From-Natural-Language-Supervision）" class="headerlink" title="CLIP论文精读（Learning Transferable Visual Models From Natural Language Supervision）"></a>CLIP论文精读（<strong>Learning Transferable Visual Models From Natural Language Supervision</strong>）</h1><blockquote><p>论文地址: <a href="https://arxiv.org/abs/2103.00020">https://arxiv.org/abs/2103.00020</a> （26 Feb 2021）</p></blockquote><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要:"></a>摘要:</h2><p>​        本论文提出了一种新颖的方法，利用自然语言监督来学习可转移的视觉模型。该方法基于现有的预训练语言模型（如GPT-4），通过结合视觉和文本信息，实现对图像数据的更丰富的理解。这种新颖的方法强调了通过自然语言监督来捕捉视觉知识的潜力，从而在各种计算机视觉任务中取得更好的泛化性能。</p><p>该方法的核心思想是使用大量未标注的图像-文本对来训练一个视觉-语言联合模型。在这个过程中，模型需要学会理解图像内容与相关文本描述之间的关系。这种理解被认为是可转移的，因为模型可以将从一种任务中学到的知识应用到其他任务上，以提高其性能。</p><p>实验结果表明，通过自然语言监督学习的视觉模型在多个计算机视觉任务上表现出色，如图像分类、物体检测和语义分割。与传统的监督学习方法相比，本方法在许多任务上实现了显著的性能提升，证明了自然语言监督对于学习可转移视觉知识的有效性。</p><p>总之，本论文提出了一种基于自然语言监督的方法，用于学习具有广泛泛化能力的视觉模型。实验结果验证了该方法在多种计算机视觉任务上的有效性，为未来研究提供了一个有趣的方向。</p><p>该方法可应用于多种任务，包括：OCR、动作检测、目标跟踪。    </p><h2 id="模型总览："><a href="#模型总览：" class="headerlink" title="模型总览："></a>模型总览：</h2><h3 id="训练步骤"><a href="#训练步骤" class="headerlink" title="训练步骤"></a>训练步骤</h3><blockquote><p>openai 准备了4亿个图片和文本对</p></blockquote><ul><li>通过自然语言处理生成的监督信号可以训练一个迁移效果很好的视觉模型 </li></ul><p><img src="/Users/kevin/Documents/images/image-20230418162752926.png" alt="image-20230418162752926" style="zoom:50%;" /> </p><ul><li>在模型的训练过程输入是一个图片和一个文字的配对</li><li>通过图像的编码器和文字编码器生成Image Encoder和Text Encoder，图像编码器可以使用ResNet和Vision Transformer</li><li>每个training batch都有N个图像文本对</li><li>CLIP在特征上做对比学习（通过正样本和负样本做对比训练），在特征矩阵里，沿着对角线方向上的为正样本，其余不是对角线的样本都是负样本，负样本的个数n^2-n</li></ul><h2 id="zero-shot推理"><a href="#zero-shot推理" class="headerlink" title="zero-shot推理"></a>zero-shot推理</h2><blockquote><p>由于CLIP没有在分类的任务上进行继续学习和微调，所以CLIP没有分类头，作者采用了一种自然语言处理的方式promt template</p></blockquote><h3 id="promt-template"><a href="#promt-template" class="headerlink" title="promt template"></a>promt template</h3><p><img src="/Users/kevin/Documents/images/image-20230418164016354.png" alt="image-20230418164016354" style="zoom:50%;" /> </p><ul><li>将ImageNet所有类别进行造句，由于训练过程使用的不是单个单词所有需要造句。</li><li>将图片送入编码器得到图片的特征，将所有图片特征和文本特征通过cosine similarity计算相识性。</li><li>将相似性最高的句子挑出来，得到所需的分类</li></ul><h3 id="测试效果"><a href="#测试效果" class="headerlink" title="测试效果"></a>测试效果</h3><p><img src="/Users/kevin/Documents/images/image-20230418164948666.png" alt="image-20230418164948666"></p><h2 id="基于CLIP的应用"><a href="#基于CLIP的应用" class="headerlink" title="基于CLIP的应用"></a>基于CLIP的应用</h2><ul><li>clifs <a href="https://github.com/johanmodin/clifs">https://github.com/johanmodin/clifs</a>  根据给定的信息在视频中做目标检索</li></ul><h2 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h2><p><img src="/Users/kevin/Documents/images/image-20230418173634810.png" alt="image-20230418173634810"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;CLIP论文精读（Learning-Transferable-Visual-Models-From-Natural-Language-Supervision）&quot;&gt;&lt;a href=&quot;#CLIP论文精读（Learning-Transferable-Visual-Mod</summary>
+      
+    
+    
+    
+    
+    <category term="zero-shot" scheme="https://knowledge-things.github.io/tags/zero-shot/"/>
+    
+  </entry>
   
   <entry>
     <title>通过深度信息计算世界坐标</title>
@@ -451,30 +473,6 @@ $ identify xxx.jpg
     
     
     <category term="Object detection" scheme="https://knowledge-things.github.io/tags/Object-detection/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 18.04安装NCCL</title>
-    <link href="https://knowledge-things.github.io/2022/11/01/ubuntu-18-04-an-zhuang-nccl/"/>
-    <id>https://knowledge-things.github.io/2022/11/01/ubuntu-18-04-an-zhuang-nccl/</id>
-    <published>2022-11-01T09:52:12.000Z</published>
-    <updated>2022-11-01T09:58:08.385Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Ubuntu-18-04安装NCCL"><a href="#Ubuntu-18-04安装NCCL" class="headerlink" title="Ubuntu 18.04安装NCCL"></a>Ubuntu 18.04安装NCCL</h1><blockquote><p><a href="https://developer.nvidia.com/nccl/nccl-legacy-downloads">https://developer.nvidia.com/nccl/nccl-legacy-downloads</a></p></blockquote><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h3><p>官网下载地址：<a href="https://developer.nvidia.com/nccl/nccl-download">https://developer.nvidia.com/nccl/nccl-download</a><br>注意版本与你的cuda适配。</p><p>2.安装</p><p>获得.deb安装文件如：nccl-local-repo-ubuntu1804-2.8.4-cuda11.1_1.0-1_amd64.deb后</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">sudo dpkg -i nccl-local-repo-ubuntu1804-2.8.4-cuda11.1_1.0-1_amd64.deb  # 安装# 如果提示缺少公共CUDA GPG秘钥sudo apt-key add &#x2F;var&#x2F;nccl-repo-2.8.3-ga-cuda10.2&#x2F;7fa2af80.pub# 必不可少更新sudo apt updatesudo apt install libnccl2 libnccl-dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Ubuntu-18-04安装NCCL&quot;&gt;&lt;a href=&quot;#Ubuntu-18-04安装NCCL&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu 18.04安装NCCL&quot;&gt;&lt;/a&gt;Ubuntu 18.04安装NCCL&lt;/h1&gt;&lt;blockquo</summary>
-      
-    
-    
-    
-    <category term="NVIDIA" scheme="https://knowledge-things.github.io/categories/NVIDIA/"/>
-    
-    
-    <category term="nccl" scheme="https://knowledge-things.github.io/tags/nccl/"/>
     
   </entry>
   
