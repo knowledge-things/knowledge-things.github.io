@@ -1,10 +1,12 @@
+https://knowledge-things.github.io/2023/05/16/slamtec-mapper-ji-guang-ce-ju-chuan-gan-qi-ying-yong-bi-ji-01/
+https://knowledge-things.github.io/2022/11/03/linux-chang-yong-ming-ling/
+https://knowledge-things.github.io/2023/05/05/jupyter-qie-huan-kernel/
+https://knowledge-things.github.io/2022/10/20/yue-du-ji-lu/
 https://knowledge-things.github.io/2023/04/20/clip-lun-wen-jing-du/
 https://knowledge-things.github.io/2022/05/21/qiu-ji-ptz-he-shi-chang-jiao-yu-onvif-he-ptz-dui-ying-guan-xi/
 https://knowledge-things.github.io/2023/04/08/tong-guo-shen-du-xin-xi-ji-suan-shi-jie-zuo-biao/
 https://knowledge-things.github.io/2023/03/31/docker-pu-tong-yong-hu-de-quan-xian-she-zhi/
-https://knowledge-things.github.io/2022/10/20/yue-du-ji-lu/
 https://knowledge-things.github.io/2023/01/10/jupyter-lab-she-zhi/
-https://knowledge-things.github.io/2022/11/03/linux-chang-yong-ming-ling/
 https://knowledge-things.github.io/2023/01/03/git-dai-li-she-zhi/
 https://knowledge-things.github.io/2023/02/15/github-pei-zhi-ssh-mi-yao/
 https://knowledge-things.github.io/2023/01/12/cvat-gua-zai-minio/
@@ -71,8 +73,8 @@ https://knowledge-things.github.io/about/index.html
 https://knowledge-things.github.io/tags/index.html
 https://knowledge-things.github.io/categories/index.html
 https://knowledge-things.github.io/
-https://knowledge-things.github.io/tags/DevOps/
 https://knowledge-things.github.io/tags/Bits/
+https://knowledge-things.github.io/tags/DevOps/
 https://knowledge-things.github.io/tags/zero-shot/
 https://knowledge-things.github.io/tags/cvat/
 https://knowledge-things.github.io/tags/Docker/
@@ -88,6 +90,7 @@ https://knowledge-things.github.io/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/
 https://knowledge-things.github.io/tags/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%A7/
 https://knowledge-things.github.io/tags/RCNN-%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE/
 https://knowledge-things.github.io/tags/paddle/
+https://knowledge-things.github.io/tags/ros/
 https://knowledge-things.github.io/tags/autossh/
 https://knowledge-things.github.io/tags/Telegraf/
 https://knowledge-things.github.io/tags/nccl/
@@ -108,9 +111,9 @@ https://knowledge-things.github.io/tags/%E8%BD%AC%E8%BD%BD/
 https://knowledge-things.github.io/tags/camera-onvif/
 https://knowledge-things.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/
 https://knowledge-things.github.io/tags/backpressure/
+https://knowledge-things.github.io/tags/monodepth/
 https://knowledge-things.github.io/tags/mask-rcnn/
 https://knowledge-things.github.io/tags/%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95/
-https://knowledge-things.github.io/tags/monodepth/
 https://knowledge-things.github.io/tags/%E8%A7%86%E5%9C%BA%E8%A7%92/
 https://knowledge-things.github.io/tags/%E4%BA%8C%E5%88%86%E6%B3%95/
 https://knowledge-things.github.io/categories/binary-repo/
@@ -130,6 +133,7 @@ https://knowledge-things.github.io/categories/%E7%B3%BB%E7%BB%9F%E7%9B%91%E6%8E%
 https://knowledge-things.github.io/categories/Node-RED/
 https://knowledge-things.github.io/categories/Paddle/
 https://knowledge-things.github.io/categories/FastDeploy-TensorRT/
+https://knowledge-things.github.io/categories/SLAMTEC-liDar/
 https://knowledge-things.github.io/categories/SSH-tunnel/
 https://knowledge-things.github.io/categories/NVIDIA/
 https://knowledge-things.github.io/categories/Linux/VPN/
