@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://knowledge-things.github.io/2023/01/04/paddle-xi-lie-jetson-tui-li/</loc>
+    <lastmod>2023-07-18</lastmod>
+  </url>
+  <url>
+    <loc>https://knowledge-things.github.io/2022/11/03/linux-chang-yong-ming-ling/</loc>
+    <lastmod>2023-07-17</lastmod>
+  </url>
+  <url>
+    <loc>https://knowledge-things.github.io/2022/10/20/yue-du-ji-lu/</loc>
+    <lastmod>2023-06-09</lastmod>
+  </url>
+  <url>
     <loc>https://knowledge-things.github.io/2023/05/16/slamtec-mapper-ji-guang-ce-ju-chuan-gan-qi-ying-yong-bi-ji-01/</loc>
     <lastmod>2023-05-16</lastmod>
   </url>
   <url>
-    <loc>https://knowledge-things.github.io/2022/11/03/linux-chang-yong-ming-ling/</loc>
-    <lastmod>2023-05-15</lastmod>
-  </url>
-  <url>
     <loc>https://knowledge-things.github.io/2023/05/05/jupyter-qie-huan-kernel/</loc>
     <lastmod>2023-05-05</lastmod>
-  </url>
-  <url>
-    <loc>https://knowledge-things.github.io/2022/10/20/yue-du-ji-lu/</loc>
-    <lastmod>2023-05-04</lastmod>
   </url>
   <url>
     <loc>https://knowledge-things.github.io/2023/04/20/clip-lun-wen-jing-du/</loc>
@@ -59,10 +63,6 @@
   <url>
     <loc>https://knowledge-things.github.io/2023/01/09/gong-kai-shu-ju-ji/</loc>
     <lastmod>2023-01-09</lastmod>
-  </url>
-  <url>
-    <loc>https://knowledge-things.github.io/2023/01/04/paddle-xi-lie-jetson-tui-li/</loc>
-    <lastmod>2023-01-04</lastmod>
   </url>
   <url>
     <loc>https://knowledge-things.github.io/2023/01/03/s3fs-gua-zai-minio-cun-chu/</loc>
