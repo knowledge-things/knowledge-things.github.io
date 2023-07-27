@@ -1,3 +1,4 @@
+https://knowledge-things.github.io/2023/07/27/fail2ban/
 https://knowledge-things.github.io/2023/05/16/slamtec-mapper-ji-guang-ce-ju-chuan-gan-qi-ying-yong-bi-ji-01/
 https://knowledge-things.github.io/2023/05/05/jupyter-qie-huan-kernel/
 https://knowledge-things.github.io/2023/04/20/clip-lun-wen-jing-du/
